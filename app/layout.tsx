@@ -11,7 +11,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Evehub',
+  title: 'EveHub',
   description: 'Evehub is a platform for event management.',
   icons: {
     icon: '/assets/images/logo.svg'
