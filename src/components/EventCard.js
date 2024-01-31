@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { MdComputer } from "react-icons/md";
 
 const EventCard = ({
-  event: { title, description, category, image, location, $id, medium, startDate, endDate },
+  event: { title, description, category, image, location, $id, medium, startDate, endDate,name },
 }) => {
 
   
