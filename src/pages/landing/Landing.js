@@ -93,14 +93,14 @@ function Landing() {
             className="flex flex-col gap-4 items-center justify-center z-10"
             style={{ flexBasis: "50%" }}
           >
+            <p className=" md:max-w-[90%] py-4 text-slate-200 " style={{ marginBottom:"8px"}}>
+              Developed and maintained by ADITYA VERMA
+            </p>
             <h1 className=" text-2xl md:text-4xl lg:text-6xl text-slate-100 font-bold leading-relaxed lg:leading-normal drop-shadow-2xl">
               Welcome to EveHub
               <br />
               Your Events, Our Platform
             </h1>
-            <p className=" md:max-w-[90%] py-4 text-slate-200">
-              Developed and maintained by ADITYA VERMA
-            </p>
             <div className="inline-flex items-center gap-2">
               {/* <Link
                 to={token ? "/dashboard" : "/auth/signup"}
