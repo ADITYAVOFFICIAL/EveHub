@@ -64,13 +64,13 @@ function Invites() {
                 <IoPeopleOutline />
                 <p>{team.total} Member(s)</p>
               </button>
-              {/* <button
+               <button
                 onClick={deleteInvitation}
                 className="primary-btn flex gap-2 items-center text-neutral-500 my-0"
               >
                 <IoRemove />
                 <p>Delete Invitation</p>
-              </button> */} 
+              </button> 
             </div>
           ))}
         </div>
