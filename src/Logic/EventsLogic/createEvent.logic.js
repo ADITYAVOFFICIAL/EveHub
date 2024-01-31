@@ -203,9 +203,9 @@ function CreateEventLogic() {
       if (!usernamee) {
         throw new Error("Please provide a club / department name");
       }
-      if (!price) {
-        throw new Error("Enter price, if free enter 0");
-      }
+      // if (!price) {
+      //   throw new Error("Enter price, if free enter 0");
+      // }
       if (!privacy) {
         throw new Error("Please provide a privacy for your event.");
       }
