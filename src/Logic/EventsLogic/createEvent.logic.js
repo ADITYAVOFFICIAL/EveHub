@@ -106,7 +106,7 @@ function CreateEventLogic() {
       setCategory((prev) => category);
       setMedium((prev) => medium);
       setMeetLink((prev) => meet[0]);
-      setWebyurl((prev)=>webyurl);
+      setWebyurl((prev) => response.webyurl);
       setMeetId((prev) => meet[1]);
       setMeetPassword((prev) => meet[2]);
       setPrivacy((prev) => privacy);
