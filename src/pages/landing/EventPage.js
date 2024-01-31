@@ -9,7 +9,6 @@ import {
   IoLocationOutline,
   IoTimerOutline,
   IoWalletOutline,
-  IoArrowBackCircleOutline,
 } from "react-icons/io5";
 import { shareLinks } from "../../static/shareLinks";
 import { useLocation } from "react-router-dom";
@@ -92,9 +91,6 @@ function EventPage() {
               )}
               <h2 className="inline-flex items-center gap-2 text-sm">
                 <IoBookmarkOutline /> {category}
-              </h2>
-              <h2 className="inline-flex items-center gap-2 text-sm">
-                <IoArrowBackCircleOutline /> {usernamee}
               </h2>
               <h2 className="inline-flex items-center gap-2 text-sm">
                 <IoCalendarClearOutline /> {startDay}, {startTime}
