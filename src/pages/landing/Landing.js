@@ -115,8 +115,8 @@ function Landing() {
                 Explore Events
               </Link>
             </div>
-            <p className=" md:max-w-[90%] py-4 text-slate-200 " style={{ marginTop:"2px"}}>
-              Developed and maintained by ADITYA VERMA
+            <p className=" md:max-w-[90%] py-4 text-slate-200 " style={{ marginTop:"2px"}}><b>
+              Developed and maintained by ADITYA VERMA</b>
             </p>
           </div>
           <div className=" w-full relative"></div>
