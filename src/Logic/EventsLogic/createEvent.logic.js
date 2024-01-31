@@ -453,7 +453,7 @@ function CreateEventLogic() {
       type: "string",
     },
     {
-      label: "Max Participants (i.e. RSVPs)",
+      label: "Max Participants",
       value: maxParticipants,
       placeholder:
         "Please provide a maximum number of participants for your event.",

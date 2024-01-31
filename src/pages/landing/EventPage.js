@@ -9,6 +9,7 @@ import {
   IoLocationOutline,
   IoTimerOutline,
   IoWalletOutline,
+  IoPeopleCircle,
 } from "react-icons/io5";
 import { shareLinks } from "../../static/shareLinks";
 import { useLocation } from "react-router-dom";
@@ -33,6 +34,7 @@ function EventPage() {
     price,
     category,
     usernamee,
+    maxParticipants,
     startDate,
     endDate,
     location,
@@ -87,6 +89,11 @@ function EventPage() {
               {language?.length > 0 && (
                 <h2 className="inline-flex items-center gap-2 text-sm">
                   <IoLanguageOutline /> {language}
+                </h2>
+              )}
+              {maxParticipants?.length > 0 && (
+                <h2 className="inline-flex items-center gap-2 text-sm">
+                  <IoPeopleCircle /> {maxParticipants}
                 </h2>
               )}
               <h2 className="inline-flex items-center gap-2 text-sm">
