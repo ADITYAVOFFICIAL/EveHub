@@ -133,7 +133,7 @@ function CreateEventLogic() {
       updatedObj.title = title;
     }
     if (value.webyurl !== fetchedDoc?.webyurl) {
-      updatedObj.webyurl = webyurl;
+      updatedObj.webyurl = value.webyurl;
     }    
     if (value.usernamee !== fetchedDoc?.usernamee) {
       updatedObj.usernamee = usernamee;
