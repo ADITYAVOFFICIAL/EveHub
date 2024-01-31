@@ -9,6 +9,9 @@ export const categories = [
         label: 'Blockchain',
     },
     {
+        label: 'Hackathon',
+    },
+    {
         label: 'Games',
     },
     {
