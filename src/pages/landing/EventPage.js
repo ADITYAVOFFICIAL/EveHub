@@ -34,6 +34,7 @@ function EventPage() {
     price,
     category,
     usernamee,
+    webyurl,
     maxParticipants,
     startDate,
     endDate,
@@ -56,14 +57,22 @@ function EventPage() {
 
   const RSVPBtn = () => (
     <button
-  disabled={adding}
-  onClick={() => window.open(meet[0], '_blank')}
-  className={`primary-btn ${adding ? 'disabled:opacity-60' : ''}`}
->
-  {price <= 0 ? "VISIT LINK" : "VISIT LINK"}
-</button>
-
+      disabled={adding}
+      onClick={() => {
+        if (medium === "offline") {
+          // Redirect to webyurl when medium is offline
+          window.open(webyurl, '_blank');
+        } else {
+          // Open meet[0] link when medium is online
+          window.open(meet[0], '_blank');
+        }
+      }}
+      className={`primary-btn ${adding ? 'disabled:opacity-60' : ''}`}
+    >
+      {price <= 0 ? "VISIT LINK" : "VISIT LINK"}
+    </button>
   );
+  
 
   return (
     <section className="container py-8 pb-16 w-full font-poppins">
