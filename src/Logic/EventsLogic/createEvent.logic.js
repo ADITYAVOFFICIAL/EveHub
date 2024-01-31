@@ -467,7 +467,6 @@ function CreateEventLogic() {
       cb: setMaxParticipants,
       type: "number",
       show: true,
-      required: true,
     },
     {
       label: "Category",
