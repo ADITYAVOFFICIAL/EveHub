@@ -24,7 +24,7 @@ function AuthLayout() {
           <h2 className="text-3xl font-bold">{pageTitle}</h2>
           <Outlet />
           <p>If you have forgotten your password, please contact us at av4923@srmist.edu.in.</p>
-          {/* {!token && (
+          {!token && (
             <p>
               {pageTitle === "Sign in" ? (
                 <>
@@ -42,7 +42,7 @@ function AuthLayout() {
                 </>
               )}
             </p>
-          )} */}
+          )}
         </div>
       </div>
       <div
@@ -55,15 +55,15 @@ function AuthLayout() {
           filter: "hue-rotate(125deg)",
         }}
       >
-        {/* {!token && (
+        {!token && (
           <Link
             to={button.link}
             className="absolute bg-black text-white p-4 py-2 rounded-[18px] top-4 right-4"
           >
             {button.text}
           </Link>
-        )} */}
-        {/* <img alt="blank" src={""} /> */}
+        )}
+       <img alt="blank" src={""} />
       </div>
     </div>
   );
