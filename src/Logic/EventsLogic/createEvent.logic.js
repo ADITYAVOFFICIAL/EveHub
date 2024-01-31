@@ -510,7 +510,7 @@ function CreateEventLogic() {
       placeholder: "Please provide a meet link for your event.",
       cb: setMeetLink,
       type: "url",
-      show: medium === "online" || medium === "offline",
+      show: true,
     },
     {
       label: "Meet ID",
