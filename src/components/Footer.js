@@ -5,7 +5,7 @@ import { footerLinks } from '../static/footerLinks'
 
 function Footer() {
   return (
-    <div className='flex flex-col py-12 bg-secondary text-neutral-200 font-poppins border-t border-neutral-400'>
+    <div className='flex flex-col gap-4 md:gap-8 py-12 bg-secondary text-neutral-200 font-poppins border-t border-neutral-400'>
     {/* <div className='w-full flex flex-row items-start uppercase gap-4 justify-between container'>
         <div className='flex flex-col items-start gap-2'>
             <Brand/>
@@ -16,7 +16,7 @@ function Footer() {
             <NavLink  className='font-light text-sm ' to={`/dashboard`}>Dashboard</NavLink>
         </ul>
     </div> */}
-    <hr className='bg-neutral-100 border border-neutral-100 opacity-25'></hr>
+    <hr className='bg-neutral-100 border border-neutral-100 opacity-100'></hr>
     <ul className='md:w-full flex flex-row flex-wrap items-center justify-center gap-4'>
         {footerLinks.map((link, index) => 
         <li className='border flex items-center justify-center rounded-full p-2 text-2xl hover:scale-125 transition-all'>
