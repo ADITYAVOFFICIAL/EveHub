@@ -5,6 +5,7 @@ import {
   MdComputer,
   MdDelete,
   MdEdit,
+  MdVisibility,
 } from "react-icons/md";
 import { ColorExtractor } from "react-color-extractor";
 
@@ -213,15 +214,9 @@ function Event() {
                   Copy Invite ID
                 </p>
               </button>
-              <Link
-    to={`/event/?id=${events?.$id}`}
-    className="shadow-md primary-btn group overflow-hidden transition-all" style={{
-      background: `rgb(${colors[4]?.join(',')})`
-    }}
-  >
-    <span>View Post</span>
-  </Link>
-              <button
+              
+              
+              {/* <button
                 onClick={toggleShowUsers}
                 className="shadow-md primary-btn group overflow-hidden transition-all" style={{
                   background: `rgb(${colors[4]?.join(',')})`
@@ -231,7 +226,20 @@ function Event() {
                 <p className="transition-all translate-x-[0px] hidden lg:block group-hover:translate-x-0">
                   Invite Users
                 </p>
-              </button>
+              </button> */}
+              <button
+  className="shadow-md primary-btn group overflow-hidden transition-all"
+  style={{
+    background: `rgb(${colors[4]?.join(',')})`
+  }}
+>
+  <Link to={`/event/${events?.$id}`}>
+    <MdVisibility />
+    <p className="transition-all translate-x-[0px] hidden lg:block group-hover:translate-x-0">
+      View Event
+    </p>
+  </Link>
+</button>
             </div>
             <ColorExtractor
               rgb
