@@ -38,12 +38,12 @@ const data = [
       "Seamlessly create and manage events with our intuitive event creation feature. Specify event details, such as date, time, location, and description, to provide a clear picture for your attendees. Customize event settings, add event images, and set ticket options effortlessly.",
     icon: <IoCreateOutline />,
   },
-  // {
-  //   title: "Realtime Notifications",
-  //   description:
-  //     "Stay updated on event activities with our realtime notification feature. Receive notifications on event updates, attendee responses, and more. Never miss out on important event details with our notification feature.",
-  //   icon: <IoNotificationsOutline />,
-  // },
+  {
+    title: "Future Updates",
+    description:
+      "Over time, we'll enhance the website with diverse features and user interface upgrades. We'll actively gather feedback from both organizers and end users to ensure continual improvements, creating a more dynamic and user-friendly online experience.",
+    icon: <IoNotificationsOutline />,
+  },
   // {
   //   title: "Seamless User Invitations",
   //   description:
