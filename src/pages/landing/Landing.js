@@ -129,7 +129,8 @@ function Landing() {
             Promoted Event description
           </p>
           <Link
-                to={token ? "/dashboard" : "/auth/signup"}
+                // to={token ? "/dashboard" : "/auth/signup"}
+                to=''
                 className="bg-gradient-to-b shadow-xl focus:ring-accent from-accent to-accent/90 p-4 text-white text-center"
                 style={{ borderRadius: "12px" }}
               >
