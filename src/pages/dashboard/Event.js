@@ -233,13 +233,14 @@ function Event() {
     background: `rgb(${colors[4]?.join(',')})`
   }}
 >
-  <Link to={`/event/${events?.$id}`}>
+  <Link to={`/event/${events?.$id}`} target="_blank" rel="noopener noreferrer">
     <MdVisibility />
     <p className="transition-all translate-x-[0px] hidden lg:block group-hover:translate-x-0">
-      View Event
+      View
     </p>
   </Link>
 </button>
+
             </div>
             <ColorExtractor
               rgb
