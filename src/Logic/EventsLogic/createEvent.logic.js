@@ -204,12 +204,12 @@ function CreateEventLogic() {
         if (!location) {
           throw new Error("Please provide a location for your event.");
         }
-        if (!latitude) {
-          throw new Error("Please provide a latitude for your event.");
-        }
-        if (!longitude) {
-          throw new Error("Please provide a longitude for your event.");
-        }
+        // if (!latitude) {
+        //   throw new Error("Please provide a latitude for your event.");
+        // }
+        // if (!longitude) {
+        //   throw new Error("Please provide a longitude for your event.");
+        // }
       }
       // if (medium === "online") {
       //   if (!meetLink) {
@@ -404,6 +404,7 @@ function CreateEventLogic() {
       cb: setDuration,
       show: true,
       type: "string",
+      required: true,
     },
     {
       label: "Language",
@@ -421,6 +422,7 @@ function CreateEventLogic() {
       cb: setMaxParticipants,
       type: "number",
       show: true,
+      required: true,
     },
     {
       label: "Category",
@@ -449,12 +451,28 @@ function CreateEventLogic() {
       required: medium === "offline",
     },
     {
-      label: "Meet Link",
+      label: "Latitude",
+      value: latitude,
+      placeholder: "Please provide a latitude for your event.",
+      cb: setLatitude,
+      inputMode: "numeric",
+      show: medium === "offline",
+    },
+    {
+      label: "Longitude",
+      value: longitude,
+      placeholder: "Please provide a longitude for your event.",
+      cb: setLongitude,
+      inputMode: "numeric",
+      show: medium === "offline",
+    },
+    {
+      label: "Website Link",
       value: meetLink,
       placeholder: "Please provide a meet link for your event.",
       cb: setMeetLink,
       type: "url",
-      show: medium === "online",
+      show: medium === "online" || medium === "offline",
     },
     {
       label: "Meet ID",

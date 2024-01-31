@@ -8,7 +8,7 @@ const Button = ({ text, type, cb, loading, style }) => {
         className={`p-4 text-white text-center  text-lg rounded-[18px] bg-black w-full disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-500 ${style || 'my-8'}`}
         onClick={cb}
       >
-        { loading ? "Hmm we'll take it from here..." : text}
+        { loading ? "We'll take it from here..." : text}
       </button>
   );
 };

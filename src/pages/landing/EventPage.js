@@ -53,12 +53,13 @@ function EventPage() {
 
   const RSVPBtn = () => (
     <button
-      disabled={adding}
-      onClick={handleRSVP}
-      className={`primary-btn disabled:opacity-60`}
-    >
-      {price <= 0 ? "RSVP" : "BUY NOW"}
-    </button>
+  disabled={adding}
+  onClick={() => window.open(meet[0], '_blank')}
+  className={`primary-btn ${adding ? 'disabled:opacity-60' : ''}`}
+>
+  {price <= 0 ? "VISIT LINK" : "VISIT LINK"}
+</button>
+
   );
 
   return (
@@ -181,7 +182,7 @@ function EventPage() {
             </h2>
             {duration?.length > 0 && (
               <h2 className="inline-flex items-center gap-2 text-sm">
-                <IoTimerOutline /> {duration.split(":").join("h ")}m
+                <IoTimerOutline /> {duration.split(":").join("h ")}
               </h2>
             )}
             {language?.length > 0 && (

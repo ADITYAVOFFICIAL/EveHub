@@ -149,9 +149,9 @@ function AcceptInvite() {
               cb={acceptInvite}
               loading={accepting}
             />
-            {/* <button className="text-red-500" onClick={rejectInvite}>
+             <button className="text-red-500" onClick={rejectInvite}>
               Reject Invitation
-            </button> */}
+            </button> 
           </div>
         )}
       </div>
