@@ -76,7 +76,7 @@ function EventPage() {
           <div className="flex flex-col md:hidden w-full space-y-4">
             <div className="rounded-lg flex flex-col gap-4 outline w-full outline-1 outline-neutral-300 p-6">
               <h2 className="font-bold text-xl">{title}</h2>
-              <h3 className="font-bold text-xl">{usernamee}</h3>
+              <h3 className="font-bold">{usernamee}</h3>
               <h2 className="inline-flex items-center gap-2 text-sm">
                 <IoBookmarkOutline /> {category}
               </h2>
@@ -183,7 +183,7 @@ function EventPage() {
         <div className="col-span-2 hidden md:block w-full space-y-4">
           <div className="rounded-lg flex flex-col gap-4 outline w-full  outline-1 outline-neutral-300 p-6">
             <h2 className="font-bold text-xl">{title}</h2>
-            <h3 className="font-bold text-xl">{usernamee}</h3>
+            <h3 className="font-bold">{usernamee}</h3>
             <h2 className="inline-flex items-center gap-2 text-sm">
               <IoBookmarkOutline /> {category}
             </h2>
