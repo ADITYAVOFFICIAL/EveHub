@@ -91,7 +91,7 @@ function Landing() {
               <br />
               Your Events, Our Platform
             </h1>
-            <p className=" md:max-w-[90%] py-4 text-slate-400">
+            <p className=" md:max-w-[90%] py-4 text-slate-200">
               Developed and maintained by ADITYA VERMA
             </p>
             <div className="inline-flex items-center gap-2">
@@ -105,7 +105,7 @@ function Landing() {
               <Link
                 to={"/explore"}
                 className="bg-gradient-to-r shadow-xl from-primary to-primary/90 p-4 text-white text-center"
-                style={{ borderRadius: "12px" }}
+                style={{ borderRadius: "12px", fontWeight:"bold"}}
               >
                 Explore Events
               </Link>
