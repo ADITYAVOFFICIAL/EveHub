@@ -36,36 +36,36 @@ const data = [
       "Seamlessly create and manage events with our intuitive event creation feature. Specify event details, such as date, time, location, and description, to provide a clear picture for your attendees. Customize event settings, add event images, and set ticket options effortlessly.",
     icon: <IoCreateOutline />,
   },
-  {
-    title: "Realtime Notifications",
-    description:
-      "Stay updated on event activities with our realtime notification feature. Receive notifications on event updates, attendee responses, and more. Never miss out on important event details with our notification feature.",
-    icon: <IoNotificationsOutline />,
-  },
-  {
-    title: "Seamless User Invitations",
-    description:
-      "Invite participants effortlessly by sending invitation links directly through our app. Share invitation links via email, messaging apps, or social media platforms. Ensure a smooth registration process and track attendee responses for effective event management.",
-    icon: <IoTicketOutline />,
-  },
+  // {
+  //   title: "Realtime Notifications",
+  //   description:
+  //     "Stay updated on event activities with our realtime notification feature. Receive notifications on event updates, attendee responses, and more. Never miss out on important event details with our notification feature.",
+  //   icon: <IoNotificationsOutline />,
+  // },
+  // {
+  //   title: "Seamless User Invitations",
+  //   description:
+  //     "Invite participants effortlessly by sending invitation links directly through our app. Share invitation links via email, messaging apps, or social media platforms. Ensure a smooth registration process and track attendee responses for effective event management.",
+  //   icon: <IoTicketOutline />,
+  // },
   {
     title: "Flexible Event Privacy",
     description:
       "Take control over event visibility with our private and public event options. Host private gatherings with exclusive access for selected participants or organize public events to reach a wider audience. Customize privacy settings to suit the unique needs of each event.",
     icon: <MdOutlinePrivacyTip />,
   },
-  {
-    title: "Easy Attendee Management",
-    description:
-      "Keep track of attendees our comprehensive attendee management feature. Easily view and manage RSVPs, track attendance, and collect essential participant information. Scan QR Codes to check-in attendees and ensure a smooth event experience for all participants.",
-    icon: <IoPeopleOutline />,
-  },
-  {
-    title: "Download Attendee List",
-    description:
-      "Staying always connected is unsure in the age of internet. So EveHub lets the event owners download a list of attendees for each event with our attendee list download feature. Export attendee lists in XLSX format for easy access and management.",
-    icon: <MdOutlineFileDownload />,
-  }
+  // {
+  //   title: "Easy Attendee Management",
+  //   description:
+  //     "Keep track of attendees our comprehensive attendee management feature. Easily view and manage RSVPs, track attendance, and collect essential participant information. Scan QR Codes to check-in attendees and ensure a smooth event experience for all participants.",
+  //   icon: <IoPeopleOutline />,
+  // },
+  // {
+  //   title: "Download Attendee List",
+  //   description:
+  //     "Staying always connected is unsure in the age of internet. So EveHub lets the event owners download a list of attendees for each event with our attendee list download feature. Export attendee lists in XLSX format for easy access and management.",
+  //   icon: <MdOutlineFileDownload />,
+  // }
 ];
 
 function Landing() {
