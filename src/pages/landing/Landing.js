@@ -90,14 +90,14 @@ function Landing() {
             <p className=" md:max-w-[90%] py-4 text-slate-400">
               Developed and maintained by ADITYA VERMA
             </p>
-            <div className="inline-flex items-center gap-2">
-              {/* <Link
+            {/* <div className="inline-flex items-center gap-2">
+              <Link
                 to={token ? "/dashboard" : "/auth/signup"}
                 className="bg-gradient-to-b shadow-xl focus:ring-accent from-accent to-accent/90 p-4 text-white text-center"
                 style={{ borderRadius: "12px" }}
               >
                 {token ? "Go to Dashboard" : "Get Started"}
-              </Link> */}
+              </Link>
               <Link
                 to={"/explore"}
                 className="bg-gradient-to-r shadow-xl from-primary to-primary/90 p-4 text-white text-center"
@@ -105,7 +105,7 @@ function Landing() {
               >
                 Explore Events
               </Link>
-            </div>
+            </div> */}
           </div>
           <div className=" w-full relative"></div>
         </section>
