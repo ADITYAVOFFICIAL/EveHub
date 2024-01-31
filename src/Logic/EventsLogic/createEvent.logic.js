@@ -24,6 +24,7 @@ function CreateEventLogic() {
 
   const [title, setTitle] = useState("");
   const [usernamee, setName] = useState("");
+  const [webyurl, setWebyurl] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
@@ -105,6 +106,7 @@ function CreateEventLogic() {
       setCategory((prev) => category);
       setMedium((prev) => medium);
       setMeetLink((prev) => meet[0]);
+      setWebyurl((prev)=>webyurl);
       setMeetId((prev) => meet[1]);
       setMeetPassword((prev) => meet[2]);
       setPrivacy((prev) => privacy);
@@ -512,6 +514,14 @@ function CreateEventLogic() {
       type: "url",
       show: medium === "online",
     },
+    {
+      label: "Web URL",
+      value: webyurl,
+      placeholder: "Please provide a web URL for your event.",
+      cb: setWebyurl,
+      type: "url",
+      show: true, // Show the field always
+    },    
     {
       label: "Meet ID",
       value: meetId,
