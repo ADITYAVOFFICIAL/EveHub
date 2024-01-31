@@ -98,6 +98,7 @@ function Landing() {
               <br />
               Your Events, Our Platform
             </h1>
+            <p></p>
             <div className="inline-flex items-center gap-2">
               {/* <Link
                 to={token ? "/dashboard" : "/auth/signup"}
