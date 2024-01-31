@@ -53,9 +53,17 @@ function EventPage() {
   const startTime = start?.toTimeString()?.slice(0, 5);
   const endTime = end?.toTimeString()?.slice(0, 5);
 
-  
-
   const RSVPBtn = () => (
+    <button
+      disabled={adding}
+      onClick={handleRSVP}
+      className={`primary-btn disabled:opacity-60`}
+    >
+      {price <= 0 ? "RSVP" : "BUY NOW"}
+    </button>
+  );
+
+  const RSVPBtn2 = () => (
     <button
       disabled={adding}
       onClick={() => {
