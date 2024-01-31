@@ -1,21 +1,18 @@
 export const categories = [
     {
-        label: 'Technology',
-    },
-    {
-        label: 'AI/ML',
-    },
-    {
-        label: 'Blockchain',
-    },
-    {
         label: 'Hackathon',
     },
     {
-        label: 'Games',
+        label: 'Conference',
     },
     {
-        label: 'Robotics',
+        label: 'Clubs',
+    },
+    {
+        label: 'Recruitments',
+    },
+    {
+        label: 'Games',
     },
     {
         label: 'Sports',
@@ -25,15 +22,6 @@ export const categories = [
     },
     {
         label: 'Medical',                
-    },
-    {
-        label: 'Clubs',
-    },
-    {
-        label: 'Recruitments',
-    },
-    {
-        label: 'Conference',
     },
     {
         label: 'Other',
