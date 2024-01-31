@@ -33,6 +33,7 @@ function EventPage() {
     price,
     category,
     userId,
+    name,
     startDate,
     endDate,
     location,
@@ -92,7 +93,7 @@ function EventPage() {
                 <IoBookmarkOutline /> {category}
               </h2>
               <h2 className="inline-flex items-center gap-2 text-sm">
-                <IoBookmarkOutline /> {userId}
+                <IoBookmarkOutline /> {name}
               </h2>
               <h2 className="inline-flex items-center gap-2 text-sm">
                 <IoCalendarClearOutline /> {startDay}, {startTime}
