@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../assets/images/logo.svg";
-import Logo2 from "../assets/images/logo_color.svg";
+import Logo from "../assets/images/logo.png";
+import Logo2 from "../assets/images/logo_color.png";
 
 function Brand({ size }) {
   const { pathname } = useLocation();
