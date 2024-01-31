@@ -13,7 +13,7 @@ function CreateEventLogic() {
   const [searchParams] = useSearchParams();
 
   const id = searchParams.get("id");
-  const [usernamee, setName] = useState("");
+  
 
 
   
@@ -23,6 +23,7 @@ function CreateEventLogic() {
   const fileRef = useRef(null);
 
   const [title, setTitle] = useState("");
+  const [usernamee, setName] = useState("");
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
   const [latitude, setLatitude] = useState("");
@@ -68,6 +69,7 @@ function CreateEventLogic() {
       
       const {
         title,
+        usernamee,
         description,
         location,
         startDate,
@@ -87,6 +89,7 @@ function CreateEventLogic() {
       } = response;
       setFetchedDoc((prev) => response);
       setTitle((prev) => title);
+      setName((prev) => usernamee);
       setDescription((prev) => description);
       setLocation((prev) => location[0]);
       setLatitude((prev) => location[1]);
