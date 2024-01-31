@@ -9,7 +9,7 @@ function AuthLayout() {
   const { pathname } = useLocation();
   const token = localStorage.getItem("token");
   const button = {
-    text: pathname.includes("login") ? "Sign Up" : "Login",
+    // text: pathname.includes("login") ? "Sign Up" : "Login",
     link: pathname.includes("login") ? "/auth/signup" : "/auth/login",
   };
   const pageTitle = pathname.includes("login")
@@ -23,7 +23,7 @@ function AuthLayout() {
           <Brand size={"w-16 md:hidden"} />
           <h2 className="text-3xl font-bold">{pageTitle}</h2>
           <Outlet />
-          {!token && (
+          {/* {!token && (
             <p>
               {pageTitle === "Sign in" ? (
                 <>
@@ -41,7 +41,7 @@ function AuthLayout() {
                 </>
               )}
             </p>
-          )}
+          )} */}
         </div>
       </div>
       <div
