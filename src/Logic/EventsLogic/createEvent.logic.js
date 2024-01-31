@@ -73,6 +73,7 @@ function CreateEventLogic() {
         title,
         usernamee,
         price,
+        webyurl,
         description,
         location,
         startDate,
