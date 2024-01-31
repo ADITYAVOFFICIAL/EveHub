@@ -79,7 +79,7 @@ function EventPage() {
               </h2>
               {duration?.length > 0 && (
                 <h2 className="inline-flex items-center gap-2 text-sm">
-                  <IoTimerOutline /> {duration.split(":").join("h ")}m
+                  <IoTimerOutline /> {duration.split(":").join("h ")}
                 </h2>
               )}
               {language?.length > 0 && (
