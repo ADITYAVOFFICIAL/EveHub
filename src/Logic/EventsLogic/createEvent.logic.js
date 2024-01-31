@@ -449,7 +449,6 @@ function CreateEventLogic() {
       cb: setDuration,
       show: true,
       type: "string",
-      required: true,
     },
     {
       label: "Language",
