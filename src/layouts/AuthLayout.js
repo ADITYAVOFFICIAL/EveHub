@@ -9,7 +9,7 @@ function AuthLayout() {
   const { pathname } = useLocation();
   const token = localStorage.getItem("token");
   const button = {
-    // text: pathname.includes("login") ? "Sign Up" : "Login",
+    text: pathname.includes("login") ? "Sign Up" : "Login",
     link: pathname.includes("login") ? "/auth/signup" : "/auth/login",
   };
   const pageTitle = pathname.includes("login")
@@ -62,8 +62,7 @@ function AuthLayout() {
           >
             {button.text}
           </Link>
-        )}
-       <img alt="blank" src={""} />
+        )}       
       </div>
     </div>
   );
