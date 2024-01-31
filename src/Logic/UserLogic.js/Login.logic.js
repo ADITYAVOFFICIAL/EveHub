@@ -24,7 +24,7 @@ function LoginLogic() {
     },
     {
       label: "Password",
-      placeholder: "Please pick a strong password",
+      placeholder: "Enter password",
       value: password,
       cb: setPassword,
       inputMode: "text",
