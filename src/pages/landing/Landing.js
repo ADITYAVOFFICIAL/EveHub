@@ -28,7 +28,8 @@ import { MdManageHistory, MdOutlineFileDownload, MdOutlinePrivacyTip, MdRsvp } f
 import { RiMouseLine, RiSteamLine } from "react-icons/ri";
 import Hero2 from "../../assets/images/3187910.jpg";
 import Security from "../../assets/images/security.jpg";
-import WelcomeBackground from "../../assets/images/welbag.gif"; // Import your .gif file
+import WelcomeBackground from "../../assets/images/welbag.gif";
+import WelcomeBackgroundMobile from "../../assets/images/welbagmob.gif";
 
 const data = [
   {
@@ -75,12 +76,18 @@ function Landing() {
 
   const token = JSON.parse(localStorage.getItem("token"));
 
+  const isMobile = window.innerWidth <= 768; // Adjust the breakpoint as needed
+
   return (
     <div className="flex-1 bg-white font-poppins select-none">
       <div className="bg-secondary">
         <section
           className="flex flex-col text-center w-full items-center py-8 lg:py-16 justify-center gap-8 md:gap-0 container min-h-[86vh] relative"
-          style={{ backgroundImage: `url(${WelcomeBackground})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+          style={{
+            backgroundImage: `url(${isMobile ? WelcomeBackgroundMobile : WelcomeBackground})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'fill'
+          }}
         >
           <div
             className="flex flex-col gap-4 items-center justify-center z-10"
