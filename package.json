@@ -1,6 +1,6 @@
 {
-  "name": "rsvp",
-  "version": "0.1.0",
+  "name": "evehub",
+  "version": "1.1.0",
   "private": true,
   "proxy": "https://cloud.appwrite.io/v1",
   "dependencies": {

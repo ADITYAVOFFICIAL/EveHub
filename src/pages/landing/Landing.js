@@ -38,12 +38,6 @@ const data = [
       "Seamlessly create and manage events with our intuitive event creation feature. Specify event details, such as date, time, location, and description, to provide a clear picture for your attendees. Customize event settings, add event images, and set ticket options effortlessly.",
     icon: <IoCreateOutline />,
   },
-  {
-    title: "Future Updates",
-    description:
-      "Over time, we'll enhance the website with diverse features and user interface upgrades. We'll actively gather feedback from both organizers and end users to ensure continual improvements, creating a more dynamic and user-friendly online experience.",
-    icon: <IoNotificationsOutline />,
-  },
   // {
   //   title: "Seamless User Invitations",
   //   description:
@@ -55,6 +49,12 @@ const data = [
     description:
       "Take control over event visibility with our private and public event options. Host private gatherings with exclusive access for selected participants or organize public events to reach a wider audience. Customize privacy settings to suit the unique needs of each event.",
     icon: <MdOutlinePrivacyTip />,
+  },
+  {
+    title: "Future Updates",
+    description:
+      "Over time, we'll enhance the website with diverse features and user interface upgrades. We'll actively gather feedback from both organizers and end users to ensure continual improvements, creating a more dynamic and user-friendly online experience.",
+    icon: <IoNotificationsOutline />,
   },
   // {
   //   title: "Easy Attendee Management",
