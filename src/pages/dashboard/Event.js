@@ -183,7 +183,7 @@ function Event() {
               <Link
                 to={`/dashboard/create?id=${events?.$id}`}
                 className="shadow-md primary-btn group overflow-hidden transition-all" style={{
-                  background: `rgb(${colors[4]?.join(',')})`
+                  background: `r  gb(${colors[4]?.join(',')})`
                 }}
               >
                 <MdEdit />
@@ -213,6 +213,14 @@ function Event() {
                   Copy Invite ID
                 </p>
               </button>
+              <Link
+    to={`/event/?id=${events?.$id}`}
+    className="shadow-md primary-btn group overflow-hidden transition-all" style={{
+      background: `rgb(${colors[4]?.join(',')})`
+    }}
+  >
+    <span>View Post</span>
+  </Link>
               <button
                 onClick={toggleShowUsers}
                 className="shadow-md primary-btn group overflow-hidden transition-all" style={{
