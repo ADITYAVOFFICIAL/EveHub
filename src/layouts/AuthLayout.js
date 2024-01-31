@@ -23,6 +23,7 @@ function AuthLayout() {
           <Brand size={"w-16 md:hidden"} />
           <h2 className="text-3xl font-bold">{pageTitle}</h2>
           <Outlet />
+          <p>If you have forgotten your password, please contact us at av4923@srmist.edu.in.</p>
           {/* {!token && (
             <p>
               {pageTitle === "Sign in" ? (
