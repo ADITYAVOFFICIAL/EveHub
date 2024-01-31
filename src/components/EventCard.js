@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { MdComputer } from "react-icons/md";
 
 const EventCard = ({
-  event: { title, description, category, image, location, $id, medium, startDate, endDate,usernamee },
+  event: { title, description, category, image, location, $id, medium, startDate, endDate,usernamee, maxParticipants},
 }) => {
 
   
@@ -49,6 +49,7 @@ const EventCard = ({
           <hr className="w-[1px] h-full md:w-full md:h-[1px]"></hr>
           <p>{new Date(endDate?.split('+')[0]).toTimeString().slice(0,5)}</p>
           <p className="text-xs text-neutral-600">{new Date(endDate?.split('+')[0]).toDateString().slice(4)}</p>
+          <p className="text-xs text-neutral-600">{maxParticipants}</p>
         </div>
       </div>
     </Link>
