@@ -129,11 +129,11 @@ function Landing() {
             Promoted Event description
           </p>
           <Link
-            to={token ? "/" : "explore"}
+            to={token ? "Promoted Event Link" : "/explore"}
             className="bg-accent p-4 text-white text-center"
             style={{ borderRadius: "12px" }}
           >
-            {token ? "/" : "Promoted Event Link"}
+            {token ? "Promoted Event Link" : "Promoted Event Link"}
           </Link>
         </div>
       </section>
@@ -209,7 +209,7 @@ function Landing() {
           ))}
         </Swiper>
       </div>
-      <section className="flex flex-col-reverse lg:flex-row-reverse w-full py-8 md:py-16 justify-between gap-8 md:gap-0 container">
+      {/* <section className="flex flex-col-reverse lg:flex-row-reverse w-full py-8 md:py-16 justify-between gap-8 md:gap-0 container">
         <div className="" style={{ flexBasis: "50%" }}>
           <img className="w-full" src={Security} />
         </div>
@@ -240,7 +240,7 @@ function Landing() {
             {token ? 'Go to Dashboard' : 'Get Started'}
           </Link>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

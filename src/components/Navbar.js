@@ -19,21 +19,21 @@ function Navbar() {
         link: "/explore",
         show: true,
       },
-      {
-        title: "Dashboard",
-        link: "/dashboard",
-        show: token ? true : false,
-      },
+      // {
+      //   title: "Dashboard",
+      //   link: "/dashboard",
+      //   show: token ? true : false,
+      // },
       {
         title: "Login",
         link: "/auth/login",
         show: token ? false : true,
       },
-      {
-        title: "Signup",
-        link: "/auth/signup",
-        show: token ? false : true,
-      },
+      // {
+      //   title: "Signup",
+      //   link: "/auth/signup",
+      //   show: token ? false : true,
+      // },
     ]);
   }, [token]);
 
