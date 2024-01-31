@@ -83,12 +83,12 @@ function Landing() {
             style={{ flexBasis: "50%" }}
           >
             <h1 className=" text-2xl md:text-4xl lg:text-6xl text-slate-100 font-bold leading-relaxed lg:leading-normal drop-shadow-2xl">
-              Spotlight Your Creativity
+              Welcome to EveHub
               <br />
-              Curate Unforgettable Events
+              Your Events, Our Platform
             </h1>
             <p className=" md:max-w-[90%] py-4 text-slate-400">
-              RSVP and Management Made Effortless for Creators
+              Developed and maintained by ADITYA VERMA
             </p>
             <div className="inline-flex items-center gap-2">
               {/* <Link
@@ -122,22 +122,18 @@ function Landing() {
             <hr className="w-20 h-1 bg-accent"></hr>
           </p>
           <h1 className="text-3xl md:text-5xl text-primary font-semibold md:leading-normal">
-            Unlock Your Creative Potential
+            Promoted Events
           </h1>
           <hr className="w-full border border-neutral-200"></hr>
           <p className="text-sm leading-[1.4rem] md:max-w-[90%] py-4 text-neutral-500 text-justify">
-            Our app empowers individual contributors and artists like you to
-            unleash your creativity and organize remarkable events. Whether
-            you're planning a solo exhibition, a live performance, or a
-            collaborative workshop, our platform provides the tools and features
-            you need to make your events a resounding success.
+            Promoted Event description
           </p>
           <Link
-            to={token ? "Go to Dashboard" : "/auth/signup"}
+            to={token ? "/" : "explore"}
             className="bg-accent p-4 text-white text-center"
             style={{ borderRadius: "12px" }}
           >
-            {token ? "Go to Dashboard" : "Get Started"}
+            {token ? "/" : "Promoted Event Link"}
           </Link>
         </div>
       </section>
