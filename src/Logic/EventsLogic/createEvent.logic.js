@@ -24,6 +24,7 @@ function CreateEventLogic() {
 
   const [title, setTitle] = useState("");
   const [usernamee, setName] = useState("");
+  const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
   const [latitude, setLatitude] = useState("");
@@ -70,6 +71,7 @@ function CreateEventLogic() {
       const {
         title,
         usernamee,
+        price,
         description,
         location,
         startDate,
@@ -90,6 +92,7 @@ function CreateEventLogic() {
       setFetchedDoc((prev) => response);
       setTitle((prev) => title);
       setName((prev) => usernamee);
+      setPrice((prev) => price);
       setDescription((prev) => description);
       setLocation((prev) => location[0]);
       setLatitude((prev) => location[1]);
@@ -129,6 +132,9 @@ function CreateEventLogic() {
     }
     if (value.usernamee !== fetchedDoc?.usernamee) {
       updatedObj.usernamee = usernamee;
+    }
+    if (value.price !== fetchedDoc?.price) {
+      updatedObj.price = price;
     }
     if(value?.acceptingAttendance !== fetchedDoc?.acceptingAttendance) {
       updatedObj.acceptingAttendance = acceptingAttendance;
@@ -196,6 +202,9 @@ function CreateEventLogic() {
       }
       if (!usernamee) {
         throw new Error("Please provide a club / department name");
+      }
+      if (!price) {
+        throw new Error("Enter price, if free enter 0");
       }
       if (!privacy) {
         throw new Error("Please provide a privacy for your event.");
@@ -268,6 +277,7 @@ function CreateEventLogic() {
         const value = {
           title,
           usernamee,
+          price,
           description,
           medium,
           startDate,
@@ -351,6 +361,14 @@ function CreateEventLogic() {
       value: usernamee, // Define the corresponding state variable
       placeholder: "Please provide a name for your club / department.",
       cb: setName, // Define the corresponding state-setting function
+      show: true, // Show this field always
+      required: true, // Make it required if you want
+    },
+    {
+      label: "Enter Cost of participation",
+      value: price, // Define the corresponding state variable
+      placeholder: "Enter value here. If FREE enter 0",
+      cb: setPrice, // Define the corresponding state-setting function
       show: true, // Show this field always
       required: true, // Make it required if you want
     },
