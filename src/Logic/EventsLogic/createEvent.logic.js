@@ -124,6 +124,9 @@ function CreateEventLogic() {
     if (value.title !== fetchedDoc?.title) {
       updatedObj.title = title;
     }
+    if (value.usernamee !== fetchedDoc?.usernamee) {
+      updatedObj.usernamee = usernamee;
+    }
     if(value?.acceptingAttendance !== fetchedDoc?.acceptingAttendance) {
       updatedObj.acceptingAttendance = acceptingAttendance;
     }
@@ -187,6 +190,9 @@ function CreateEventLogic() {
       }
       if (!description) {
         throw new Error("Please provide a description for your event.");
+      }
+      if (!usernamee) {
+        throw new Error("Please provide a club / department name");
       }
       if (!privacy) {
         throw new Error("Please provide a privacy for your event.");
@@ -258,6 +264,7 @@ function CreateEventLogic() {
         }
         const value = {
           title,
+          usernamee,
           description,
           medium,
           startDate,
