@@ -57,18 +57,18 @@ function PhoneLogic() {
     e?.preventDefault();
     setSigningin((prev) => true);
     setValidateMessage((prev) => null);
-    
-
+  
     const account = new Account(client);
-
+  
     try {
+      const fullPhoneNumber = `+91${phone}`; // Concatenate +91 with the entered phone number
       const phoneUpdateResponse = await account.updatePhone(
-        `${phoneCode}${phone}`,
+        fullPhoneNumber,
         password
       );
-      
+  
       const sendOTPResponse = await account.createPhoneVerification();
-      
+  
       toast.success("Phone number updated successfully. Please Check for OTP.");
       navigate("/auth/otp", {
         replace: true,
@@ -76,17 +76,17 @@ function PhoneLogic() {
           ...sendOTPResponse,
           email,
           password,
-          phone: `${phoneCode}${phone}`,
+          phone: fullPhoneNumber,
         },
       });
     } catch (error) {
-      
       setValidateMessage((prev) => error.message);
       toast.error(error.message);
     } finally {
       setSigningin((prev) => false);
     }
   };
+  
 
   return {
     inputs,
