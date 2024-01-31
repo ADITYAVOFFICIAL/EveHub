@@ -301,6 +301,7 @@ function CreateEventLogic() {
           tnc,
           acceptingAttendance,
           duration,
+          webyurl,
           language,
           acceptingRsvp
         };
