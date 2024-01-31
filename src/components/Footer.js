@@ -5,7 +5,7 @@ import { footerLinks } from '../static/footerLinks'
 
 function Footer() {
   return (
-    <div className='flex flex-col gap-4 md:gap-8 py-12 bg-secondary text-neutral-200 font-poppins border-t border-neutral-400'>
+    <div className='flex flex-col gap-4 md:gap-8 py-12 bg-white text-neutral-200 font-poppins border-t border-neutral-400'>
     {/* <div className='w-full flex flex-row items-start uppercase gap-4 justify-between container'>
         <div className='flex flex-col items-start gap-2'>
             <Brand/>
