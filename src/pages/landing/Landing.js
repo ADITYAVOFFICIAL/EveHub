@@ -36,36 +36,36 @@ const data = [
       "Seamlessly create and manage events with our intuitive event creation feature. Specify event details, such as date, time, location, and description, to provide a clear picture for your attendees. Customize event settings, add event images, and set ticket options effortlessly.",
     icon: <IoCreateOutline />,
   },
-  // {
-  //   title: "Realtime Notifications",
-  //   description:
-  //     "Stay updated on event activities with our realtime notification feature. Receive notifications on event updates, attendee responses, and more. Never miss out on important event details with our notification feature.",
-  //   icon: <IoNotificationsOutline />,
-  // },
-  // {
-  //   title: "Seamless User Invitations",
-  //   description:
-  //     "Invite participants effortlessly by sending invitation links directly through our app. Share invitation links via email, messaging apps, or social media platforms. Ensure a smooth registration process and track attendee responses for effective event management.",
-  //   icon: <IoTicketOutline />,
-  // },
+  {
+    title: "Realtime Notifications",
+    description:
+      "Stay updated on event activities with our realtime notification feature. Receive notifications on event updates, attendee responses, and more. Never miss out on important event details with our notification feature.",
+    icon: <IoNotificationsOutline />,
+  },
+  {
+    title: "Seamless User Invitations",
+    description:
+      "Invite participants effortlessly by sending invitation links directly through our app. Share invitation links via email, messaging apps, or social media platforms. Ensure a smooth registration process and track attendee responses for effective event management.",
+    icon: <IoTicketOutline />,
+  },
   {
     title: "Flexible Event Privacy",
     description:
       "Take control over event visibility with our private and public event options. Host private gatherings with exclusive access for selected participants or organize public events to reach a wider audience. Customize privacy settings to suit the unique needs of each event.",
     icon: <MdOutlinePrivacyTip />,
   },
-  // {
-  //   title: "Easy Attendee Management",
-  //   description:
-  //     "Keep track of attendees our comprehensive attendee management feature. Easily view and manage RSVPs, track attendance, and collect essential participant information. Scan QR Codes to check-in attendees and ensure a smooth event experience for all participants.",
-  //   icon: <IoPeopleOutline />,
-  // },
-  // {
-  //   title: "Download Attendee List",
-  //   description:
-  //     "Staying always connected is unsure in the age of internet. So EveHub lets the event owners download a list of attendees for each event with our attendee list download feature. Export attendee lists in XLSX format for easy access and management.",
-  //   icon: <MdOutlineFileDownload />,
-  // }
+  {
+    title: "Easy Attendee Management",
+    description:
+      "Keep track of attendees our comprehensive attendee management feature. Easily view and manage RSVPs, track attendance, and collect essential participant information. Scan QR Codes to check-in attendees and ensure a smooth event experience for all participants.",
+    icon: <IoPeopleOutline />,
+  },
+  {
+    title: "Download Attendee List",
+    description:
+      "Staying always connected is unsure in the age of internet. So EveHub lets the event owners download a list of attendees for each event with our attendee list download feature. Export attendee lists in XLSX format for easy access and management.",
+    icon: <MdOutlineFileDownload />,
+  }
 ];
 
 function Landing() {
@@ -90,14 +90,14 @@ function Landing() {
             <p className=" md:max-w-[90%] py-4 text-slate-400">
               Developed and maintained by ADITYA VERMA
             </p>
-            {/* <div className="inline-flex items-center gap-2">
-              <Link
+            <div className="inline-flex items-center gap-2">
+              {/* <Link
                 to={token ? "/dashboard" : "/auth/signup"}
                 className="bg-gradient-to-b shadow-xl focus:ring-accent from-accent to-accent/90 p-4 text-white text-center"
                 style={{ borderRadius: "12px" }}
               >
                 {token ? "Go to Dashboard" : "Get Started"}
-              </Link>
+              </Link> */}
               <Link
                 to={"/explore"}
                 className="bg-gradient-to-r shadow-xl from-primary to-primary/90 p-4 text-white text-center"
@@ -105,7 +105,7 @@ function Landing() {
               >
                 Explore Events
               </Link>
-            </div> */}
+            </div>
           </div>
           <div className=" w-full relative"></div>
         </section>
@@ -129,11 +129,11 @@ function Landing() {
             Promoted Event description
           </p>
           <Link
-            to={token ? "Promoted Event Link" : "/explore"}
+            to={token ? "Go to Dashboard" : "/auth/signup"}
             className="bg-accent p-4 text-white text-center"
             style={{ borderRadius: "12px" }}
           >
-            {token ? "Promoted Event Link" : "Promoted Event Link"}
+            {token ? "Go to Dashboard" : "Get Started"}
           </Link>
         </div>
       </section>
@@ -209,7 +209,7 @@ function Landing() {
           ))}
         </Swiper>
       </div>
-      {/* <section className="flex flex-col-reverse lg:flex-row-reverse w-full py-8 md:py-16 justify-between gap-8 md:gap-0 container">
+      <section className="flex flex-col-reverse lg:flex-row-reverse w-full py-8 md:py-16 justify-between gap-8 md:gap-0 container">
         <div className="" style={{ flexBasis: "50%" }}>
           <img className="w-full" src={Security} />
         </div>
@@ -240,7 +240,7 @@ function Landing() {
             {token ? 'Go to Dashboard' : 'Get Started'}
           </Link>
         </div>
-      </section> */}
+      </section>
     </div>
   );
 }
