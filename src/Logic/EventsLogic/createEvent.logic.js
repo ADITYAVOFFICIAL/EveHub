@@ -517,14 +517,14 @@ function CreateEventLogic() {
       value: meetId,
       placeholder: "Please provide a meet ID for your event.",
       cb: setMeetId,
-      show: medium === "online",
+      show: meetLink.length > 0,
     },
     {
       label: "Meet Password",
       value: meetPassword,
       placeholder: "Please provide a meet password for your event.",
       cb: setMeetPassword,
-      show: medium === "online",
+      show: meetLink.length > 0,
     },
     {
       label: "Accepting Attendances",
