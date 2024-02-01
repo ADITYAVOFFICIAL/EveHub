@@ -174,7 +174,7 @@ function Landing() {
               Your Events, Our Platform
             </h1>
             <p></p>
-            <div className="inline-flex items-center gap-2">
+            {/* <div className="inline-flex items-center gap-2">
               <Link
                 to={"/explore"}
                 className="bg-gradient-to-r shadow-xl from-primary to-primary/90 p-4 text-white text-center"
@@ -182,7 +182,14 @@ function Landing() {
               >
                 Explore Events
               </Link>
-            </div>
+            </div> */}
+            <div class="w-full h-40 flex items-center justify-center">
+          <a href="/explore" class="relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group">
+          <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-red-500 rounded-full group-hover:w-56 group-hover:h-56 md:bg-blue-500"></span>
+            <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
+            <span class="relative" style={{fontWeight:"bold"}}>Explore EveHub</span>
+          </a>
+        </div>
             <p className=" md:max-w-[90%] py-4 text-slate-200 " style={{ marginTop:"2px"}}><b>
               Developed and maintained by ADITYA VERMA</b>
             </p>
