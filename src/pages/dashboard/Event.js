@@ -216,7 +216,7 @@ function Event() {
               </button>
               
               
-              <button
+              {/* <button
                 onClick={toggleShowUsers}
                 className="shadow-md primary-btn group overflow-hidden transition-all" style={{
                   background: `rgb(${colors[4]?.join(',')})`
@@ -226,7 +226,7 @@ function Event() {
                 <p className="transition-all translate-x-[0px] hidden lg:block group-hover:translate-x-0">
                   Invite Users
                 </p>
-              </button>
+              </button> */}
               <button
   className="shadow-md primary-btn group overflow-hidden transition-all"
   style={{

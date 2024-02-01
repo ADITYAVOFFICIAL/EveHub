@@ -22,7 +22,7 @@ function SignupLogic() {
     {
       label: "Name",
       name: "name",
-      placeholder: "Bhupendra Jogi",
+      placeholder: "John Doe",
       value: name,
       cb: setName,
       required: true,

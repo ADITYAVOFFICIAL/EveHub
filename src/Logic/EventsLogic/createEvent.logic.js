@@ -544,7 +544,7 @@ function CreateEventLogic() {
       value: acceptingAttendance,
       // placeholder: "Please provide a meet password for your event.",
       cb: setAcceptingAttendance,
-      show: true,
+      show: false,
       options: [
         {
           label: "Yes",
@@ -561,7 +561,7 @@ function CreateEventLogic() {
       value: acceptingRsvp,
       // placeholder: "Please provide a meet password for your event.",
       cb: setAcceptingRsvp,
-      show: true,
+      show: false,
       options: [
         {
           label: "Yes",

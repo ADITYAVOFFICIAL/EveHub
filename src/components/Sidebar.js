@@ -55,12 +55,12 @@ function Sidebar() {
       <NavLink className="sidebar-link" to="events?filter=total">
         <IoCalendarClearOutline /> Events
       </NavLink>
-      <NavLink className="sidebar-link" to="invities">
+      {/* <NavLink className="sidebar-link" to="invities">
         <IoTicketOutline /> Invities
-      </NavLink>
-      <NavLink className="sidebar-link" to="rsvp">
+      </NavLink> */}
+      {/* <NavLink className="sidebar-link" to="rsvp">
         <IoPeopleOutline /> RSVPs
-      </NavLink>
+      </NavLink> */}
       <button className="sidebar-link" onClick={toggleNotificationBar}>
         <div className="relative">
           <IoNotificationsOutline />

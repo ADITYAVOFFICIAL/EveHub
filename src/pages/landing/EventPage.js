@@ -53,34 +53,25 @@ function EventPage() {
   const startTime = start?.toTimeString()?.slice(0, 5);
   const endTime = end?.toTimeString()?.slice(0, 5);
 
-  const RSVPBtn = () => (
-    <>
-      <button
-        disabled={adding}
-        onClick={handleRSVP}
-        className={`primary-btn disabled:opacity-60`}
-      >
-        {price <= 0 ? "RSVP" : "BUY NOW"}
-      </button>
-      <button
-        disabled={adding}
-        onClick={() => {
-          if (medium === "offline") {
-            // Redirect to webyurl when medium is offline
-            window.open(webyurl, '_blank');
-          } else {
-            // Open meet[0] link when medium is online
-            window.open(meet[0], '_blank');
-          }
-        }}
-        className={`primary-btn ${adding ? 'disabled:opacity-60' : ''}`}
-      >
-        {price <= 0 ? "VISIT LINK" : "VISIT LINK"}
-      </button>
-    </>
-  );
   
 
+  const RSVPBtn = () => (
+    <button
+      disabled={adding}
+      onClick={() => {
+        if (medium === "offline") {
+          // Redirect to webyurl when medium is offline
+          window.open(webyurl, '_blank');
+        } else {
+          // Open meet[0] link when medium is online
+          window.open(meet[0], '_blank');
+        }
+      }}
+      className={`primary-btn ${adding ? 'disabled:opacity-60' : ''}`}
+    >
+      {price <= 0 ? "VISIT LINK" : "VISIT LINK"}
+    </button>
+  );
   
 
   return (
