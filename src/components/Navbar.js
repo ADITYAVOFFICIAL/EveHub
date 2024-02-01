@@ -121,6 +121,7 @@ function Navbar() {
                   Logout
                 </button>
               )}<div className="flex items-center justify-center w-full"> {/* Added w-full class */}
+              {userInfo && (
               <NavLink>
                 <button className="primary-btn" style={{
                   border: "1px solid",
@@ -137,7 +138,7 @@ function Navbar() {
                       <span className="text-lg" style={{width:"350px"}}>Welcome {userInfo.name}</span>
                     </>
                 </button>
-              </NavLink>
+              </NavLink>)}
             </div>            
             </div>
           </div>
