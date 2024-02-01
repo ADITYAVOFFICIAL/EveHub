@@ -135,7 +135,7 @@ function Navbar() {
                 }}>
                    <>
                       <IoPersonOutline className="text-lg" />
-                      <span className="text-lg" style={{width:"350px"}}>Welcome {userInfo.name}</span>
+                      <span className="text-lg" style={{width:"280px"}}>Welcome {userInfo.name}</span>
                     </>
                 </button>
               </NavLink>)}
