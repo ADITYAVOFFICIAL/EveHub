@@ -19,7 +19,7 @@ function Explore() {
 
   return (
     <section className="container py-4 md:py-16">
-      <h1 className="pb-6 text-xl md:text-4xl font-bold">Explore the events happening at SRM KTR Campus</h1>
+      <h1 className="pb-6 text-2xl md:text-4xl font-bold text-center md:text-left">Explore the events happening at SRM KTR Campus</h1>
       <h1 className="pb-5 text-xl font-bold">Categories</h1>
       <div className="flex gap-5 mb-8 items-center flex-wrap text-neutral-500 font-bold">
       {[{ label: "All" }, ...categories]?.map((item, index) => (

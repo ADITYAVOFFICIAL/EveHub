@@ -43,7 +43,6 @@ function Navbar() {
               </div>
               {/* middle */}
               <div className="flex gap-8">
-                {/* Render the NavLink only if userInfo exists */}
                 {userInfo && (
                   <NavLink
                     title={userInfo.email}
@@ -116,11 +115,30 @@ function Navbar() {
                     </NavLink>
                   )
               )}
+              
               {token && (
                 <button className="logout-btn font-bold" onClick={logout}> {/* Apply bold font style */}
                   Logout
                 </button>
-              )}
+              )}<div className="flex items-center justify-center w-full"> {/* Added w-full class */}
+              <NavLink>
+                <button className="primary-btn" style={{
+                  border: "1px solid",
+                  borderRadius: "20px",
+                  height: "35px",
+                  width: "100%",
+                  color: "black",
+                  borderColor: "white",
+                  backgroundColor: "white",
+                  fontWeight: "bold"
+                }}>
+                   <>
+                      <IoPersonOutline className="text-lg" />
+                      <span className="text-lg" style={{width:"350px"}}>Welcome {userInfo.name}</span>
+                    </>
+                </button>
+              </NavLink>
+            </div>            
             </div>
           </div>
         </div>
