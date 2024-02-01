@@ -25,6 +25,7 @@ function CreateEventLogic() {
   const [title, setTitle] = useState("");
   const [usernamee, setName] = useState("");
   const [webyurl, setWebyurl] = useState("");
+  const [lumaurl, setLumaurl] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
@@ -74,6 +75,7 @@ function CreateEventLogic() {
         usernamee,
         price,
         webyurl,
+        lumaurl,
         description,
         location,
         startDate,
@@ -108,6 +110,7 @@ function CreateEventLogic() {
       setMedium((prev) => medium);
       setMeetLink((prev) => meet[0]);
       setWebyurl((prev) => webyurl);
+      setLumaurl((prev) => lumaurl);
       setMeetId((prev) => meet[1]);
       setMeetPassword((prev) => meet[2]);
       setPrivacy((prev) => privacy);
@@ -136,6 +139,9 @@ function CreateEventLogic() {
     if (value.webyurl !== fetchedDoc?.webyurl) {
       updatedObj.webyurl = value.webyurl;
     }    
+    if (value.lumaurl !== fetchedDoc?.lumaurl) {
+      updatedObj.lumaurl = value.lumaurl;
+    }   
     if (value.usernamee !== fetchedDoc?.usernamee) {
       updatedObj.usernamee = usernamee;
     }
@@ -200,6 +206,12 @@ function CreateEventLogic() {
     setSigningin((prev) => true);
     setValidateMessage((prev) => null);
     try {
+      if (lumaurl.trim() !== "") {
+        const lumaUrlPattern = /^https:\/\/lu\.ma\//;
+        if (!lumaUrlPattern.test(lumaurl)) {
+            throw new Error("LUMA URL must start with 'https://lu.ma/'.");
+        }
+    }
       if (!title) {
         throw new Error("Please provide a title for your event.");
       }
@@ -291,9 +303,13 @@ function CreateEventLogic() {
           category,
           maxParticipants: String(maxParticipants).length === 0 ? 0 : maxParticipants,
           location:
-            medium === "online"
-              ? []
-              : [String(location), String(latitude), String(longitude)],
+  medium === "online"
+    ? []
+    : [
+      String(location),
+        latitude ? String(latitude) : "12.821065", // Set latitude to SRM KTR latitude if not provided
+        longitude ? String(longitude) : "80.038597", // Set longitude to SRM KTR longitude if not provided
+      ],
           meet:
             medium === "offline"
               ? []
@@ -305,9 +321,10 @@ function CreateEventLogic() {
           tnc,
           acceptingAttendance,
           duration,
-          webyurl: webyurl || `https://evehubsrm.vercel.app/event/${id || ''}`, // Set webyurl here
+          webyurl,
           language,
-          acceptingRsvp
+          acceptingRsvp,
+          lumaurl
         };
         const updatedValues = id ? getUpdatedValues(value) : value;
         
@@ -459,15 +476,15 @@ function CreateEventLogic() {
       show: true,
       type: "string",
     },
-    {
-      label: "Max Participants",
-      value: maxParticipants,
-      placeholder:
-        "Please provide a maximum number of participants for your event.",
-      cb: setMaxParticipants,
-      type: "number",
-      show: true,
-    },
+    // {
+    //   label: "Max Participants",
+    //   value: maxParticipants,
+    //   placeholder:
+    //     "Please provide a maximum number of participants for your event.",
+    //   cb: setMaxParticipants,
+    //   type: "number",
+    //   show: true,
+    // },
     {
       label: "Category",
       value: category,
@@ -497,7 +514,7 @@ function CreateEventLogic() {
     {
       label: "Latitude",
       value: latitude,
-      placeholder: "Please provide a latitude for your event.",
+      placeholder: "Please provide a latitude for your event. [DEFAULT WILL BE SET TO SRM KTR LOCATION]",
       cb: setLatitude,
       inputMode: "numeric",
       show: medium === "offline",
@@ -505,7 +522,7 @@ function CreateEventLogic() {
     {
       label: "Longitude",
       value: longitude,
-      placeholder: "Please provide a longitude for your event.",
+      placeholder: "Please provide a longitude for your event. [DEFAULT WILL BE SET TO SRM KTR LOCATION]",
       cb: setLongitude,
       inputMode: "numeric",
       show: medium === "offline",
@@ -525,7 +542,15 @@ function CreateEventLogic() {
       cb: setWebyurl,
       type: "url",
       show: true, // Show the field always
-    },    
+    },
+    {
+      label: "LUMA URL",
+      value: lumaurl,
+      placeholder: "Please provide Luma URL.",
+      cb: setLumaurl,
+      type: "url",
+      show: true, // Show the field always
+    },     
     {
       label: "Meet ID",
       value: meetId,

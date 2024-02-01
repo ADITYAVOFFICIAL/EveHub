@@ -138,15 +138,32 @@ function Landing() {
 
   return (
     <div className="flex-1 bg-white font-poppins select-none">
-      <div className="bg-secondary">
+      <div className="bg-secondary" style={{ borderRadius: "0 0 25px 25px" }}>
         <section
-          className="flex flex-col text-center w-full items-center py-8 lg:py-16 justify-center gap-8 md:gap-0 container min-h-[86vh] relative"
+          className="flex flex-col text-center w-full items-center py-8 lg:py-16 justify-center gap-8 md:gap-0 container min-h-[94vh] relative"
           style={{
             backgroundImage: `url(${isMobile ? WelcomeBackgroundMobile : WelcomeBackground})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'fill'
+            backgroundPosition: 'fill',
+            borderRadius:"25px 25px 20px 20px ",
           }}
         >
+          {/* <Link
+  to={"/explore"}
+  className="bg-white shadow-xl from-primary to-primary/90 p-4 text-black text-center sm:text-xs md:text-base lg:text-lg lg:my-4"
+  style={{ borderRadius: "12px", fontWeight:"bold", maxWidth:"90%", width:"100%"}}
+>
+  ⚠️ Latest Announcements here or function error notification ⚠️
+</Link>
+
+<Link
+  to={"/explore"}
+  className="bg-white shadow-xl from-primary to-primary/90 p-4 text-black text-center sm:text-xs md:text-base lg:text-lg"
+  style={{ borderRadius: "12px", fontWeight:"bold", maxWidth:"90%", width:"100%" }}
+>
+  ⚠️  Latest Announcements here or function error notification  ⚠️
+</Link> */}
+
           <div
             className="flex flex-col gap-4 items-center justify-center z-10"
             style={{ flexBasis: "50%" }}
@@ -196,11 +213,11 @@ function Landing() {
                 className="bg-gradient-to-b shadow-xl focus:ring-accent from-accent to-accent/90 p-4 text-white text-center"
                 style={{ borderRadius: "12px" }}
               >
-                {token ? "[ PAID FEATURE ]" : "Get Started"}
+                {token ? "[ PAID FEATURE ]" : "[ PAID FEATURE ]"}
               </Link>
         </div>
       </section>
-      <div className="bg-gradient-to-b from-secondary from-100% to-50% to-white pb-10">
+      <div className="bg-gradient-to-b from-secondary from-100% to-50% to-white pb-10" style={{ borderRadius: "25px 25px 0 0" }}>
         <section className="flex flex-col lg:flex-row w-full items-center py-8 lg:pt-16 lg:pb-0 justify-between gap-4 md:gap-0 container">
           <div className="flex flex-row gap-16">
             <div className="flex-[80%] space-y-4">

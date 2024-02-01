@@ -1,16 +1,20 @@
+import { IoPersonOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { RiMenu3Line } from "react-icons/ri";
-import { NavLink } from "react-router-dom";
-import LogoutLogic from "../Logic/UserLogic.js/Logout.logic";
 import Brand from "./Brand";
+import LogoutLogic from "../Logic/UserLogic.js/Logout.logic";
+import { useUser } from "../context/userContext";
 
 function Navbar() {
+  const { userInfo } = useUser();
+  const location = useLocation();
+  let token = localStorage.getItem("token");
   const [toggleMenu, setToggleMenu] = useState(false);
   const [navData, setNavData] = useState([]);
-  let token = localStorage.getItem("token");
 
   useEffect(() => {
-    setNavData((prev) => [
+    setNavData([
       {
         title: "Explore",
         link: "/explore",
@@ -19,7 +23,7 @@ function Navbar() {
       {
         title: "Login",
         link: "/auth/login",
-        show: token ? false : true,
+        show: !token,
       },
     ]);
   }, [token]);
@@ -28,17 +32,43 @@ function Navbar() {
 
   return (
     <div className="app">
-      <nav className="text-white w-full bg-secondary text-lg py-2"> {/* Reduced height by adjusting padding */}
+      <nav className={`text-white w-full bg-secondary text-lg py-2 ${location.pathname !== "/" ? "" : ""}`}>
         <div className="container">
           <div className="flex mx-auto justify-between">
             {/* Primary menu and logo */}
-            <div className="flex items-center justify-between w-full gap-16 my-2 font-poppins"> {/* Reduced vertical margin */}
+            <div className="flex items-center justify-between w-full gap-16 my-2 font-poppins">
               {/* logo */}
               <div>
-                <Brand style={{ fontSize: "34px" }} /> {/* Increased logo size */}
+                <Brand style={{ fontSize: "34px" }} />
+              </div>
+              {/* middle */}
+              <div className="flex gap-8">
+                {/* Render the NavLink only if userInfo exists */}
+                {userInfo && (
+                  <NavLink
+                    title={userInfo.email}
+                    className="inline-flex items-center justify-center gap-1 hover:text-accent hidden md:flex" // Hide on mobile screens
+                    style={{
+                      border: "1px solid",
+                      borderRadius: "20px",
+                      height: "35px",
+                      width: "530px",
+                      color: "black",
+                      borderColor: "white",
+                      backgroundColor: "white",
+                      fontWeight: "bold"
+                    }}
+                    to="dashboard"
+                  >
+                    <>
+                      <IoPersonOutline className="text-lg" />
+                      <span className="text-lg">Welcome {userInfo.name}</span>
+                    </>
+                  </NavLink>
+                )}
               </div>
               {/* primary */}
-              <div className="hidden lg:flex gap-8 ">
+              <div className="hidden lg:flex gap-8">
                 {navData?.map(
                   (item, index) =>
                     item.show && (

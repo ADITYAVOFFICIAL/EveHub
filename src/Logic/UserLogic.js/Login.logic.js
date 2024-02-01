@@ -66,7 +66,7 @@ function LoginLogic() {
       const accountDetails = await account.get();
       
       if (accountDetails.phoneVerification)
-        navigate("/", { replace: true });
+        navigate("/dashboard", { replace: true });
       else if (
         accountDetails.phone.length === 0 ||
         accountDetails.phone === null ||

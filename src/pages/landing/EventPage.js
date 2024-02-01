@@ -26,7 +26,6 @@ function EventPage() {
   const { pathname } = useLocation();
 
   if (loading || !events) return <Loading />;
-
   if (error) return <div>{error}</div>;
 
   const {
@@ -36,6 +35,7 @@ function EventPage() {
     price,
     category,
     usernamee,
+    lumaurl,
     webyurl,
     maxParticipants,
     startDate,
@@ -60,6 +60,9 @@ function EventPage() {
   const RSVPBtn = () => {
     const disableLink = webyurl === window.location.href;
     
+    // Return null if webyurl is null
+    if (!webyurl) return null;
+  
     return (
       <button
         disabled={adding || disableLink}
@@ -77,7 +80,8 @@ function EventPage() {
         {price <= 0 ? "VISIT LINK" : "VISIT LINK"}
       </button>
     );
-  };
+  };  
+  
   
   
 
@@ -121,6 +125,7 @@ function EventPage() {
                   <IoBookmarkOutline /> {endDay}, {endTime}
                 </h2>
               )}
+              
               <h2 className="inline-flex flex-wrap items-center gap-2 text-sm">
                 {medium === "offline" ? (
                   <>
@@ -151,12 +156,16 @@ function EventPage() {
                     </>
                   )}
                 </h2>
-
+                
                 <RSVPBtn />
+                
               </div>
+              
             </div>
+            
             <div className="inline-flex w-full items-center gap-2">
               <div className="mr-auto">
+                
                 <h2 className="font-semibold text-lg">Invite your friends</h2>
                 <p className="text-xs text-neutral-500 font-grostek">
                   and enjoy a shared experience!
@@ -175,8 +184,28 @@ function EventPage() {
                   {link?.icon}
                 </a>
               ))}
+              
             </div>
+            
           </div>
+          {medium === "offline" && lumaurl ? (
+  <button 
+    onClick={() => window.location.href = lumaurl} 
+    className="bg-gradient-to-r shadow-xl from-primary to-primary/90 p-5 text-white text-center hover:shadow-md"
+    style={{ 
+      width: "100%", 
+      textAlign: "center", 
+      fontWeight: "bold", 
+      fontSize:"20px",
+      borderRadius: "10px", 
+      transition: "background 1s, background-position 0.5s"
+    }}
+  >
+    REGISTER FOR THIS EVENT
+  </button>
+) : null}
+
+
           <h2 className="font-semibold py-2 border-b border-neutral-300 text-lg">
             About
           </h2>
@@ -264,6 +293,7 @@ function EventPage() {
               </h2>
 
               <RSVPBtn />
+              
             </div>
           </div>
           <div className="inline-flex w-full items-center gap-2">

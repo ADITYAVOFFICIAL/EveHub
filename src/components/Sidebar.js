@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect } from "react";
 import {
+  IoBook,
   IoCalendarClearOutline,
   IoHomeOutline,
   IoLogOutOutline,
@@ -61,6 +62,7 @@ function Sidebar() {
       {/* <NavLink className="sidebar-link" to="rsvp">
         <IoPeopleOutline /> RSVPs
       </NavLink> */}
+      
       <button className="sidebar-link" onClick={toggleNotificationBar}>
         <div className="relative">
           <IoNotificationsOutline />
@@ -74,20 +76,24 @@ function Sidebar() {
         </div>
         Notifications
       </button>
+      <NavLink className="sidebar-link" to="https://drive.google.com/file/d/1uilPY7nvRNY3LRvih_QByoMy0AEuBy2B/view" target="_blank">
+        <IoBook /> Instructions
+      </NavLink>
       <div className="mt-auto flex flex-col">
-        <NavLink
-          title={userInfo?.email}
-          className="sidebar-link inline-flex items-center gap-1"
-          to="account"
-        >
-          {userInfo ? (
-            <>
-              <IoPersonOutline /> {userInfo?.name?.split(" ")[0]}
-            </>
-          ) : (
-            "Account"
-          )}
-        </NavLink>
+      <NavLink
+  title={userInfo?.email}
+  className="sidebar-link inline-flex items-center gap-1"
+  to="account"
+>
+  {userInfo ? (
+    <>
+      <IoPersonOutline /> {userInfo?.name}
+    </>
+  ) : (
+    "Account"
+  )}
+</NavLink>
+
         <button className="sidebar-link" onClick={logout}>
           <IoLogOutOutline /> Logout
         </button>
