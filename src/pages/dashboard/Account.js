@@ -12,7 +12,7 @@ function Account() {
   const [loading, setLoading] = useState(false);
   const [updateFields, setUpdateFields] = useState(false);
 
-  const {userInfo, setUserInfo} = useUser()
+  const { userInfo, setUserInfo } = useUser();
 
   // const user = JSON.parse(localStorage.getItem("spotlight-user"));
 
@@ -30,14 +30,14 @@ function Account() {
 
   const verifyEmail = async (e) => {
     e.preventDefault();
-    
+
     try {
       setLoading((prev) => true);
       const account = new Ac(client);
       const res = await account.createVerification(
         `${process.env.REACT_APP_WEBSITE_URL}/verify-email`
       );
-      
+
       toast.success("Verification email sent");
     } catch (err) {
       console.error(err);
@@ -55,7 +55,7 @@ function Account() {
       value: name,
       cb: setName,
       disabled: !updateFields,
-      requird: true,
+      required: true,
     },
     {
       label: "Email",
@@ -79,15 +79,11 @@ function Account() {
 
   const revalidateFields = () => {
     const user = JSON.parse(localStorage.getItem("spotlight-user"));
-    const {
-      name: userName,
-      email: userEmail,
-      phone: userPhone,
-    } = user;
+    const { name: userName, email: userEmail, phone: userPhone } = user;
     setName((prev) => userName);
     setEmail((prev) => userEmail);
     setPhone((prev) => userPhone);
-    setUserInfo(prev => user)
+    setUserInfo((prev) => user);
   };
 
   const handleUpdateFields = async (e) => {
@@ -95,11 +91,10 @@ function Account() {
     try {
       setLoading((prev) => true);
       const account = new Ac(client);
-      
-      
+
       if (name !== userName) {
         const res = await account.updateName(name);
-        
+
         const databases = new Databases(client);
         const userDoc = await databases.listDocuments(
           process.env.REACT_APP_DATABASE_ID,
@@ -117,12 +112,11 @@ function Account() {
           );
         }
         toast.success("Name updated successfully!");
-        
+
         localStorage.setItem("spotlight-user", JSON.stringify(res));
         revalidateFields();
       }
     } catch (err) {
-      
       toast.error(err.message);
     } finally {
       setLoading((prev) => false);
@@ -168,6 +162,7 @@ function Account() {
           />
         )}
       </form>
+      <p>To change your password send mail to av4923@srmist.edu.in</p>
     </div>
   );
 }

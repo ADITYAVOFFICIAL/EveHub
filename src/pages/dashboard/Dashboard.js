@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import NotFoundEvent from '../../assets/images/eventNotFound.svg'
 import GetEventLogic from "../../Logic/EventsLogic/getEvents";
 import Loading from "../../components/Loading";
+import Dashed from '../../assets/images/dash.gif'
 
 function Dashboard() {
   const [date, setDate] = useState(new Date());
@@ -80,6 +81,7 @@ function Dashboard() {
             })}
         </div>}
       </div>
+      <img src={Dashed} alt="Hallo" className=" w-[1200px] mx-auto mt-4" style={{borderRadius:"25px"}} />
     </div>
   );
 }

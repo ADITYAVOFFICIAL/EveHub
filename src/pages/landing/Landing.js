@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import Marketing from "../../assets/images/marketing.png";
 import FutureUpdatesBackground from "../../assets/images/cardy.gif";
+import OneBackground from "../../assets/images/b1.gif";
+import TwoBackground from "../../assets/images/b2.gif";
 import Research from "../../assets/images/research.png";
 import Development from "../../assets/images/dev.png";
 import Ui from "../../assets/images/uiux.png";
@@ -37,12 +39,14 @@ const data = [
     description:
       "Seamlessly create and manage events with our intuitive event creation feature. Specify event details, such as date, time, location, and description, to provide a clear picture for your attendees. Customize event settings, add event images, and set ticket options effortlessly.",
     icon: <IoCreateOutline />,
+    backgroundImage: OneBackground,
   },
   {
     title: "Flexible Event Privacy",
     description:
       "Take control over event visibility with our private and public event options. Host private gatherings with exclusive access for selected participants or organize public events to reach a wider audience. Customize privacy settings to suit the unique needs of each event.",
     icon: <MdOutlinePrivacyTip />,
+    backgroundImage: TwoBackground,
   },
   {
     title: "Future Updates",
