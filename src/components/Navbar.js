@@ -76,13 +76,13 @@ function Navbar() {
                         onClick={() => setToggleMenu(false)}
                         key={index}
                         to={item.link}
-                        className="hover:text-accent"
+                        className="hover:text-accent font-bold" // Apply bold font style
                       >
                         {item.title}
                       </NavLink>
                     )
                 )}
-                {token && <button onClick={logout}>Logout</button>}
+                {token && <button onClick={logout} className="font-bold">Logout</button>} {/* Apply bold font style */}
               </div>
             </div>
             {/* secondary */}
@@ -111,14 +111,13 @@ function Navbar() {
                       onClick={() => setToggleMenu(false)}
                       key={index}
                       to={item.link}
-                      className="hover:text-accent"
-                    >
+                      className="hover:text-accent font-bold pt-10 flex items-center"                    >
                       {item.title}
                     </NavLink>
                   )
               )}
               {token && (
-                <button className="logout-btn" onClick={logout}>
+                <button className="logout-btn font-bold" onClick={logout}> {/* Apply bold font style */}
                   Logout
                 </button>
               )}
