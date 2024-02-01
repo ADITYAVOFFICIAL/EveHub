@@ -8,7 +8,7 @@ import {
   MdVisibility,
 } from "react-icons/md";
 import { ColorExtractor } from "react-color-extractor";
-
+import qrcode from "qrcode";
 import CreateMembershipLogic from "../../Logic/Membership/CreateMembership.logic";
 
 import {
@@ -17,6 +17,13 @@ import {
   IoPeopleOutline,
   IoPersonOutline,
   IoWalletOutline,
+  IoQrCode,
+  IoEye,
+  IoTime,
+  IoBookSharp,
+  IoArchive,
+  IoBookmark,
+  IoLink,
 } from "react-icons/io5";
 
 import { toast } from "react-hot-toast";
@@ -64,7 +71,23 @@ function Event() {
 
   const [colors, setColors] = useState([]);
 
-  
+  const generateQRCode = async () => {
+    try {
+        const url = `https://evehubsrm.vercel.app/event/${events?.$id}`; // Replace with your actual URL
+        const qrCodeDataURL = await qrcode.toDataURL(url);
+        // Display or save the QR code image
+        console.log(qrCodeDataURL); // For testing, you can display the data URL in console
+        // You can further manipulate qrCodeDataURL, for example, display it in an image tag or trigger download
+        // For downloading, you can create a link element and simulate a click event
+        const link = document.createElement("a");
+        link.download = "qr_code.png";
+        link.href = qrCodeDataURL;
+        link.click();
+    } catch (error) {
+        console.error("Error generating QR code:", error);
+        toast.error("Error generating QR code");
+    }
+};
 
   const navigate = useNavigate();
 
@@ -227,20 +250,27 @@ function Event() {
                   Invite Users
                 </p>
               </button> */}
+               <button
+                onClick={generateQRCode}
+                className="shadow-md primary-btn group overflow-hidden transition-all" style={{
+                  background: `rgb(${colors[4]?.join(',')})`
+                }}
+              >
+                <IoQrCode />
+                <p className="transition-all translate-x-[0px] hidden lg:block group-hover:translate-x-0">
+                  QR Code
+                </p>
+              </button> 
               <button
+  onClick={() => window.open(`/event/${events?.$id}`, "_blank", "noopener noreferrer")}
   className="shadow-md primary-btn group overflow-hidden transition-all"
-  style={{
-    background: `rgb(${colors[4]?.join(',')})`
-  }}
+  style={{ background: `rgb(${colors[4]?.join(',')})` }}
 >
-  <Link to={`/event/${events?.$id}`} target="_blank" rel="noopener noreferrer">
-    <MdVisibility />
-    <p className="transition-all translate-x-[0px] hidden lg:block group-hover:translate-x-0">
-      View Post
-    </p>
-  </Link>
+  <IoEye />
+  <p className="transition-all translate-x-[0px] hidden lg:block group-hover:translate-x-0">
+    View Post
+  </p>
 </button>
-
             </div>
             <ColorExtractor
               rgb
@@ -289,7 +319,20 @@ function Event() {
                 <IoWalletOutline />{" "}
                 {events?.price > 0 ? `Rs. ${events?.price}` : "Free"}
               </h2>
-              <h2
+              <h2 className="text-lg inline-flex items-center gap-2">
+  <IoTime />{" "}
+  {`${events?.duration}`}
+</h2>
+<h2 className="text-lg inline-flex items-center gap-2">
+  <IoBookmark />{" "}
+  {`${events?.category}`}
+</h2>
+              <h2 className="text-lg inline-flex items-center gap-2">
+  <IoPersonOutline />{" "}
+  {`${events?.usernamee}`}
+</h2>
+
+              {/* <h2
                 onClick={toggleShowUsers}
                 className="text-lg inline-flex items-center gap-2 cursor-pointer"
               >
@@ -297,26 +340,53 @@ function Event() {
                 {memberCount - 1 > 0
                   ? `${memberCount - 1} Member(s)`
                   : "No members"}
-              </h2>
-              <h2 className="text-lg inline-flex items-center gap-2 cursor-pointer">
+              </h2> */}
+              {/* <h2 className="text-lg inline-flex items-center gap-2 cursor-pointer">
                 <IoPeopleOutline />{" "}
                 {events?.maxParticipants > 0
                   ? `Max Limit of ${events.maxParticipants} members`
                   : "No max participation limit"}
-              </h2>
+              </h2> */}
+              {events?.webyurl && events?.webyurl.length > 0 && (
+  <h2 className="text-lg inline-flex items-center gap-2">
+  <IoLink />
+  <span className="overflow-hidden overflow-ellipsis whitespace-nowrap">
+    {events?.price > 0 ? `${events?.webyurl}` : `${events?.webyurl}`}
+  </span>
+</h2>
+
+)}
+
             </div>
           </div>
-          <div
-            className="col-span-3 p-4 rounded-[18px]"
-            style={{
-              backgroundColor: `rgb(${colors[0]?.join(",")})`,
-            }}
-          >
-            <h2 className="text-3xl font-bold">{events?.title}</h2>
-            <pre className="display-linebreak text-sm text-neutral-600 py-4">
-              {events?.description}
-            </pre>
-          </div>
+          <div className="col-span-3">
+  {/* Description */}
+  <div
+    className="p-4 rounded-[18px] mb-4"
+    style={{
+      backgroundColor: `rgb(${colors[0]?.join(",")})`,
+    }}
+  >
+    <h2 className="text-3xl font-bold">{events?.title}</h2>
+    <pre className="display-linebreak text-sm text-neutral-600 py-4">
+      {events?.description}
+    </pre>
+  </div>
+
+  {/* Terms and Conditions */}
+  <div
+    className="p-4 rounded-[18px]"
+    style={{
+      backgroundColor: `rgb(${colors[0]?.join(",")})`,
+    }}
+  >
+    <h2 className="text-3xl font-bold">Terms and Conditions</h2>
+    <pre className="display-linebreak text-sm text-neutral-600 py-4">
+      {events?.tnc}
+    </pre>
+  </div>
+</div>
+
         </section>
         {showUsers && (
           <UserList

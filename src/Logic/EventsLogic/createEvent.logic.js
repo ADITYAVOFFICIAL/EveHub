@@ -305,7 +305,7 @@ function CreateEventLogic() {
           tnc,
           acceptingAttendance,
           duration,
-          webyurl,
+          webyurl: webyurl || `https://evehubsrm.vercel.app/event/${id || ''}`, // Set webyurl here
           language,
           acceptingRsvp
         };
@@ -353,6 +353,7 @@ function CreateEventLogic() {
       setSigningin((prev) => false);
     }
   };
+
 
   const inputs = [
     {

@@ -1,4 +1,5 @@
 import React from "react";
+import { FaLinkedinIn } from 'react-icons/fa';
 import GetEventLogic from "../../Logic/EventsLogic/getEvents";
 import Loading from "../../components/Loading";
 import { MdComputer, MdCurrencyRupee } from "react-icons/md";
@@ -10,6 +11,7 @@ import {
   IoTimerOutline,
   IoWalletOutline,
   IoPeopleCircle,
+  IoPodium,
 } from "react-icons/io5";
 import { shareLinks } from "../../static/shareLinks";
 import { useLocation } from "react-router-dom";
@@ -55,23 +57,28 @@ function EventPage() {
 
   
 
-  const RSVPBtn = () => (
-    <button
-      disabled={adding}
-      onClick={() => {
-        if (medium === "offline") {
-          // Redirect to webyurl when medium is offline
-          window.open(webyurl, '_blank');
-        } else {
-          // Open meet[0] link when medium is online
-          window.open(meet[0], '_blank');
-        }
-      }}
-      className={`primary-btn ${adding ? 'disabled:opacity-60' : ''}`}
-    >
-      {price <= 0 ? "VISIT LINK" : "VISIT LINK"}
-    </button>
-  );
+  const RSVPBtn = () => {
+    const disableLink = webyurl === window.location.href;
+    
+    return (
+      <button
+        disabled={adding || disableLink}
+        onClick={() => {
+          if (medium === "offline") {
+            // Redirect to webyurl when medium is offline
+            window.open(webyurl, '_blank');
+          } else {
+            // Open meet[0] link when medium is online
+            window.open(meet[0], '_blank');
+          }
+        }}
+        className={`primary-btn ${adding ? 'disabled:opacity-60' : ''}`}
+      >
+        {price <= 0 ? "VISIT LINK" : "VISIT LINK"}
+      </button>
+    );
+  };
+  
   
 
   return (
@@ -177,17 +184,21 @@ function EventPage() {
             {description}
           </div>
           {tnc && (
-            <>
-              <h2 className="font-semibold py-2 border-b border-neutral-300 text-lg">
-                Terms and Conditions
-              </h2>
-              <ul className="display-linebreak text-neutral-800 text-sm font-grostek list-disc">
-                {tnc?.split("\n")?.map((t) => (
-                  <li>{t}</li>
-                ))}
-              </ul>
-            </>
-          )}
+  <>
+    <h2 className="font-semibold py-2 border-b border-neutral-300 text-lg">
+      Terms and Conditions
+    </h2>
+    <ul className="display-linebreak text-neutral-800 text-sm font-grostek list-disc">
+      {tnc
+        .split("\n")
+        .filter((t) => t.trim() !== "") // Filter out blank lines
+        .map((t, index) => (
+          <li key={index} className="mb-2">{t}</li> // Add margin bottom to create gap
+        ))}
+    </ul>
+  </>
+)}
+
         </div>
         <div className="col-span-2 hidden md:block w-full space-y-4">
           <div className="rounded-lg flex flex-col gap-4 outline w-full  outline-1 outline-neutral-300 p-6">
@@ -206,6 +217,12 @@ function EventPage() {
                 <IoLanguageOutline /> {language}
               </h2>
             )}
+            {medium?.length > 0 && (
+  <h2 className="inline-flex items-center gap-2 text-sm">
+    <IoPodium /> {medium.charAt(0).toUpperCase() + medium.slice(1)}
+  </h2>
+)}
+
             <h2 className="inline-flex items-center gap-2 text-sm">
               <IoCalendarClearOutline /> {startDay}, {startTime}
               {startDay === endDay && ` | ${endTime}`}
@@ -250,26 +267,38 @@ function EventPage() {
             </div>
           </div>
           <div className="inline-flex w-full items-center gap-2">
-            <div className="mr-auto">
-              <h2 className="font-semibold text-lg">Invite your friends</h2>
-              <p className="text-xs text-neutral-500 font-grostek">
-                and enjoy a shared experience!
-              </p>
-            </div>
-            {shareLinks?.map((link, index) => (
-              <a
-                href={link?.share(
-                  `${window.location.origin}${pathname}`,
-                  title
-                )}
-                target="_blank"
-                title={`Share on ${link?.title}`}
-                className={`border flex items-center justify-center rounded-full p-2 text-xl hover:scale-125 transition-all text-white bg-gradient-to-br ${link?.color}`}
-              >
-                {link?.icon}
-              </a>
-            ))}
-          </div>
+  <div className="mr-auto">
+    <h2 className="font-semibold text-lg">Invite your friends</h2>
+    <p className="text-xs text-neutral-500 font-grostek">
+      and enjoy a shared experience!
+    </p>
+  </div>
+  {shareLinks?.map((link, index) => (
+    <a
+      href={link?.share(`${window.location.origin}${pathname}`, title)}
+      target="_blank"
+      title={`Share on ${link?.title}`}
+      rel="noopener noreferrer"
+      className={`border flex items-center justify-center rounded-full p-2 text-xl hover:scale-125 transition-all text-white bg-gradient-to-br ${link?.color}`}
+      key={index}
+    >
+      {link?.icon}
+    </a>
+  ))}
+  {/* LinkedIn share link with Font Awesome icon */}
+  <a
+    href={`https://www.linkedin.com/shareArticle?url=${encodeURIComponent(
+      `${window.location.origin}${pathname}`
+    )}&title=${encodeURIComponent(title)}`}
+    target="_blank"
+    title="Share on LinkedIn"
+    rel="noopener noreferrer"
+    className="border flex items-center justify-center rounded-full p-2 text-xl hover:scale-125 transition-all text-white bg-gradient-to-br bg-blue-600"
+  >
+    <FaLinkedinIn />
+  </a>
+</div>
+
         </div>
       </div>
     </section>

@@ -12,43 +12,32 @@ function Navbar() {
   let token = localStorage.getItem("token");
 
   useEffect(() => {
-    
     setNavData((prev) => [
       {
         title: "Explore",
         link: "/explore",
         show: true,
       },
-      // {
-      //   title: "Dashboard",
-      //   link: "/dashboard",
-      //   show: token ? true : false,
-      // },
       {
         title: "Login",
         link: "/auth/login",
         show: token ? false : true,
       },
-      // {
-      //   title: "Signup",
-      //   link: "/auth/signup",
-      //   show: token ? false : true,
-      // },
     ]);
   }, [token]);
 
   const { logout } = LogoutLogic();
 
   return (
-    <div className="app ">
-      <nav className=" text-white w-full bg-secondary text-sm">
+    <div className="app">
+      <nav className="text-white w-full bg-secondary text-lg"> {/* Increased font size */}
         <div className="container">
-          <div className="flex mx-auto justify-between ">
+          <div className="flex mx-auto justify-between">
             {/* Primary menu and logo */}
             <div className="flex items-center justify-between w-full gap-16 my-8 font-poppins">
               {/* logo */}
               <div>
-                <Brand />
+                <Brand style={{ fontSize: "34px" }} /> {/* Increased logo size */}
               </div>
               {/* primary */}
               <div className="hidden lg:flex gap-8 ">
@@ -56,7 +45,7 @@ function Navbar() {
                   (item, index) =>
                     item.show && (
                       <NavLink
-                        onClick={() => setToggleMenu((prev) => false)}
+                        onClick={() => setToggleMenu(false)}
                         key={index}
                         to={item.link}
                         className="hover:text-accent"
@@ -81,7 +70,7 @@ function Navbar() {
         </div>
         {/* mobile navigation */}
         <div
-          className={`fixed z-40 w-full bg-secondary overflow-hidden flex flex-col lg:hidden gap-12  origin-top duration-700 font-poppins ${
+          className={`fixed z-40 w-full bg-secondary overflow-hidden flex flex-col lg:hidden gap-12 origin-top duration-700 font-poppins ${
             !toggleMenu ? "h-0" : "h-full"
           }`}
         >
@@ -91,7 +80,7 @@ function Navbar() {
                 (item, index) =>
                   item.show && (
                     <NavLink
-                      onClick={() => setToggleMenu((prev) => false)}
+                      onClick={() => setToggleMenu(false)}
                       key={index}
                       to={item.link}
                       className="hover:text-accent"
