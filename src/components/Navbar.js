@@ -6,9 +6,7 @@ import Brand from "./Brand";
 
 function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
-
   const [navData, setNavData] = useState([]);
-
   let token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -30,11 +28,11 @@ function Navbar() {
 
   return (
     <div className="app">
-      <nav className="text-white w-full bg-secondary text-lg"> {/* Increased font size */}
+      <nav className="text-white w-full bg-secondary text-lg py-2"> {/* Reduced height by adjusting padding */}
         <div className="container">
           <div className="flex mx-auto justify-between">
             {/* Primary menu and logo */}
-            <div className="flex items-center justify-between w-full gap-16 my-8 font-poppins">
+            <div className="flex items-center justify-between w-full gap-16 my-2 font-poppins"> {/* Reduced vertical margin */}
               {/* logo */}
               <div>
                 <Brand style={{ fontSize: "34px" }} /> {/* Increased logo size */}
