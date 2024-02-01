@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Analytics } from '@vercel/analytics/react';
 import LandingLayout from "./layouts/LandingLayout";
 import Login from "./pages/landing/Login";
 import Signup from "./pages/landing/Signup";
@@ -29,6 +30,7 @@ function App() {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
+          <Analytics />
       <Router>
         <Routes>
           <Route path="/ticket" element={<Ticket />} />
@@ -50,6 +52,7 @@ function App() {
               <Route path="otp" element={<Otp />} />
             </Route>
           </Route>
+          
           <Route
             path="/dashboard"
             element={
