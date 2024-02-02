@@ -186,6 +186,7 @@ function EventPage() {
                 </p>
               </div>
               {shareLinks?.map((link, index) => (
+                
                 <a
                   href={link?.share(
                     `${window.location.origin}${pathname}`,
@@ -198,7 +199,17 @@ function EventPage() {
                   {link?.icon}
                 </a>
               ))}
-              
+              <a
+    href={`https://www.linkedin.com/shareArticle?url=${encodeURIComponent(
+      `${window.location.origin}${pathname}`
+    )}&title=${encodeURIComponent(title)}`}
+    target="_blank"
+    title="Share on LinkedIn"
+    rel="noopener noreferrer"
+    className="border flex items-center justify-center rounded-full p-2 text-xl hover:scale-125 transition-all text-white bg-gradient-to-br bg-blue-600"
+  >
+    <FaLinkedinIn />
+  </a>
             </div>
             
           </div>
