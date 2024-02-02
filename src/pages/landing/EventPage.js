@@ -115,6 +115,11 @@ function EventPage() {
                   <IoTimerOutline /> {duration.split(":").join("h ")}
                 </h2>
               )}
+              {medium?.length > 0 && (
+  <h2 className="inline-flex items-center gap-2 text-sm">
+    <IoMegaphoneOutline /> {medium.charAt(0).toUpperCase() + medium.slice(1)}
+  </h2>
+)}
               {language?.length > 0 && (
                 <h2 className="inline-flex items-center gap-2 text-sm">
                   <IoLanguageOutline /> {language}
