@@ -1,13 +1,10 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-import Marketing from "../../assets/images/marketing.png";
 import FutureUpdatesBackground from "../../assets/images/cardy.gif";
 import OneBackground from "../../assets/images/b1.gif";
 import TwoBackground from "../../assets/images/b2.gif";
-import Research from "../../assets/images/research.png";
 import Development from "../../assets/images/dev.png";
-import Ui from "../../assets/images/uiux.png";
 import Card from "../../components/Card";
 import Testimonial from "../../components/TestimonialCard";
 import Hero from "../../assets/images/pattern1.jpg";
@@ -29,7 +26,6 @@ import {
 import { MdManageHistory, MdOutlineFileDownload, MdOutlinePrivacyTip, MdRsvp } from "react-icons/md";
 import { RiMouseLine, RiSteamLine } from "react-icons/ri";
 import Hero2 from "../../assets/images/3187910.jpg";
-import Security from "../../assets/images/security.jpg";
 import WelcomeBackground from "../../assets/images/welbag.gif";
 import WelcomeBackgroundMobile from "../../assets/images/welbagmob.gif";
 
