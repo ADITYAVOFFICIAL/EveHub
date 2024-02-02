@@ -68,13 +68,30 @@ function Event() {
     showUsers,
     loading: fetchingUsers,
   } = GetUsersLogic();
+  function rgbToHex(rgb) {
+    return "#" + rgb.map(component => {
+        const intValue = Math.round(component); // Convert to integer
+        const hex = intValue.toString(16);
+        return hex.length === 1 ? "0" + hex : hex;
+    }).join("");
+}
 
   const [colors, setColors] = useState([]);
 
   const generateQRCode = async () => {
     try {
         const url = `https://evehubsrm.vercel.app/event/${events?.$id}`; // Replace with your actual URL
-        const qrCodeDataURL = await qrcode.toDataURL(url);
+        const darkColorHex = rgbToHex(colors[4]);
+const lightColorHex = rgbToHex(colors[0]);
+
+const qrCodeDataURL = await qrcode.toDataURL(url, {
+    width: 800, // Customize width (in pixels)
+    color: {
+        dark: darkColorHex,
+        light: lightColorHex,
+    },
+});
+
         // Display or save the QR code image
         console.log(qrCodeDataURL); // For testing, you can display the data URL in console
         // You can further manipulate qrCodeDataURL, for example, display it in an image tag or trigger download
@@ -84,8 +101,8 @@ function Event() {
         link.href = qrCodeDataURL;
         link.click();
     } catch (error) {
-        console.error("Error generating QR code:", error);
-        toast.error("Error generating QR code");
+      console.error("Error generating QR code:", error);
+      toast.error("Error generating QR code: " + error.message);
     }
 };
 
