@@ -1,10 +1,10 @@
-import { RiGithubFill, RiInstagramFill, RiTwitterFill } from 'react-icons/ri';
+import { RiGithubFill, RiInstagramFill, RiLinkedinBoxFill, RiTwitterFill } from 'react-icons/ri';
 
 export const footerLinks = [
     {
-        title: 'Instagram',
-        icon: <RiInstagramFill/>,
-        link: 'https://instagram.com/'
+        title: 'Linkedin',
+        icon: <RiLinkedinBoxFill/>,
+        link: 'https://www.linkedin.com/in/aditya-verma-real/'
     },
     {
         title: 'Github',
