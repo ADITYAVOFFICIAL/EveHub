@@ -142,8 +142,8 @@ function Account() {
         {inputFields?.map((field, index) => (
           <Input key={index} {...field} show={true} />
         ))}
-        <button
-          className="rounded-[18px] bg-neutral-300 mt-2 p-4 outline outline-1 outline-neutral-300"
+        {/* <button
+          className="rounded-[18px] bg-black mt-2 p-4 outline outline-1 outline-black text-neutral-300"
           onClick={(e) => {
             e.preventDefault();
             setUpdateFields((prev) => !prev);
@@ -160,9 +160,9 @@ function Account() {
             disabled={!updateFields}
             loading={loading}
           />
-        )}
+        )} */}
       </form>
-      <p>To change your password send mail to av4923@srmist.edu.in</p>
+      <p style={{fontWeight:"bold"}}>To change your password send mail to av4923@srmist.edu.in</p>
     </div>
   );
 }

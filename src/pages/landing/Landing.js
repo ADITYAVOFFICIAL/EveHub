@@ -193,7 +193,7 @@ function Landing() {
         </div>
         <Link
   to={""}
-  className="bg-white shadow-xl from-primary to-primary/90 p-4 text-black text-center sm:text-xs md:text-base lg:text-lg"
+  className="bg-black shadow-xl from-primary to-primary/90 p-4 text-white text-center sm:text-xs md:text-base lg:text-lg"
   style={{ borderRadius: "12px", fontWeight: "bold", maxWidth: "90%", width: "60%", lineHeight: "1", padding: "8px 16px" }}
 >
   Developed and maintained by ADITYA VERMA

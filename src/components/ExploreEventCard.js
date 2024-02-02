@@ -7,6 +7,7 @@ function ExploreEventCard({
     category,
     image,
     location,
+    usernamee,
     $id,
     medium,
     startDate,
@@ -32,10 +33,11 @@ function ExploreEventCard({
                 <p>{category}</p>
             </div>
         </div>
-        <div className="py-4 space-y-2">
-            <h1 className="font-bold">{title}</h1>
-            {/* <p className="text-sm text-gray-500 line-clamp-3">{description}</p> */}
-        </div>
+        <div className="py-2">
+    <h1 className="font-bold" style={{ fontSize: "20px", whiteSpace: 'normal' }}>{title}</h1>
+    <h1 className="font-bold" style={{ fontSize: "14px", whiteSpace: 'normal' }}>{usernamee}</h1>
+    {/* <p className="text-sm text-gray-500 line-clamp-3">{description}</p> */}
+</div>
   </Link>;
 }
 

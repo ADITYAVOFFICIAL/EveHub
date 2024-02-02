@@ -12,7 +12,7 @@ import {
   IoTimerOutline,
   IoWalletOutline,
   IoPeopleCircle,
-  IoPodium,
+  IoMegaphoneOutline,
 } from "react-icons/io5";
 import { shareLinks } from "../../static/shareLinks";
 import { useLocation } from "react-router-dom";
@@ -263,7 +263,7 @@ function EventPage() {
             )}
             {medium?.length > 0 && (
   <h2 className="inline-flex items-center gap-2 text-sm">
-    <IoPodium /> {medium.charAt(0).toUpperCase() + medium.slice(1)}
+    <IoMegaphoneOutline /> {medium.charAt(0).toUpperCase() + medium.slice(1)}
   </h2>
 )}
 

@@ -206,6 +206,14 @@ function CreateEventLogic() {
     setSigningin((prev) => true);
     setValidateMessage((prev) => null);
     try {
+      const boldWords = description.match(/<b>(.*?)<\/b>/g) || [];
+        const boldWordsWithoutTags = boldWords.map((bold) => bold.replace(/<\/?b>/g, ""));
+
+        // Replace bold words with placeholders in description
+        let descriptionWithoutBold = description;
+        boldWords.forEach((bold) => {
+            descriptionWithoutBold = descriptionWithoutBold.replace(bold, "$BOLD$");
+        });
       if (lumaurl.trim() !== "") {
         const lumaUrlPattern = /^https:\/\/lu\.ma\//;
         if (!lumaUrlPattern.test(lumaurl)) {
@@ -296,7 +304,8 @@ function CreateEventLogic() {
           title,
           usernamee,
           price,
-          description,
+          description: descriptionWithoutBold,
+            boldWords: boldWordsWithoutTags,
           medium,
           startDate,
           endDate,
@@ -354,6 +363,9 @@ function CreateEventLogic() {
           const teamNameUpdate = await teams.updateName(teamId, title);
           
         }
+        if (!updatedValues.teamId && !fetchingDoc) {
+          await getEventById();
+      }
         // const updateTeamPreferences = await teams.updatePrefs( teamId, {...fetchedDoc?, ...response } )
         // 
         toast.success(`Event ${id ? "updated" : "created"} successfully`);
@@ -463,7 +475,7 @@ function CreateEventLogic() {
     {
       label: "Duration",
       value: duration,
-      placeholder: "Please provide a duration for your event. [In Hours or Minutes]",
+      placeholder: "Please provide a duration for your event. [In Hours or Minutes or Days]",
       cb: setDuration,
       show: true,
       type: "string",
@@ -476,15 +488,15 @@ function CreateEventLogic() {
       show: true,
       type: "string",
     },
-    // {
-    //   label: "Max Participants",
-    //   value: maxParticipants,
-    //   placeholder:
-    //     "Please provide a maximum number of participants for your event.",
-    //   cb: setMaxParticipants,
-    //   type: "number",
-    //   show: true,
-    // },
+    {
+      label: "Max Participants",
+      value: maxParticipants,
+      placeholder:
+        "Please provide a maximum number of participants for your event.",
+      cb: setMaxParticipants,
+      type: "number",
+      show: true,
+    },
     {
       label: "Category",
       value: category,
