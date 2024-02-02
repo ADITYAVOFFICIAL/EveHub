@@ -211,14 +211,6 @@ function CreateEventLogic() {
     setSigningin((prev) => true);
     setValidateMessage((prev) => null);
     try {
-      const boldWords = description.match(/<b>(.*?)<\/b>/g) || [];
-        const boldWordsWithoutTags = boldWords.map((bold) => bold.replace(/<\/?b>/g, ""));
-
-        // Replace bold words with placeholders in description
-        let descriptionWithoutBold = description;
-        boldWords.forEach((bold) => {
-            descriptionWithoutBold = descriptionWithoutBold.replace(bold, "$BOLD$");
-        });
       if (lumaurl.trim() !== "") {
         const lumaUrlPattern = /^https:\/\/lu\.ma\//;
         if (!lumaUrlPattern.test(lumaurl)) {
@@ -309,8 +301,7 @@ function CreateEventLogic() {
           title,
           usernamee,
           price,
-          description: descriptionWithoutBold,
-            boldWords: boldWordsWithoutTags,
+          description,
           medium,
           startDate,
           endDate,

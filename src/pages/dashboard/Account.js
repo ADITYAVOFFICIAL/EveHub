@@ -133,6 +133,7 @@ function Account() {
 
   return (
     <div className="flex flex-col items-center justify-center h-full w-full gap-4 ">
+      <h1 className="page-title" style={{fontSize:"50px",marginBottom:"20px"}}>PERSONAL ACCOUNT PAGE</h1>
       <Avatar size={"text-3xl"} name={userName} />
       <h1 className="page-title">Hello, {userName}</h1>
       <form
@@ -171,7 +172,7 @@ export default Account;
 
 function Verified() {
   return (
-    <p className="bg-green-600 rounded-[18px] p-2 py-1 inline-flex text-white gap-1 items-center">
+    <p className="bg-green-600 rounded-[10px] p-2 py-1 inline-flex text-white gap-1 items-center">
       <MdVerified /> Verified
     </p>
   );
