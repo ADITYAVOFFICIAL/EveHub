@@ -28,7 +28,7 @@ import { RiMouseLine, RiSteamLine } from "react-icons/ri";
 import Hero2 from "../../assets/images/3187910.jpg";
 import WelcomeBackground from "../../assets/images/welbag.gif";
 import WelcomeBackgroundMobile from "../../assets/images/welbagmob.gif";
-
+import Security from "../../assets/images/hero.svg";
 const data = [
   {
     title: "Event Creation Made Easy",
@@ -146,14 +146,14 @@ function Landing() {
             borderRadius:"25px 25px 20px 20px ",
           }}
         >
-          {/* <Link
+          <Link
   to={"/explore"}
   className="bg-white shadow-xl from-primary to-primary/90 p-4 text-black text-center sm:text-xs md:text-base lg:text-lg lg:my-4"
   style={{ borderRadius: "12px", fontWeight:"bold", maxWidth:"90%", width:"100%"}}
 >
-  ⚠️ Latest Announcements here or function error notification ⚠️
+  ⚠️ Link of the website not to published as it has not launched yet ⚠️
 </Link>
-
+{/* 
 <Link
   to={"/explore"}
   className="bg-white shadow-xl from-primary to-primary/90 p-4 text-black text-center sm:text-xs md:text-base lg:text-lg"
@@ -195,7 +195,25 @@ function Landing() {
           <div className=" w-full relative"></div>
         </section>
       </div>
-      <section className="flex flex-col-reverse  lg:flex-row w-full py-8 md:py-16 justify-between gap-8 md:gap-0 container">
+      <section className="flex flex-col-reverse lg:flex-row-reverse w-full py-8 md:py-16 justify-between gap-8 md:gap-0 container">
+        <div className="" style={{ flexBasis: "30%" }}>
+          <img className="w-full" src={Security} style={{borderRadius:"25px"}}/>
+        </div>
+        <div
+          className="flex flex-col gap-4 items-start justify-evenly text-left py-8 lg:pr-16"
+          style={{ flexBasis: "50%" }}
+        >
+          <p className="text-accent tracking-[1px] font-semibold items-center gap-2 flex">
+            <hr className="w-20 h-1 bg-accent"></hr> Onboarded Members
+          </p>
+          <hr className="w-full border border-neutral-200"></hr>
+          <ol className="text-sm leading-[1.4rem] md:max-w-[90%] py-4 text-neutral-500 text-justify" style={{ fontWeight: "bold" }}>
+  <li className="mb-2">1. Data Science Community SRM</li>
+  <li className="mb-2">2. The Product House x SRMIST</li>
+  </ol>
+        </div>
+      </section>
+      {/* <section className="flex flex-col-reverse  lg:flex-row w-full py-8 md:py-16 justify-between gap-8 md:gap-0 container">
         <div className="md:pt-16 " style={{ flexBasis: "50%" }}>
           <img className="w-full" src={Hero2} />
         </div>
@@ -221,7 +239,7 @@ function Landing() {
                 {token ? "[ PAID FEATURE ]" : "[ PAID FEATURE ]"}
               </Link>
         </div>
-      </section>
+      </section> */}
       <div className="bg-gradient-to-b from-secondary from-100% to-50% to-white pb-10" style={{ borderRadius: "25px 25px 0 0" }}>
         <section className="flex flex-col lg:flex-row w-full items-center py-8 lg:pt-16 lg:pb-0 justify-between gap-4 md:gap-0 container">
           <div className="flex flex-row gap-16">
