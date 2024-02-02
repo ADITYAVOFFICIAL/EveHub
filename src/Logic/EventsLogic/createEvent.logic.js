@@ -5,8 +5,13 @@ import { categories } from "./categories";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import { useSearchParams } from "react-router-dom";
+import { useUser } from "../../context/userContext";
 
 function CreateEventLogic() {
+  const { userInfo, setUserInfo } = useUser();
+  const {
+    name: userName,
+  } = userInfo;
   const [validateMessage, setValidateMessage] = useState(null);
   const [signingin, setSigningin] = useState(false);
 
@@ -23,7 +28,7 @@ function CreateEventLogic() {
   const fileRef = useRef(null);
 
   const [title, setTitle] = useState("");
-  const [usernamee, setName] = useState("");
+  const [usernamee, setName] = useState(userName);
   const [webyurl, setWebyurl] = useState("");
   const [lumaurl, setLumaurl] = useState("");
   const [price, setPrice] = useState("");
@@ -95,7 +100,7 @@ function CreateEventLogic() {
       } = response;
       setFetchedDoc((prev) => response);
       setTitle((prev) => title);
-      setName((prev) => usernamee);
+      setName((prev) => userName);
       setPrice((prev) => price);
       setDescription((prev) => description);
       setLocation((prev) => location[0]);
@@ -398,7 +403,7 @@ function CreateEventLogic() {
       value: usernamee, // Define the corresponding state variable
       placeholder: "Please provide a name for your club / department.",
       cb: setName, // Define the corresponding state-setting function
-      show: true, // Show this field always
+      show: false, // Show this field always
       required: true, // Make it required if you want
     },
     {
