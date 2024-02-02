@@ -28,15 +28,18 @@ import { RiMouseLine, RiSteamLine } from "react-icons/ri";
 import Hero2 from "../../assets/images/3187910.jpg";
 import WelcomeBackground from "../../assets/images/welbag.gif";
 import WelcomeBackgroundMobile from "../../assets/images/welbagmob.gif";
-import Security from "../../assets/images/hero.svg";
+import Security from "../../assets/images/hero.png";
 const data = [
   {
-    title: "Event Creation Made Easy",
-    description:
-      "Seamlessly create and manage events with our intuitive event creation feature. Specify event details, such as date, time, location, and description, to provide a clear picture for your attendees. Customize event settings, add event images, and set ticket options effortlessly.",
-    icon: <IoCreateOutline />,
+    title: <span style={{ color: "white" }}>Event Creation Made Easy</span>,
+    description: (
+      <span style={{ color: "white" }}>
+        Effortlessly bring your events to life with our seamless event creation and management feature. Specify crucial details like date, time, location, and captivating descriptions to paint a vivid picture for your attendees. Tailor event settings, upload stunning images, and configure ticketing options with absolute ease. It's your vision, simplified and elevated.
+      </span>
+    ),
+    icon: <IoCreateOutline  style={{ color: "white" }}/>,
     backgroundImage: OneBackground,
-  },
+  },  
   {
     title: "Flexible Event Privacy",
     description:
@@ -200,7 +203,7 @@ function Landing() {
         </section>
       </div>
       <section className="flex flex-col-reverse lg:flex-row-reverse w-full py-8 md:py-16 justify-between gap-8 md:gap-0 container">
-        <div className="" style={{ flexBasis: "30%" }}>
+        <div className="" style={{ flexBasis: "55%" }}>
           <img className="w-full" src={Security} style={{borderRadius:"25px"}}/>
         </div>
         <div
@@ -257,12 +260,7 @@ function Landing() {
             </div>
           </div>
           <p className="flex-[80%] w-full text-sm leading-[1.4rem] md:max-w-[90%] py-4 text-slate-400 text-justify">
-            Say goodbye to the hassles of event planning. Our user-friendly
-            interface simplifies the process, allowing you to focus on your
-            artistic endeavors. Create and manage events effortlessly, from
-            setting dates and locations to providing event descriptions and
-            ticketing options. Streamline your planning process and bring your
-            vision to reality.
+          Bid farewell to the hassles of event planning. Our intuitive interface streamlines the process, freeing you to concentrate on your creative pursuits. Seamlessly create and oversee events—from scheduling dates and venues to crafting event details and ticketing choices. Simplify your planning journey and transform your vision into reality.
           </p>
         </section>
         <div className="flex flex-row gap-4 items-center justify-between container">
