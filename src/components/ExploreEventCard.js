@@ -28,7 +28,7 @@ function ExploreEventCard({
                 <h3>{startDate}</h3>
                 <p>{month}</p>
             </div>
-            <div className="absolute m-2 rounded text-xs bottom-0 left-0 text-center bg-white shadow p-2">
+            <div className="absolute m-2 rounded text-xs bottom-0 left-0 text-center bg-white shadow p-2" style={{fontWeight:"bold"}}>
                 <p>{category}</p>
             </div>
         </div>

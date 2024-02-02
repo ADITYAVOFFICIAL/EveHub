@@ -101,14 +101,16 @@ function Landing() {
         }
       }
       capitalizedFormData["Type of User"] = dropdown1Value;
-    capitalizedFormData["Domain"] = dropdown2Value;
-      const response = await fetch("https://formspree.io/f/mwkdqzgr", {
+      capitalizedFormData["Domain"] = dropdown2Value;
+  
+      const response = await fetch(process.env.REACT_APP_FORMSPREE_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(capitalizedFormData),
       });
+  
       if (response.ok) {
         alert("Message sent successfully!");
         setFormData({
@@ -116,10 +118,9 @@ function Landing() {
           name: "",
           email: "",
           message: "",
-
         });
-        setDropdown1Value(""); // Reset dropdown values after form submission
-      setDropdown2Value("");
+        setDropdown1Value("");
+        setDropdown2Value("");
       } else {
         throw new Error("Failed to send message");
       }
@@ -128,6 +129,7 @@ function Landing() {
       alert("Failed to send message. Please try again later.");
     }
   };
+  
   
   const swiper = useSwiper();
   const swiperRef = useRef(null);

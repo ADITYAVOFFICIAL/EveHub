@@ -89,11 +89,12 @@ function EventPage() {
     <section className="container py-8 pb-16 w-full font-poppins">
       <div className="grid grid-cols-1 md:grid-cols-6 gap-8 md:items-start">
         <div className="col-span-4 space-y-4">
-          <img
-            alt="event image"
-            src={image}
-            className="rounded-lg w-full aspect-video object-cover"
-          />
+        <img
+  alt="event image"
+  src={image}
+  className="rounded-lg w-full h-full object-contain"
+/>
+
           <div className="flex flex-col md:hidden w-full space-y-4">
             <div className="rounded-lg flex flex-col gap-4 outline w-full outline-1 outline-neutral-300 p-6">
               <h2 className="font-bold text-xl">{title}</h2>

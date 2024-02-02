@@ -12,7 +12,13 @@ export const categories = [
         label: 'Recruitments',
     },
     {
+        label: 'Recreational',
+    },
+    {
         label: 'Results',
+    },
+    {
+        label: 'Expo',
     },
     {
         label: 'Games',
