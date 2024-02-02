@@ -57,7 +57,7 @@ function Navbar() {
                       backgroundColor: "white",
                       fontWeight: "bold"
                     }}
-                    to="dashboard"
+                    to="/dashboard"
                   >
                     <>
                       <IoPersonOutline className="text-lg" />
@@ -122,23 +122,24 @@ function Navbar() {
                 </button>
               )}<div className="flex items-center justify-center w-full"> {/* Added w-full class */}
               {userInfo && (
-              <NavLink>
-                <button className="primary-btn" style={{
-                  border: "1px solid",
-                  borderRadius: "20px",
-                  height: "35px",
-                  width: "100%",
-                  color: "black",
-                  borderColor: "white",
-                  backgroundColor: "white",
-                  fontWeight: "bold"
-                }}>
-                   <>
-                      <IoPersonOutline className="text-lg" />
-                      <span className="text-lg" style={{width:"280px"}}>Welcome {userInfo.name}</span>
-                    </>
-                </button>
-              </NavLink>)}
+  <NavLink to="/dashboard">
+    <button className="primary-btn" style={{
+      border: "1px solid",
+      borderRadius: "20px",
+      height: "35px",
+      width: "100%",
+      color: "black",
+      borderColor: "white",
+      backgroundColor: "white",
+      fontWeight: "bold"
+    }}>
+      <>
+        <IoPersonOutline className="text-lg" />
+        <span className="text-lg" style={{width:"280px"}}>Welcome {userInfo.name}</span>
+      </>
+    </button>
+  </NavLink>
+)}
             </div>            
             </div>
           </div>
