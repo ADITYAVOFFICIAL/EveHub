@@ -90,15 +90,23 @@ function EventPage() {
     <section className="container py-8 pb-16 w-full font-poppins">
       <div className="grid grid-cols-1 md:grid-cols-6 gap-8 md:items-start">
         <div className="col-span-4 space-y-4">
-          <img
-            alt="event image"
-            src={image}
-            className="rounded-lg w-full aspect-video object-cover"
-          />
+        <a href={image} rel="noopener noreferrer">
+  <img
+    alt="event image"
+    src={image}
+    className="rounded-lg w-full aspect-video object-cover"
+  />
+</a>
+
           <div className="flex flex-col md:hidden w-full space-y-4">
             <div className="rounded-lg flex flex-col gap-4 outline w-full outline-1 outline-neutral-300 p-6">
               <h2 className="font-bold text-xl">{title}</h2>
-              <h3 className="font-bold">{usernamee}<MdVerified/></h3>
+              <h3 className="font-bold">
+  <span style={{ display: "flex", alignItems: "center" }}>
+    {usernamee}
+    <MdVerified style={{ color: "#17c3ff", marginLeft: "3px" }} />
+  </span>
+</h3>
               <h2 className="inline-flex items-center gap-2 text-sm">
                 <IoBookmarkOutline /> {category}
               </h2>
