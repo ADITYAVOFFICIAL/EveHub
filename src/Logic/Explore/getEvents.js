@@ -34,9 +34,8 @@ function GetExporeLogic() {
 
   const getEvents = useCallback(async () => {
     try {
-      
-      setError((prev) => null);
-      setLoading((prev) => true);
+      setError(null);
+      setLoading(true);
       const database = new Databases(client);
       const response = await database.listDocuments(
         process.env.REACT_APP_DATABASE_ID,
@@ -45,27 +44,26 @@ function GetExporeLogic() {
           ? [Query.equal("privacy", "public")]
           : buildQuery()
       );
-      
-      setEvents((prev) => response?.documents);
-      setEventCount((prev) => response?.total);
-      setPublicEvent((prev) =>
-        response?.documents?.filter((event) => event.privacy === "public")
-      );
-      setOfflineEvent((prev) =>
-        response?.documents?.filter((event) => event.medium === "offline")
-      );
-      setOnlineEvent((prev) =>
-        response?.documents?.filter((event) => event.medium === "online")
-      );
+  
+      // Sort events by start date (nearest to current date first)
+      const sortedEvents = response.documents.sort((a, b) => {
+        const startDateA = new Date(a.startDate).getTime();
+        const startDateB = new Date(b.startDate).getTime();
+        return startDateA - startDateB;
+      });
+  
+      setEvents(sortedEvents);
+      setEventCount(response.total);
+      setPublicEvent(response.documents.filter(event => event.privacy === "public"));
+      setOfflineEvent(response.documents.filter(event => event.medium === "offline"));
+      setOnlineEvent(response.documents.filter(event => event.medium === "online"));
     } catch (err) {
-      
-      
-      
-      setError((prev) => err.message);
+      setError(err.message);
     } finally {
-      setLoading((prev) => false);
+      setLoading(false);
     }
   }, [searchParams]);
+  
 
   const getEventById = useCallback(async () => {
     try {

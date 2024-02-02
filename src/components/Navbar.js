@@ -32,7 +32,7 @@ function Navbar() {
 
   return (
     <div className="app">
-      <nav className={`text-white w-full bg-secondary text-lg py-2 ${location.pathname !== "/" ? "" : ""}`}>
+<nav className={`text-white w-full bg-secondary text-lg py-2 ${location.pathname === "/" ? "rounded-b-none" : ""}`} style={{borderRadius: location.pathname !== "/" ? "0 0 25px 25px" : ""}}>
         <div className="container">
           <div className="flex mx-auto justify-between">
             {/* Primary menu and logo */}
@@ -99,7 +99,7 @@ function Navbar() {
         <div
           className={`fixed z-40 w-full bg-secondary overflow-hidden flex flex-col lg:hidden gap-12 origin-top duration-700 font-poppins ${
             !toggleMenu ? "h-0" : "h-full"
-          }`}
+          }`} style={{borderRadius:"0 0 30px 30px"}}
         >
           <div className="px-8">
             <div className="flex flex-col gap-8 tracking-wider">
