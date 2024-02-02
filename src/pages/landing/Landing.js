@@ -147,20 +147,20 @@ function Landing() {
           }}
         >
           <Link
-  to={"/explore"}
+  to={""}
   className="bg-white shadow-xl from-primary to-primary/90 p-4 text-black text-center sm:text-xs md:text-base lg:text-lg lg:my-4"
-  style={{ borderRadius: "12px", fontWeight:"bold", maxWidth:"90%", width:"100%"}}
+  style={{ borderRadius: "12px", fontWeight: "bold", maxWidth: "90%", width: "100%", lineHeight: "1", padding: "8px 16px" }}
 >
-  ⚠️ Link of the website not to published as it has not launched yet ⚠️
+  ⚠️ Please refrain from sharing the website link as it has not yet been launched ⚠️
 </Link>
-{/* 
+
 <Link
-  to={"/explore"}
+  to={""}
   className="bg-white shadow-xl from-primary to-primary/90 p-4 text-black text-center sm:text-xs md:text-base lg:text-lg"
-  style={{ borderRadius: "12px", fontWeight:"bold", maxWidth:"90%", width:"100%" }}
+  style={{ borderRadius: "12px", fontWeight: "bold", maxWidth: "90%", width: "100%", lineHeight: "1", padding: "8px 16px" }}
 >
-  ⚠️  Latest Announcements here or function error notification  ⚠️
-</Link> */}
+  🔔 Any updates will be intimated here 🔔
+</Link>
 
           <div
             className="flex flex-col gap-4 items-center justify-center z-10"
@@ -188,9 +188,13 @@ function Landing() {
             <span class="relative" style={{fontWeight:"bold"}}>Explore EveHub</span>
           </a>
         </div>
-            <p className=" md:max-w-[90%] py-4 text-slate-200 " style={{ marginTop:"2px"}}><b>
-              Developed and maintained by ADITYA VERMA</b>
-            </p>
+        <Link
+  to={""}
+  className="bg-white shadow-xl from-primary to-primary/90 p-4 text-black text-center sm:text-xs md:text-base lg:text-lg"
+  style={{ borderRadius: "12px", fontWeight: "bold", maxWidth: "90%", width: "60%", lineHeight: "1", padding: "8px 16px" }}
+>
+  Developed and maintained by ADITYA VERMA
+</Link>
           </div>
           <div className=" w-full relative"></div>
         </section>
