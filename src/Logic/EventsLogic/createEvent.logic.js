@@ -395,7 +395,7 @@ function CreateEventLogic() {
       value: usernamee, // Define the corresponding state variable
       placeholder: "Please provide a name for your club / department.",
       cb: setName, // Define the corresponding state-setting function
-      show: true, // Show this field always
+      show: false, // Show this field always
       required: true, // Make it required if you want
     },
     {
