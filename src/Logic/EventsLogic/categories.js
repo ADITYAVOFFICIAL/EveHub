@@ -6,7 +6,7 @@ export const categories = [
         label: 'Conference',
     },
     {
-        label: 'Clubs',
+        label: 'Talks',
     },
     {
         label: 'Recruitments',
