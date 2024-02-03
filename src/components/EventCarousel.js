@@ -36,7 +36,7 @@ function EventCarousel({ events, title }) {
           className="event-swiper"
           ref={swiperRef}
           modules={[Navigation]}
-          slidesPerView={1}
+          slidesPerView={4}
           spaceBetween={20}
           breakpoints={{
             360: {

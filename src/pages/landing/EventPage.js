@@ -11,7 +11,7 @@ import {
   IoLocationOutline,
   IoTimerOutline,
   IoWalletOutline,
-  IoPeopleCircle,
+  IoPeople,
   IoMegaphoneOutline,
 } from "react-icons/io5";
 import { shareLinks } from "../../static/shareLinks";
@@ -129,11 +129,12 @@ function EventPage() {
                   <IoLanguageOutline /> {language}
                 </h2>
               )}
-              {maxParticipants?.length > 0 && (
-                <h2 className="inline-flex items-center gap-2 text-sm">
-                  <IoPeopleCircle /> {maxParticipants}
-                </h2>
-              )}
+             {maxParticipants && (
+  <h2 className="inline-flex items-center gap-2 text-sm">
+    <IoPeople />Available Seats : {maxParticipants}
+  </h2>
+)}
+
               <h2 className="inline-flex items-center gap-2 text-sm">
                 <IoCalendarClearOutline /> {startDay}, {startTime}
                 {startDay === endDay && ` | ${endTime}`}
@@ -290,6 +291,11 @@ function EventPage() {
             {medium?.length > 0 && (
   <h2 className="inline-flex items-center gap-2 text-sm">
     <IoMegaphoneOutline /> {medium.charAt(0).toUpperCase() + medium.slice(1)}
+  </h2>
+)}
+{maxParticipants && (
+  <h2 className="inline-flex items-center gap-2 text-sm">
+    <IoPeople />Available Seats : {maxParticipants}
   </h2>
 )}
 
