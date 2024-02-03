@@ -97,7 +97,7 @@ const qrCodeDataURL = await qrcode.toDataURL(url, {
         // You can further manipulate qrCodeDataURL, for example, display it in an image tag or trigger download
         // For downloading, you can create a link element and simulate a click event
         const link = document.createElement("a");
-        link.download = "qr_code.png";
+        link.download = "your_event_qr_code.png";
         link.href = qrCodeDataURL;
         link.click();
     } catch (error) {

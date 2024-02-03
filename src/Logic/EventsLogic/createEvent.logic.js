@@ -211,6 +211,7 @@ function CreateEventLogic() {
     setSigningin((prev) => true);
     setValidateMessage((prev) => null);
     try {
+      const formattedDescription = description.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
       if (lumaurl.trim() !== "") {
         const lumaUrlPattern = /^https:\/\/lu\.ma\//;
         if (!lumaUrlPattern.test(lumaurl)) {
@@ -394,7 +395,7 @@ function CreateEventLogic() {
       value: usernamee, // Define the corresponding state variable
       placeholder: "Please provide a name for your club / department.",
       cb: setName, // Define the corresponding state-setting function
-      show: false, // Show this field always
+      show: true, // Show this field always
       required: true, // Make it required if you want
     },
     {

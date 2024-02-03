@@ -90,13 +90,17 @@ function EventPage() {
     <section className="container py-8 pb-16 w-full font-poppins">
       <div className="grid grid-cols-1 md:grid-cols-6 gap-8 md:items-start">
         <div className="col-span-4 space-y-4">
-        <a href={image} rel="noopener noreferrer">
-  <img
-    alt="event image"
-    src={image}
-    className="rounded-lg w-full aspect-video object-cover"
-  />
-</a>
+        <div class="image-container">
+  <a href={image} rel="noopener noreferrer">
+    <img
+      alt="event image"
+      src={image}
+      className="rounded-lg w-full aspect-video object-cover"
+    />
+  </a>
+  <button onClick={() => window.location.href = image} class="overlay-button primary-btn" style={{borderRadius:"8px", height:"50px"}}>View Full Image</button></div>
+
+
 
           <div className="flex flex-col md:hidden w-full space-y-4">
             <div className="rounded-lg flex flex-col gap-4 outline w-full outline-1 outline-neutral-300 p-6">
@@ -242,16 +246,22 @@ function EventPage() {
     <h2 className="font-semibold py-2 border-b border-neutral-300 text-lg">
       Terms and Conditions
     </h2>
-    <ul className="display-linebreak text-neutral-800 text-sm font-grostek list-disc">
+    <div className="display-linebreak text-neutral-800 text-sm font-grostek">
       {tnc
-        .split("\n")
-        .filter((t) => t.trim() !== "") // Filter out blank lines
-        .map((t, index) => (
-          <li key={index} className="mb-2">{t}</li> // Add margin bottom to create gap
+        .split("\n\n") // Split by double line breaks to separate sections
+        .map((section, index) => (
+          <div key={index} className="mb-4">
+            {section
+              .split("\n") // Split each section by single line breaks
+              .map((line, index) => (
+                <p key={index}>{line}</p> // Render each line as a paragraph
+              ))}
+          </div>
         ))}
-    </ul>
+    </div>
   </>
 )}
+
 
         </div>
         <div className="col-span-2 hidden md:block w-full space-y-4">
