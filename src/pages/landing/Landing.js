@@ -218,6 +218,7 @@ function Landing() {
   <li className="mb-2">1. Data Science Community SRM</li>
   <li className="mb-2">2. The Product House x SRMIST</li>
   <li className="mb-2">3. Astrophilia</li>
+  <li className="mb-2">4. Aerospace Systems Research Laboratory </li>
   </ol>
         </div>
       </section>
