@@ -94,7 +94,7 @@ function Explore() {
       <div style={{
   padding: "20px",
   borderRadius: "20px",
-  backgroundImage: "url(https://64.media.tumblr.com/4716ad64374f44aa6bd0d75e3da48098/81e36304e3a7e1d8-e3/s400x600/e0cef59a4a4df2ceef686ccb7e415b10571477f7.gif)",
+  backgroundImage: "url(https://images.squarespace-cdn.com/content/v1/5d017747ed82db0001af480d/1631683467096-JA2BYYOL9AAQHROBD1UJ/horizon.gif)",
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat"
 }}>
