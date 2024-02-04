@@ -78,17 +78,32 @@ body,
   padding-block: var(--event-swiper-padding-block) !important;
 }
 .event-content {
-  max-width: 200px; /* Adjust the maximum width as needed */
-  word-wrap: break-word; /* Enable text wrapping */
+  white-space: wrap;
 }
 
 .event-title {
-  font-weight: bold; /* Make the title bold */
+  font-size: 15px;
 }
 
-.event-details {
-  font-size: smaller; /* Adjust the font size for details if needed */
+.event-details, .event-category {
+  font-size: 10px;
+  font-weight: bold;
+  color: black;
 }
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+  .event-title {
+    font-size: 8px; /* Adjust font size for mobile */
+  }
+  .event-category {
+    font-size: 6px; /* Adjust font size for mobile */
+  }
+  .event-details  {
+    font-size: 7px; /* Adjust font size for mobile */
+  }
+}
+
 
 .testimonial-slider {
   padding-inline: 0 !important;
