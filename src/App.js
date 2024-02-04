@@ -48,9 +48,9 @@ function App() {
             <Route path="event/:id" element={<EventPage />} />
             <Route path="auth" element={<AuthLayout />}>
               <Route path="login" element={<Login />} />
-              <Route path="signup" element={<Signup />} />
+              {/* <Route path="signup" element={<Signup />} />
               <Route path="phone" element={<Phone />} />
-              <Route path="otp" element={<Otp />} />
+              <Route path="otp" element={<Otp />} /> */}
             </Route>
           </Route>
           
@@ -74,15 +74,15 @@ function App() {
                 </DashboardScreenLayout>
               }
             />
-            <Route
+            {/* <Route
               path="invities"
               element={
                 <DashboardScreenLayout title={"Your Invites"}>
                   <Invites />
                 </DashboardScreenLayout>
               }
-            />
-            <Route
+            /> */}
+            {/* <Route
               path="rsvp"
               element={
                 <DashboardScreenLayout title={"Your RSVPs"}>
@@ -90,12 +90,12 @@ function App() {
                   <Rsvps />{" "}
                 </DashboardScreenLayout>
               }
-            />
+            /> */}
             <Route path="calendar" element={<Cal />} />
           </Route>
-          <Route path="/accept-invite/:eventId" element={<AcceptInvite />} />
-          <Route path="/verify-email" element={<VeirfyEmail />} />
-          <Route path="/mark-attendance" element={<MarkAttendance />} />
+          {/* <Route path="/accept-invite/:eventId" element={<AcceptInvite />} /> */}
+          {/* <Route path="/verify-email" element={<VeirfyEmail />} /> */}
+          {/* <Route path="/mark-attendance" element={<MarkAttendance />} /> */}
         </Routes>
       </Router>
     </>
