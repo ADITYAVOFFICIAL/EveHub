@@ -9,7 +9,7 @@ function ProtectedRoute({children}) {
     if(state === null && (pathname.includes('phone') || pathname.includes('otp'))) {
       navigate('/')
     }
-  },[state, navigate])
+  },[state, navigate,pathname])
   
   useEffect(() => {
     const token = localStorage.getItem('token') 
@@ -20,7 +20,7 @@ function ProtectedRoute({children}) {
     else if(token && (pathname.includes('login') || pathname.includes('signup'))) {
       navigate('/dashboard')
     }
-  }, [localStorage, navigate])
+  }, [ navigate,pathname])
 
 
   return (
