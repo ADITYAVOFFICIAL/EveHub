@@ -49,9 +49,9 @@ function Cal() {
   const renderEventContent = (eventInfo) => {
     return (
       <div className="event-content" style={{ whiteSpace: "wrap" }}>
-  <p className="event-title" style={{fontSize:"15px"}}>{eventInfo.event.title}</p>
-  <p className="event-details" style={{fontSize:"10px",fontWeight:"bold"}}>{eventInfo.event.extendedProps.description}</p>
-  <p className="event-category" style={{fontSize:"10px",fontWeight:"bold",color:"black"}}>{eventInfo.event.extendedProps.category}</p>
+  <p className="event-title">{eventInfo.event.title}</p>
+  <p className="event-details">{eventInfo.event.extendedProps.description}</p>
+  <p className="event-category">{eventInfo.event.extendedProps.category}</p>
 </div>
     );
   };

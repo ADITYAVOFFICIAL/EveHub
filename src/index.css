@@ -94,7 +94,7 @@ body,
 /* Media query for mobile devices */
 @media only screen and (max-width: 600px) {
   .event-title {
-    font-size: 8px; /* Adjust font size for mobile */
+    font-size: 9px; /* Adjust font size for mobile */
   }
   .event-category {
     font-size: 6px; /* Adjust font size for mobile */
