@@ -84,7 +84,7 @@ function Sidebar() {
       </button>
       <NavLink className="sidebar-link" to="pdfer">
         <IoBook /> Instructions
-      </NavLink>
+      </NavLink>  
       <div className="mt-auto flex flex-col">
       <NavLink
   title={userInfo?.email}

@@ -37,6 +37,8 @@ function EventPage() {
     usernamee,
     lumaurl,
     webyurl,
+    facebooker,
+    insta,
     maxParticipants,
     startDate,
     endDate,
@@ -205,12 +207,18 @@ function EventPage() {
               ))}
               
          </div>
-         <div style={{ display: 'flex', justifyContent: 'center' }}>
-  <InstagramEmbed url="https://www.instagram.com/p/C2t4DMqP-xE/" width={550}/>
-</div>
-<div style={{ display: 'flex', justifyContent: 'center' }}>
-  <FacebookEmbed url="https://www.facebook.com/andrewismusic/posts/451971596293956" width={550} />
-</div>
+         {insta && (
+  <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <InstagramEmbed url={insta} width={550}/>
+  </div>
+)}
+
+{facebooker && (
+  <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <FacebookEmbed url={facebooker} width={550} />
+  </div>
+)}
+
           </div>
           {medium === "offline" && lumaurl ? (
   <button 
@@ -358,12 +366,18 @@ function EventPage() {
   ))}
   
 </div>
-<div style={{ display: 'flex', justifyContent: 'center' }}>
-  <InstagramEmbed url="https://www.instagram.com/p/C2t4DMqP-xE/" width={550}/>
-</div>
-<div style={{ display: 'flex', justifyContent: 'center' }}>
-  <FacebookEmbed url="https://www.facebook.com/andrewismusic/posts/451971596293956" width={550}/>
-</div>
+{insta && (
+  <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <InstagramEmbed url={insta} width={550}/>
+  </div>
+)}
+
+{facebooker && (
+  <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <FacebookEmbed url={facebooker} width={550} />
+  </div>
+)}
+
         </div>
       </div>
     </section>
