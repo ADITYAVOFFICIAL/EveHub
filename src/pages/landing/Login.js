@@ -4,7 +4,7 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 
 function Login() {
-  const { inputs, validateMessage, loginUser, signingin } = LoginLogic();
+  const { inputs, loginUser, signingin } = LoginLogic();
 
     
     

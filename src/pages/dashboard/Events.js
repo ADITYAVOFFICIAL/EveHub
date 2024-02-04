@@ -21,19 +21,19 @@ function Events() {
 
   useEffect(() => {
     const filter = searchParams.get("filter");
-    const search = searchParams.get("search") ?? "";
     if (filter === "total") {
-      setFilteredEvents((prev) => events);
+      setFilteredEvents(events);
     } else if (filter === "private") {
-      setFilteredEvents((prev) => privateEvent);
+      setFilteredEvents(privateEvent);
     } else if (filter === "public") {
-      setFilteredEvents((prev) => publicEvent);
+      setFilteredEvents(publicEvent);
     } else if (filter === "offline") {
-      setFilteredEvents((prev) => offlineEvent);
+      setFilteredEvents(offlineEvent);
     } else if (filter === "online") {
-      setFilteredEvents((prev) => onlineEvent);
+      setFilteredEvents(onlineEvent);
     }
-  }, [events, searchParams]);
+  }, [events, searchParams, privateEvent, publicEvent, offlineEvent, onlineEvent]);
+  
 
   return (
     <>

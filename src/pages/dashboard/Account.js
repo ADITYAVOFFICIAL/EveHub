@@ -5,7 +5,6 @@ import { MdVerified } from "react-icons/md";
 import client from "../../appwrite.config";
 import { Account as Ac, Databases, Query } from "appwrite";
 import { toast } from "react-hot-toast";
-import Button from "../../components/Button";
 import { useUser } from "../../context/userContext";
 
 function Account() {

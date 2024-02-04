@@ -6,23 +6,17 @@ import OneBackground from "../../assets/images/b1.gif";
 import TwoBackground from "../../assets/images/b2.gif";
 import Card from "../../components/Card";
 import { Navigation } from "swiper";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import {
   IoArrowBack,
-  IoArrowDownCircleOutline,
   IoArrowForward,
   IoCreateOutline,
   IoNotificationsOutline,
-  IoPeople,
-  IoPeopleOutline,
-  IoTicketOutline,
 } from "react-icons/io5";
-import { MdManageHistory, MdOutlineFileDownload, MdOutlinePrivacyTip, MdRsvp } from "react-icons/md";
-import { RiMouseLine, RiSteamLine } from "react-icons/ri";
-import Hero2 from "../../assets/images/3187910.jpg";
+import { MdOutlinePrivacyTip} from "react-icons/md";
 import WelcomeBackground from "../../assets/images/welbag.gif";
 import WelcomeBackgroundMobile from "../../assets/images/welbagmob.gif";
 import Security from "../../assets/images/hero.png";
@@ -51,6 +45,7 @@ const data = [
     icon: <IoNotificationsOutline />,
     backgroundImage: FutureUpdatesBackground,
     className: "text-white",
+    alt:"Black wavy thing smooth"
   }
 ];
 
@@ -127,10 +122,9 @@ function Landing() {
   };
   
   
-  const swiper = useSwiper();
   const swiperRef = useRef(null);
 
-  const token = JSON.parse(localStorage.getItem("token"));
+  // const token = JSON.parse(localStorage.getItem("token"));
 
   const isMobile = window.innerWidth <= 768; 
 
@@ -201,7 +195,7 @@ function Landing() {
       </div>
       <section className="flex flex-col-reverse lg:flex-row-reverse w-full py-8 md:py-16 justify-between gap-8 md:gap-0 container">
         <div className="" style={{ flexBasis: "55%" }}>
-          <img className="w-full" src={Security} style={{borderRadius:"25px"}}/>
+          <img alt="Club/Dept Images" className="w-full" src={Security} style={{borderRadius:"25px"}}/>
         </div>
         <div
           className="flex flex-col gap-4 items-start justify-evenly text-left py-8 lg:pr-16"

@@ -5,7 +5,6 @@ import {
   MdComputer,
   MdDelete,
   MdEdit,
-  MdVisibility,
 } from "react-icons/md";
 import { ColorExtractor } from "react-color-extractor";
 import qrcode from "qrcode";
@@ -14,20 +13,17 @@ import CreateMembershipLogic from "../../Logic/Membership/CreateMembership.logic
 import {
   IoCopy,
   IoLocation,
-  IoPeopleOutline,
   IoPersonOutline,
   IoWalletOutline,
   IoQrCode,
   IoEye,
   IoTime,
-  IoBookSharp,
-  IoArchive,
   IoBookmark,
   IoLink,
 } from "react-icons/io5";
 
 import { toast } from "react-hot-toast";
-import { Databases, Teams } from "appwrite";
+import { Databases } from "appwrite";
 import client from "../../appwrite.config";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../components/Loading";
@@ -110,9 +106,7 @@ const qrCodeDataURL = await qrcode.toDataURL(url, {
 
   const deleteEvent = async () => {
     try {
-      const teams = new Teams(client);
       const database = new Databases(client);
-      const teamResponse = await teams.delete(events?.teamId);
       
       const response = await database.deleteDocument(
         process.env.REACT_APP_DATABASE_ID,
@@ -184,7 +178,7 @@ const qrCodeDataURL = await qrcode.toDataURL(url, {
     return () => unsubscribe();
   },[]);
 
-  const { createMembership, teamMembers, memberCount } = CreateMembershipLogic(
+  const { createMembership, teamMembers } = CreateMembershipLogic(
     events?.teamId
   );
 

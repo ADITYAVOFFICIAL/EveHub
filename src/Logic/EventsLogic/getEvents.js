@@ -29,6 +29,7 @@ function GetEventLogic() {
             userQuery
         ]
     }, [filter])
+    
 
     const getEvents = useCallback(async () => {
 

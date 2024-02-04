@@ -11,7 +11,6 @@ function Explore() {
     offlineEvent,
     onlineEvent,
     loading,
-    usernamee,
     error,
     setSearchParams,
     category,

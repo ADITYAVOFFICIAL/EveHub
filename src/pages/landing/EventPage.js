@@ -19,7 +19,7 @@ import RsvpLogic from "../../Logic/Explore/rsvp.logic";
 
 function EventPage() {
   const { loading, error, events } = GetEventLogic();
-  const { handleRSVP, adding } =
+  const { adding } =
     RsvpLogic(events);
   
 
@@ -125,7 +125,6 @@ function convertTo12HourFormat(hours, minutes) {
         <div class="image-container">
   <a href={image} rel="noopener noreferrer">
     <img
-      alt="event image"
       src={image}
       className="rounded-lg w-full aspect-video object-cover"
     />

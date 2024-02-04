@@ -1,14 +1,11 @@
 import React, { useCallback, useEffect } from "react";
 import {
   IoBook,
-  IoCalendarClearOutline,
   IoCalendarNumberOutline,
   IoHomeOutline,
   IoLogOutOutline,
   IoNotificationsOutline,
-  IoPeopleOutline,
   IoPersonOutline,
-  IoSpeedometer,
   IoTicketOutline,
 } from "react-icons/io5";
 import { Link, NavLink, useNavigate } from "react-router-dom";
@@ -41,7 +38,8 @@ function Sidebar() {
       localStorage.removeItem("token");
       navigate("/");
     }
-  }, []);
+  }, [navigate, setUserInfo]); // Include navigate and setUserInfo in the dependency array
+  
 
   useEffect(() => {
     getUserInfo();
