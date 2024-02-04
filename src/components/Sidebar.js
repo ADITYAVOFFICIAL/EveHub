@@ -33,11 +33,11 @@ function Sidebar() {
       const account = new Account(client);
       const res = await account.get();
       
-      localStorage.setItem("spotlight-user", JSON.stringify(res));
+      localStorage.setItem("evehub-user", JSON.stringify(res));
       setUserInfo((prev) => res);
     } catch (err) {
       console.error(err);
-      localStorage.removeItem("spotlight-user");
+      localStorage.removeItem("evehub-user");
       localStorage.removeItem("token");
       navigate("/");
     }

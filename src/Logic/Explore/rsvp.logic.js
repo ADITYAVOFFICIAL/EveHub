@@ -7,7 +7,7 @@ import { useNotifications } from "../../context/notificationContext";
 export default function RsvpLogic(event) {
   const token = JSON.parse(localStorage.getItem("token"));
   const cookieFallback = JSON.parse(localStorage.getItem("cookieFallback"));
-  const spotlightUser = JSON.parse(localStorage.getItem("spotlight-user"));
+  const evehubUser = JSON.parse(localStorage.getItem("evehub-user"));
   
 
   const [adding, setAdding] = useState(false);
@@ -15,8 +15,8 @@ export default function RsvpLogic(event) {
   const { sendNotification } = useNotifications();
 
   const checkUserIsOwner = () => {
-    if (token && cookieFallback && spotlightUser) {
-      if (event?.createdBy === spotlightUser?.$id) {
+    if (token && cookieFallback && evehubUser) {
+      if (event?.createdBy === evehubUser?.$id) {
         return true;
       }
     }
@@ -88,8 +88,8 @@ export default function RsvpLogic(event) {
       
       await sendNotification({
         userId: userId,
-        fromUserId: spotlightUser?.$id,
-        fromUserName: spotlightUser?.name,
+        fromUserId: evehubUser?.$id,
+        fromUserName: evehubUser?.name,
         type: "RSVP_APPROVED",
         message: `Your RSVP to ${eventName}'s event has been approved. Please check your email for an invite to the event`,
       });
@@ -122,8 +122,8 @@ export default function RsvpLogic(event) {
       )
       await sendNotification({
         userId: userId,
-        fromUserId: spotlightUser?.$id,
-        fromUserName: spotlightUser?.name,
+        fromUserId: evehubUser?.$id,
+        fromUserName: evehubUser?.name,
         type: "RSVP_REJECTED",
         message: `Your RSVP to ${eventName}'s event has been rejected by the owner.`,
       });

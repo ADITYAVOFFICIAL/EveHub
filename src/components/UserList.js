@@ -66,13 +66,13 @@ function UserList({
   );
 
   const checkUserIsOwner = (id) => {
-    const userId = JSON.parse(localStorage.getItem("spotlight-user"))?.["$id"];
+    const userId = JSON.parse(localStorage.getItem("evehub-user"))?.["$id"];
     const user = users?.find((user) => user?.userId === (id ?? userId));
     return user?.roles?.includes("owner") ?? false;
   };
 
   const checkUserRoles = (id) => {
-    const userId = JSON.parse(localStorage.getItem("spotlight-user"))?.["$id"];
+    const userId = JSON.parse(localStorage.getItem("evehub-user"))?.["$id"];
     const user = users?.find((user) => user?.userId === (id ?? userId));
     
     
@@ -81,7 +81,7 @@ function UserList({
   };
 
   const userMembershipId = (id) => {
-    const userId = JSON.parse(localStorage.getItem("spotlight-user"))?.["$id"];
+    const userId = JSON.parse(localStorage.getItem("evehub-user"))?.["$id"];
     const user = users.find((user) => user?.userId === (id ?? userId));
     return {
       membershipId: user?.$id,
@@ -92,7 +92,7 @@ function UserList({
 
   const handleInvite = async (user, role) => {
     
-    const fromUser = JSON.parse(localStorage.getItem("spotlight-user"));
+    const fromUser = JSON.parse(localStorage.getItem("evehub-user"));
     try {
       if (typeof createMembership === "function") {
         const res = await createMembership({
@@ -416,7 +416,7 @@ function UserList({
                   await deleteInvitation({ teamId, membershipId });
                   toast.success("Invitation deleted");
                   const user = JSON.parse(
-                    localStorage.getItem("spotlight-user")
+                    localStorage.getItem("evehub-user")
                   );
                   const databases = new Databases(client);
                   const res = await databases.listDocuments(

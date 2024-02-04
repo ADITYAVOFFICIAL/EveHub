@@ -14,7 +14,7 @@ function Account() {
 
   const { userInfo, setUserInfo } = useUser();
 
-  // const user = JSON.parse(localStorage.getItem("spotlight-user"));
+  // const user = JSON.parse(localStorage.getItem("evehub-user"));
 
   const {
     name: userName,
@@ -78,7 +78,7 @@ function Account() {
   ];
 
   const revalidateFields = () => {
-    const user = JSON.parse(localStorage.getItem("spotlight-user"));
+    const user = JSON.parse(localStorage.getItem("evehub-user"));
     const { name: userName, email: userEmail, phone: userPhone } = user;
     setName((prev) => userName);
     setEmail((prev) => userEmail);
@@ -113,7 +113,7 @@ function Account() {
         }
         toast.success("Name updated successfully!");
 
-        localStorage.setItem("spotlight-user", JSON.stringify(res));
+        localStorage.setItem("evehub-user", JSON.stringify(res));
         revalidateFields();
       }
     } catch (err) {
@@ -135,7 +135,7 @@ function Account() {
     <div className="flex flex-col items-center justify-center h-full w-full gap-4 ">
       <h1 className="page-title" style={{fontSize:"50px",marginBottom:"20px"}}>PERSONAL ACCOUNT PAGE</h1>
       <Avatar size={"text-3xl"} name={userName} />
-      <h1 className="page-title">Hello, {userName}</h1>
+      <h1 className="page-title">Hello, {userName} 👋🏼</h1>
       <form
         onSubmit={handleUpdateFields}
         className="flex flex-col gap-4 w-full max-w-[400px]"

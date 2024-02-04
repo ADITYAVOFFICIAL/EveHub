@@ -17,7 +17,7 @@ function LogoutLogic() {
       await account.deleteSessions();
       
       localStorage.removeItem("token");
-      localStorage.removeItem("spotlight-user");
+      localStorage.removeItem("evehub-user");
       toast.success("Logged out successfully");
       navigate("/");
     } catch (error) {

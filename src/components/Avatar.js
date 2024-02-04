@@ -11,7 +11,7 @@ function Avatar({ size }) {
   return (
     <div
       className={`font-bold p-4 flex aspect-square text-center items-center justify-center bg-gradient-to-br from-green-500 to-black text-white ${size}`}
-      style={{ borderRadius: "20px", height: "65px", width: "300px" }}
+      style={{ borderRadius: "16px", height: "65px", width: "360px" }}
     >
       {/* Display the user ID */}
       <div

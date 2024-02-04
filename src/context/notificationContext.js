@@ -40,7 +40,7 @@ export default function NotificationProvider({ children }) {
                 process.env.REACT_APP_DATABASE_ID,
                 process.env.REACT_APP_NOTIFICATIONS_COLLECTION_ID,
                 [
-                    Query.equal('userId', JSON.parse(localStorage.getItem('spotlight-user'))?.$id),
+                    Query.equal('userId', JSON.parse(localStorage.getItem('evehub-user'))?.$id),
                     Query.orderDesc('$updatedAt')
                 ]
             );
@@ -64,7 +64,7 @@ export default function NotificationProvider({ children }) {
         
         client.subscribe(`databases.${process.env.REACT_APP_DATABASE_ID}.collections.${process.env.REACT_APP_NOTIFICATIONS_COLLECTION_ID}.documents`, (res) => {
             
-            if(res.payload?.userId !== JSON.parse(localStorage.getItem('spotlight-user'))?.$id) return;
+            if(res.payload?.userId !== JSON.parse(localStorage.getItem('evehub-user'))?.$id) return;
             setNotifications(prev => uniqueArray([res.payload, ...prev]));
             if(!show) {
                 setUnreadNotifications(prev => uniqueArray([res.payload]).length);
