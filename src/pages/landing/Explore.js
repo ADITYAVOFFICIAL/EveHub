@@ -3,6 +3,7 @@ import GetExporeLogic from "../../Logic/Explore/getEvents";
 import EventCarousel from "../../components/EventCarousel";
 import Loading from "../../components/Loading";
 import { categories } from "../../Logic/EventsLogic/categories";
+import Cal from "../../pages/dashboard/Cal";
 
 function Explore() {
   const {
@@ -89,6 +90,21 @@ function Explore() {
           )}
         </>
       )}
+      <hr className="w-full  border border-black opacity-80 mb-10"></hr>
+      <div style={{
+  padding: "20px",
+  borderRadius: "20px",
+  backgroundImage: "url(https://64.media.tumblr.com/4716ad64374f44aa6bd0d75e3da48098/81e36304e3a7e1d8-e3/s400x600/e0cef59a4a4df2ceef686ccb7e415b10571477f7.gif)",
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat"
+}}>
+  <h1 className="pb-6 text-2xl md:text-4xl font-bold text-center md:text-center text-black">
+    EVENT CALENDAR : SRMIST KTR
+  </h1>
+  <Cal />
+</div>
+
+
     </section>
   );
 }

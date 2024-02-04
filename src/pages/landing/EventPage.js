@@ -3,7 +3,6 @@ import { FaLinkedinIn } from 'react-icons/fa';
 import GetEventLogic from "../../Logic/EventsLogic/getEvents";
 import Loading from "../../components/Loading";
 import { MdComputer, MdCurrencyRupee, MdVerified } from "react-icons/md";
-
 import {
   IoBookmarkOutline,
   IoCalendarClearOutline,
