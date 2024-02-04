@@ -569,19 +569,19 @@ function CreateEventLogic() {
     {
       label: "Insta post URL",
       value: insta,
-      placeholder: "Please provide a instagram post URL.",
-      cb: setInsta,
+      placeholder: "Please provide an Instagram post URL.",
+      cb: setInsta, // Use setInsta to set the state for insta variable
       type: "url",
       show: true, // Show the field always
     },
     {
       label: "Facebook post URL",
       value: facebooker,
-      placeholder: "Please provide a facebook post URL.",
-      cb: setFace,
+      placeholder: "Please provide a Facebook post URL.",
+      cb: setFace, // Use setFace to set the state for facebooker variable
       type: "url",
       show: true, // Show the field always
-    },
+    },    
     {
       label: "LUMA URL",
       value: lumaurl,
