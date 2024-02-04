@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from "react";
 import {
   IoBook,
   IoCalendarClearOutline,
+  IoCalendarNumberOutline,
   IoHomeOutline,
   IoLogOutOutline,
   IoNotificationsOutline,
@@ -52,9 +53,11 @@ function Sidebar() {
       </div>
       <Link className="sidebar-link" to="">
         <IoHomeOutline /> Home
+      </Link><Link className="sidebar-link" to="calendar">
+        <IoCalendarNumberOutline /> Shared Calendar
       </Link>
       <NavLink className="sidebar-link" to="events?filter=total">
-        <IoCalendarClearOutline /> Events
+        <IoTicketOutline /> Events
       </NavLink>
       {/* <NavLink className="sidebar-link" to="invities">
         <IoTicketOutline /> Invities

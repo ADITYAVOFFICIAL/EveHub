@@ -8,6 +8,7 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Account from "./pages/dashboard/Account";
 import AuthLayout from "./layouts/AuthLayout";
+import Cal from "./pages/dashboard/Cal";
 import { Toaster } from "react-hot-toast";
 import Phone from "./pages/landing/Phone";
 import Otp from "./pages/landing/Otp";
@@ -30,7 +31,7 @@ function App() {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
-          <Analytics />
+      <Analytics />
       <Router>
         <Routes>
           <Route path="/ticket" element={<Ticket />} />
@@ -90,6 +91,7 @@ function App() {
                 </DashboardScreenLayout>
               }
             />
+            <Route path="calendar" element={<Cal />} />
           </Route>
           <Route path="/accept-invite/:eventId" element={<AcceptInvite />} />
           <Route path="/verify-email" element={<VeirfyEmail />} />

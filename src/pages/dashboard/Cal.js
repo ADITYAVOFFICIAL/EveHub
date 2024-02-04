@@ -12,21 +12,18 @@ function Cal() {
       try {
         // Initialize the Appwrite SDK
         const appwrite = new Databases(process.env.REACT_APP_PROJECT_ID);
+        console.log('Fetched documents:', response.data.documents);
         // Set the endpoint
         appwrite.setEndpoint(process.env.REACT_APP_API_ENDPOINT);
+        
         // Fetch events from the backend
         const response = await appwrite.listDocuments(
           process.env.REACT_APP_DATABASE_ID,
           process.env.REACT_APP_EVENTS_COLLECTION_ID
         );
-        // Transform fetched events data to match FullCalendar format
-        const transformedEvents = response.documents.map(event => ({
-          title: event.title,
-          start: new Date(event.date), // Assuming the date field in the event data
-          // Add more fields as needed
-        }));
-        // Set the transformed events to state
-        setEvents(transformedEvents);
+        
+        // Set the fetched events to state
+        setEvents(response.documents);
       } catch (error) {
         console.error('Error fetching events:', error);
       }
@@ -40,7 +37,11 @@ function Cal() {
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
-        events={events}
+        events={events.map(event => ({
+          title: event.title,
+          start: new Date(event.date), // Parse the date string into a Date object
+          // Add more fields as needed
+        }))}
         eventClick={(info) => {
           // Handle event click here, e.g., show event details modal
           console.log('Event clicked:', info.event);
