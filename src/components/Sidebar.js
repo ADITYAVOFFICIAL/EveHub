@@ -8,6 +8,7 @@ import {
   IoNotificationsOutline,
   IoPeopleOutline,
   IoPersonOutline,
+  IoSpeedometer,
   IoTicketOutline,
 } from "react-icons/io5";
 import { Link, NavLink, useNavigate } from "react-router-dom";
@@ -56,6 +57,9 @@ function Sidebar() {
       </Link><Link className="sidebar-link" to="calendar">
         <IoCalendarNumberOutline /> Shared Calendar
       </Link>
+      {/* <NavLink className="sidebar-link" to="metricdisplay">
+        <IoSpeedometer /> Metrics
+      </NavLink> */}
       <NavLink className="sidebar-link" to="events?filter=total">
         <IoTicketOutline /> Events
       </NavLink>

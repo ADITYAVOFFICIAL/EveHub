@@ -26,7 +26,6 @@ import Ticket from "./components/Ticket";
 import Rsvps from "./pages/dashboard/Rsvp";
 import DashboardScreenLayout from "./layouts/DashboardScreenLayout";
 import MarkAttendance from "./pages/MarkAttendance";
-
 function App() {
   return (
     <>
