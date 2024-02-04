@@ -204,16 +204,17 @@ function EventPage() {
                 </a>
               ))}
               <a
-    href={`https://www.linkedin.com/shareArticle?url=${encodeURIComponent(
-      `${window.location.origin}${pathname}`
-    )}&title=${encodeURIComponent(title)}`}
-    target="_blank"
-    title="Share on LinkedIn"
-    rel="noopener noreferrer"
-    className="border flex items-center justify-center rounded-full p-2 text-xl hover:scale-125 transition-all text-white bg-gradient-to-br bg-blue-600"
-  >
-    <FaLinkedinIn />
-  </a>
+  href={`https://www.linkedin.com/shareArticle?url=${encodeURIComponent(
+    `${window.location.origin}${pathname}`
+  )}&title=${encodeURIComponent(`${title} Powered by EveHub`)}`}
+  target="_blank"
+  title="Share on LinkedIn"
+  rel="noopener noreferrer"
+  className="border flex items-center justify-center rounded-full p-2 text-xl hover:scale-125 transition-all text-white bg-gradient-to-br bg-blue-600"
+>
+  <FaLinkedinIn />
+</a>
+
             </div>
             
           </div>
@@ -365,7 +366,7 @@ function EventPage() {
   <a
     href={`https://www.linkedin.com/shareArticle?url=${encodeURIComponent(
       `${window.location.origin}${pathname}`
-    )}&title=${encodeURIComponent(title)}`}
+    )}&title=${encodeURIComponent(`${title} Powered by EveHub`)}`}
     target="_blank"
     title="Share on LinkedIn"
     rel="noopener noreferrer"
