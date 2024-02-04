@@ -25,7 +25,9 @@ function Cal() {
 
         console.log("Fetched events:", response.documents);
 
-        const transformedEvents = response.documents.map(event => {
+        const transformedEvents = response.documents
+          .filter(event => event.privacy === 'public') // Filter events by privacy
+          .map(event => {
             console.log('Event:', event);
             return {
               title: event.title,
@@ -33,11 +35,8 @@ function Cal() {
               // Add more fields as needed
             };
           });
-          console.log('Transformed events:', transformedEvents);
-          
 
-        console.log("Transformed events:", transformedEvents);
-
+        console.log('Transformed events:', transformedEvents);
         setEvents(transformedEvents);
       } catch (error) {
         console.error('Error fetching events:', error);
