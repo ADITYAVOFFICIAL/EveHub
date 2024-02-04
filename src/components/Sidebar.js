@@ -69,7 +69,6 @@ function Sidebar() {
       {/* <NavLink className="sidebar-link" to="rsvp">
         <IoPeopleOutline /> RSVPs
       </NavLink> */}
-      
       <button className="sidebar-link" onClick={toggleNotificationBar}>
         <div className="relative">
           <IoNotificationsOutline />
@@ -83,7 +82,7 @@ function Sidebar() {
         </div>
         Notifications
       </button>
-      <NavLink className="sidebar-link" to="https://drive.google.com/file/d/1uilPY7nvRNY3LRvih_QByoMy0AEuBy2B/view" target="_blank">
+      <NavLink className="sidebar-link" to="pdfer">
         <IoBook /> Instructions
       </NavLink>
       <div className="mt-auto flex flex-col">

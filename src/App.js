@@ -9,6 +9,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import Account from "./pages/dashboard/Account";
 import AuthLayout from "./layouts/AuthLayout";
 import Cal from "./pages/dashboard/Cal";
+import Pdfer from "./pages/dashboard/Pdfer";
 import { Toaster } from "react-hot-toast";
 import Phone from "./pages/landing/Phone";
 import Otp from "./pages/landing/Otp";
@@ -91,6 +92,7 @@ function App() {
               }
             /> */}
             <Route path="calendar" element={<Cal />} />
+            <Route path="pdfer" element={<Pdfer/>}/>
           </Route>
           {/* <Route path="/accept-invite/:eventId" element={<AcceptInvite />} /> */}
           {/* <Route path="/verify-email" element={<VeirfyEmail />} /> */}

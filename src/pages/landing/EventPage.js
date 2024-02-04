@@ -1,8 +1,8 @@
 import React from "react";
-import { FaLinkedinIn } from 'react-icons/fa';
 import GetEventLogic from "../../Logic/EventsLogic/getEvents";
 import Loading from "../../components/Loading";
 import { MdComputer, MdCurrencyRupee, MdVerified } from "react-icons/md";
+import { FacebookEmbed, InstagramEmbed } from 'react-social-media-embed';
 import {
   IoBookmarkOutline,
   IoCalendarClearOutline,
@@ -203,20 +203,14 @@ function EventPage() {
                   {link?.icon}
                 </a>
               ))}
-              <a
-  href={`https://www.linkedin.com/shareArticle?url=${encodeURIComponent(
-    `${window.location.origin}${pathname}`
-  )}&title=${encodeURIComponent(`${title} Powered by EveHub`)}`}
-  target="_blank"
-  title="Share on LinkedIn"
-  rel="noopener noreferrer"
-  className="border flex items-center justify-center rounded-full p-2 text-xl hover:scale-125 transition-all text-white bg-gradient-to-br bg-blue-600"
->
-  <FaLinkedinIn />
-</a>
-
-            </div>
-            
+              
+         </div>
+         <div style={{ display: 'flex', justifyContent: 'center' }}>
+  <InstagramEmbed url="https://www.instagram.com/p/C2t4DMqP-xE/" width={550}/>
+</div>
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+  <FacebookEmbed url="https://www.facebook.com/andrewismusic/posts/451971596293956" width={550} />
+</div>
           </div>
           {medium === "offline" && lumaurl ? (
   <button 
@@ -362,20 +356,14 @@ function EventPage() {
       {link?.icon}
     </a>
   ))}
-  {/* LinkedIn share link with Font Awesome icon */}
-  <a
-    href={`https://www.linkedin.com/shareArticle?url=${encodeURIComponent(
-      `${window.location.origin}${pathname}`
-    )}&title=${encodeURIComponent(`${title} Powered by EveHub`)}`}
-    target="_blank"
-    title="Share on LinkedIn"
-    rel="noopener noreferrer"
-    className="border flex items-center justify-center rounded-full p-2 text-xl hover:scale-125 transition-all text-white bg-gradient-to-br bg-blue-600"
-  >
-    <FaLinkedinIn />
-  </a>
+  
 </div>
-
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+  <InstagramEmbed url="https://www.instagram.com/p/C2t4DMqP-xE/" width={550}/>
+</div>
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+  <FacebookEmbed url="https://www.facebook.com/andrewismusic/posts/451971596293956" width={550}/>
+</div>
         </div>
       </div>
     </section>
