@@ -30,7 +30,6 @@ function CreateEventLogic() {
   const [title, setTitle] = useState("");
   const [usernamee, setName] = useState(userName);
   const [webyurl, setWebyurl] = useState("");
-  const [facebooker, setFace] = useState("");
   const [insta, setInsta] = useState("");
   const [lumaurl, setLumaurl] = useState("");
   const [price, setPrice] = useState("");
@@ -82,7 +81,6 @@ function CreateEventLogic() {
         usernamee,
         price,
         webyurl,
-        facebooker,
         insta,
         lumaurl,
         description,
@@ -119,8 +117,7 @@ function CreateEventLogic() {
       setMedium((prev) => medium);
       setMeetLink((prev) => meet[0]);
       setWebyurl((prev) => webyurl);
-      setWebyurl((prev) => facebooker);
-      setWebyurl((prev) => insta);
+      setInsta((prev)=>insta);
       setLumaurl((prev) => lumaurl);
       setMeetId((prev) => meet[1]);
       setMeetPassword((prev) => meet[2]);
@@ -149,13 +146,10 @@ function CreateEventLogic() {
     }
     if (value.webyurl !== fetchedDoc?.webyurl) {
       updatedObj.webyurl = value.webyurl;
-    }
-    if (value.facebooker !== fetchedDoc?.facebooker) {
-      updatedObj.facebooker = value.facebooker;
-    }
+    }   
     if (value.insta !== fetchedDoc?.insta) {
       updatedObj.insta = value.insta;
-    }      
+    }  
     if (value.lumaurl !== fetchedDoc?.lumaurl) {
       updatedObj.lumaurl = value.lumaurl;
     }   
@@ -340,7 +334,6 @@ function CreateEventLogic() {
           acceptingAttendance,
           duration,
           webyurl,
-          facebooker,
           insta,
           language,
           acceptingRsvp,
@@ -567,21 +560,13 @@ function CreateEventLogic() {
       show: true, // Show the field always
     },
     {
-      label: "Insta post URL",
+      label: "Insta Post or Profile URL",
       value: insta,
-      placeholder: "Please provide an Instagram post URL.",
-      cb: setInsta, // Use setInsta to set the state for insta variable
+      placeholder: "Please provide a web URL for your event.",
+      cb: setInsta,
       type: "url",
       show: true, // Show the field always
     },
-    {
-      label: "Facebook post URL",
-      value: facebooker,
-      placeholder: "Please provide a Facebook post URL.",
-      cb: setFace, // Use setFace to set the state for facebooker variable
-      type: "url",
-      show: true, // Show the field always
-    },    
     {
       label: "LUMA URL",
       value: lumaurl,
