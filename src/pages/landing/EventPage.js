@@ -52,10 +52,41 @@ function EventPage() {
 
   const start = startDate ? new Date(startDate?.split("+")[0]) : null;
   const end = endDate ? new Date(endDate?.split("+")[0]) : null;
-  const startDay = start?.toDateString();
-  const endDay = end?.toDateString();
-  const startTime = start?.toTimeString()?.slice(0, 5);
-  const endTime = end?.toTimeString()?.slice(0, 5);
+  const startDay = start ? formatDate(start) : null;
+const endDay = end ? formatDate(end) : null;
+
+function formatDate(date) {
+  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const monthsOfYear = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  
+  const dayOfWeek = daysOfWeek[date.getDay()];
+  const dayOfMonth = date.getDate();
+  const month = monthsOfYear[date.getMonth()];
+  const year = date.getFullYear();
+  
+  return `${dayOfWeek} ${dayOfMonth} ${month} ${year}`;
+}
+  const startTime = start
+  ? convertTo12HourFormat(start.getHours(), start.getMinutes())
+  : null;
+const endTime = end
+  ? convertTo12HourFormat(end.getHours(), end.getMinutes())
+  : null;
+
+function convertTo12HourFormat(hours, minutes) {
+  // Determine AM or PM
+  const meridiem = hours >= 12 ? 'PM' : 'AM';
+
+  // Convert hours from 24-hour to 12-hour format
+  let hour12 = hours % 12;
+  hour12 = hour12 || 12; // Convert 0 to 12
+
+  // Add leading zero to minutes if needed
+  const minutesStr = minutes < 10 ? `0${minutes}` : minutes;
+
+  // Return the formatted time
+  return `${hour12}:${minutesStr} ${meridiem}`;
+}
 
   
 

@@ -217,8 +217,7 @@ function Landing() {
           <ol className="text-sm leading-[1.4rem] md:max-w-[90%] py-4 text-neutral-500 text-justify" style={{ fontWeight: "bold" }}>
   <li className="mb-2">1. Data Science Community SRM</li>
   <li className="mb-2">2. The Product House x SRMIST</li>
-  <li className="mb-2">3. Astrophilia</li>
-  <li className="mb-2">4. Aerospace Systems Research Laboratory </li>
+  <li className="mb-2">3. Aerospace Systems Research Laboratory </li>
   </ol>
         </div>
       </section>
