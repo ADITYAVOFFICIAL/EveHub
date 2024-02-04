@@ -98,6 +98,9 @@ body,
 
 /* Media query for mobile devices */
 @media only screen and (max-width: 600px) {
+  .event-content {
+    white-space: wrap;
+  }
   .event-title {
     font-size: 9px; /* Adjust font size for mobile */
   }
