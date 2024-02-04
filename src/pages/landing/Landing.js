@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import FutureUpdatesBackground from "../../assets/images/cardy.gif";
 import OneBackground from "../../assets/images/b1.gif";
 import TwoBackground from "../../assets/images/b2.gif";
+import GTmet from "../../assets/images/gtmetric.png";
 import Card from "../../components/Card";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -305,6 +306,10 @@ function Landing() {
             </SwiperSlide>
           ))}
         </Swiper>
+        <h1 className="text-3xl md:text-5xl text-white font-semibold md:leading-normal md:text-center" style={{marginTop:"50px"}}>Website Performance</h1>
+        <div style={{ flexBasis: "55%", display: "flex", justifyContent: "center"}}>
+  <img alt="GTmetrix Performance" className="w-full" src={GTmet} style={{ borderRadius: "25px", maxHeight: "300px", maxWidth: "850px"}}/>
+</div>
       </div>
       <div className="flex-1 bg-secondary font-poppins select-none">    
         <section className="container py-8">
