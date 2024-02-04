@@ -77,6 +77,18 @@ body,
   padding-inline: 0 !important; 
   padding-block: var(--event-swiper-padding-block) !important;
 }
+.event-content {
+  max-width: 200px; /* Adjust the maximum width as needed */
+  word-wrap: break-word; /* Enable text wrapping */
+}
+
+.event-title {
+  font-weight: bold; /* Make the title bold */
+}
+
+.event-details {
+  font-size: smaller; /* Adjust the font size for details if needed */
+}
 
 .testimonial-slider {
   padding-inline: 0 !important;

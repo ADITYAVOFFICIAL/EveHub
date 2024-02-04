@@ -27,14 +27,12 @@ function Cal() {
 
         const transformedEvents = response.documents
           .filter(event => event.privacy === 'public') // Filter events by privacy
-          .map(event => {
-            console.log('Event:', event);
-            return {
-              title: event.title,
-              start: event.startDate.substring(0, 10), // Extract the date part (YYYY-MM-DD)
-              // Add more fields as needed
-            };
-          });
+          .map(event => ({
+            title: event.title,
+            start: event.startDate.substring(0, 10),
+            description: event.usernamee, // Extract the date part (YYYY-MM-DD)
+            // Add more fields as needed
+          }));
 
         console.log('Transformed events:', transformedEvents);
         setEvents(transformedEvents);
@@ -46,12 +44,23 @@ function Cal() {
     fetchEvents();
   }, []);
 
+  // Function to customize event content
+  const renderEventContent = (eventInfo) => {
+    return (
+      <div className="event-content" style={{ whiteSpace: "wrap" }}>
+  <p className="event-title">{eventInfo.event.title}</p>
+  <p className="event-details">{eventInfo.event.extendedProps.description}</p>
+</div>
+    );
+  };
+
   return (
     <div>
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
         events={events}
+        eventContent={renderEventContent}
       />
     </div>
   );
