@@ -219,11 +219,11 @@ function CreateEventLogic() {
     try {
       const formattedDescription = description.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
       if (lumaurl.trim() !== "") {
-        const lumaUrlPattern = /^https:\/\/lu\.ma\//;
+        const lumaUrlPattern = /^https:\/\//; // Updated pattern to match any HTTPS URL
         if (!lumaUrlPattern.test(lumaurl)) {
-            throw new Error("LUMA URL must start with 'https://lu.ma/'.");
+            throw new Error("URL must start with 'https://'.");
         }
-    }
+    }    
       if (!title) {
         throw new Error("Please provide a title for your event.");
       }
@@ -568,9 +568,9 @@ function CreateEventLogic() {
       show: true, // Show the field always
     },
     {
-      label: "LUMA URL",
+      label: "LUMA URL or REGISTRATION URL",
       value: lumaurl,
-      placeholder: "Please provide Luma URL.",
+      placeholder: "Please provide Luma URL or your registration URL.",
       cb: setLumaurl,
       type: "url",
       show: true, // Show the field always
