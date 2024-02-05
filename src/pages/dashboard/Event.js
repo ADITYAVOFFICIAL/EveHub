@@ -81,12 +81,15 @@ function Event() {
 const lightColorHex = rgbToHex(colors[0]);
 
 const qrCodeDataURL = await qrcode.toDataURL(url, {
-    width: 800, // Customize width (in pixels)
-    color: {
-        dark: darkColorHex,
-        light: lightColorHex,
-    },
+  width: 800, // Customize width (in pixels)
+  color: {
+      dark: darkColorHex,
+      light: lightColorHex,
+  },
 });
+
+toast.success("QR code downloaded");
+
 
         // Display or save the QR code image
         console.log(qrCodeDataURL); // For testing, you can display the data URL in console
