@@ -154,7 +154,7 @@ function Landing() {
   className="bg-white shadow-xl from-primary to-primary/90 p-4 text-black text-center sm:text-xs md:text-base lg:text-lg"
   style={{ borderRadius: "12px", fontWeight: "bold", maxWidth: "90%", width: "100%", lineHeight: "1", padding: "8px 16px" }}
 >
-  🔔 Any updates will be intimated here 🔔
+  🔔 Website will launch on 8 Feb 11:00AM IST🔔
 </Link>
 
           <div
@@ -210,6 +210,7 @@ function Landing() {
   <li className="mb-2">1. Data Science Community SRM</li>
   <li className="mb-2">2. The Product House x SRMIST</li>
   <li className="mb-2">3. Aerospace Systems Research Laboratory </li>
+  <li className="mb-2">4. Newton School Coding Club SRM </li>
   </ol>
         </div>
       </section>
