@@ -265,7 +265,19 @@ function convertTo12HourFormat(hours, minutes) {
   >
     REGISTER FOR THIS EVENT
   </button>
-) : null}
+) : <button 
+className="bg-gradient-to-r shadow-xl from-red-500 to-black p-5 text-white text-center hover:shadow-md"
+style={{ 
+  width: "100%", 
+  textAlign: "center", 
+  fontWeight: "bold", 
+  fontSize:"20px",
+  borderRadius: "10px", 
+  transition: "background 1s, background-position 0.5s"
+}}
+>
+REGISTRATIONS ARE CLOSED
+</button>}
 
 
           <h2 className="font-semibold py-2 border-b border-neutral-300 text-lg">

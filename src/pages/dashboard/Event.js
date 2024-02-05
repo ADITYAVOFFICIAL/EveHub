@@ -122,8 +122,8 @@ const qrCodeDataURL = await qrcode.toDataURL(url, {
 
   const copyTeamId = (e) => {
     e?.preventDefault();
-    navigator.clipboard.writeText(events?.teamId);
-    toast.success("Invitation ID copied to clipboard");
+    navigator.clipboard.writeText(`https://evehubsrm.vercel.app/event/${events?.$id}`);
+    toast.success("Event URL copied to clipboard");
   };
 
   const deleteEventToast = (e) => {
@@ -245,7 +245,7 @@ const qrCodeDataURL = await qrcode.toDataURL(url, {
               >
                 <IoCopy />
                 <p className="transition-all translate-x-[0px] hidden lg:block  group-hover:translate-x-0">
-                  Copy Invite ID
+                  Copy Post URL
                 </p>
               </button>
               
