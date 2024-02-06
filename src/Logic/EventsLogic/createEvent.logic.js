@@ -623,7 +623,7 @@ setPh2((prev) => ph2);
     {
       label: "LUMA EMBED URL",
       value: lumaurl,
-      placeholder: "Please provide Luma URL or your registration URL.",
+      placeholder: "Please provide Luma Embed URL Only.",
       cb: setLumaurl,
       type: "url",
       show: true, // Show the field always
