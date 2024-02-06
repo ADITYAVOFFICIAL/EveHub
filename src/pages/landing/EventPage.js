@@ -297,20 +297,6 @@ function convertTo12HourFormat(hours, minutes) {
   </>
 )}
 
-
-{lumaurl && (
-  <div style={{ position: "relative", paddingBottom: "100%", height: window.innerWidth <= 768 ? "100%" : "50%", overflow: "hidden", maxWidth: "100%" }}>
-    <iframe
-      src={lumaurl}
-      width="100%"
-      height="100%"
-      frameborder="0"
-      aria-hidden="false"
-      tabindex="0"
-      style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", borderRadius: "20px" }}
-    ></iframe>
-  </div>
-)}
 {insta && window.innerWidth <= 768 && (
   <div style={{ display: 'flex', justifyContent: 'center' }}>
     <InstagramEmbed url={insta} width={550}/>
@@ -323,6 +309,17 @@ function convertTo12HourFormat(hours, minutes) {
           <div className="display-linebreak text-neutral-800 text-sm font-grostek">
             {description}
           </div>
+          {lumaurl && (
+  <div sty>
+    <iframe
+      src={lumaurl}
+      frameborder="0"
+      aria-hidden="false"
+      tabindex="0"
+      style={{borderRadius: "20px",height:"550px",width:"100%" }}
+    ></iframe>
+  </div>
+)}
           {tnc && (
   <>
     <h2 className="font-semibold py-2 border-b border-neutral-300 text-lg">
