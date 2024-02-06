@@ -242,12 +242,9 @@ setPh2((prev) => ph2);
     setValidateMessage((prev) => null);
     try {
       const formattedDescription = description.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-      if (lumaurl.trim() !== "") {
-        const lumaUrlPattern = /^https:\/\//; // Updated pattern to match any HTTPS URL
-        if (!lumaUrlPattern.test(lumaurl)) {
-            throw new Error("URL must start with 'https://'.");
-        }
-    }    
+      if (lumaurl.trim() !== "" && !lumaurl.startsWith("https://lu.ma/embed")) {
+      throw new Error("Luma URL must start with 'https://lu.ma/embed'.");
+    }
       if (!title) {
         throw new Error("Please provide a title for your event.");
       }
@@ -624,7 +621,7 @@ setPh2((prev) => ph2);
       show: true, // Show the field always
     },
     {
-      label: "LUMA URL or REGISTRATION URL",
+      label: "LUMA EMBED URL",
       value: lumaurl,
       placeholder: "Please provide Luma URL or your registration URL.",
       cb: setLumaurl,

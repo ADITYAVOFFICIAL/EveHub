@@ -254,9 +254,9 @@ function convertTo12HourFormat(hours, minutes) {
 )}
 
           </div>
-          {medium === "offline" && lumaurl ? (
+          {medium === "offline" && webyurl ? (
   <button 
-    onClick={() => window.location.href = lumaurl} 
+    onClick={() => window.location.href = webyurl} 
     className="bg-gradient-to-r shadow-xl from-primary to-primary/90 p-5 text-white text-center hover:shadow-md"
     style={{ 
       width: "100%", 
@@ -282,6 +282,17 @@ style={{
 >
 REGISTRATIONS ARE CLOSED
 </button>}
+<div style={{ position: "relative", paddingBottom: "56.25%", height: "0", overflow: "hidden", maxWidth: "100%" }}>
+  <iframe
+    src={lumaurl}
+    width="100%"
+    height="100%"
+    frameborder="0"
+    aria-hidden="false"
+    tabindex="0"
+    style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", borderRadius: "20px" }}
+  ></iframe>
+</div>
 
 
           <h2 className="font-semibold py-2 border-b border-neutral-300 text-lg">

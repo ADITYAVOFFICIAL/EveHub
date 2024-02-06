@@ -126,7 +126,7 @@ function Navbar() {
     <button className="primary-btn" style={{
       border: "1px solid",
       borderRadius: "20px",
-      height: "35px",
+      height: "60px",
       width: "100%",
       color: "black",
       borderColor: "white",
