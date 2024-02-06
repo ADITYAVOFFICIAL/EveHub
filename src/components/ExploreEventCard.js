@@ -42,15 +42,14 @@ function ExploreEventCard({
   border: "1px solid",
   borderRadius: "20px",
   height: "20px",
-  width: "60%",
   color: "black",
-  borderColor: "white",
-  backgroundColor: "white",
+  borderColor: "black",
+  backgroundColor: "black",
   fontWeight: "bold",
   marginTop: "0px"
 }}>
   {lumaurl || webyurl ? (
-    <span style={{ fontWeight: "bolder", color: "green", fontSize: "12px" }}>
+    <span style={{ fontWeight: "bolder", color: "limegreen", fontSize: "12px" }}>
       Registrations Open
     </span>
   ) : (
