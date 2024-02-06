@@ -244,45 +244,78 @@ function convertTo12HourFormat(hours, minutes) {
 
           </div>
           {medium === "offline" && webyurl ? (
-  <button 
-    onClick={() => window.location.href = webyurl} 
-    className="bg-gradient-to-r shadow-xl from-primary to-primary/90 p-5 text-white text-center hover:shadow-md"
-    style={{ 
-      width: "100%", 
-      textAlign: "center", 
-      fontWeight: "bold", 
-      fontSize:"20px",
-      borderRadius: "10px", 
-      transition: "background 1s, background-position 0.5s"
-    }}
-  >
-    REGISTER FOR THIS EVENT
-  </button>
-) : <button 
-className="bg-gradient-to-r shadow-xl from-red-500 to-black p-5 text-white text-center hover:shadow-md"
-style={{ 
-  width: "100%", 
-  textAlign: "center", 
-  fontWeight: "bold", 
-  fontSize:"20px",
-  borderRadius: "10px", 
-  transition: "background 1s, background-position 0.5s"
-}}
->
-REGISTRATIONS ARE CLOSED
-</button>}
-<div style={{ position: "relative", paddingBottom: "100%", height: "0", overflow: "hidden", maxWidth: "100%" }}>
-  <iframe
-    src={lumaurl}
-    width="100%"
-    height="100%"
-    frameborder="0"
-    aria-hidden="false"
-    tabindex="0"
-    style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", borderRadius: "20px" }}
-  ></iframe>
-</div>
+  <>
+    <button 
+      onClick={() => window.location.href = webyurl} 
+      className="bg-gradient-to-r shadow-xl from-primary to-primary/90 p-5 text-white text-center hover:shadow-md"
+      style={{ 
+        width: "100%", 
+        textAlign: "center", 
+        fontWeight: "bold", 
+        fontSize: "20px",
+        borderRadius: "10px", 
+        transition: "background 1s, background-position 0.5s"
+      }}
+    >
+      REGISTER FOR THIS EVENT
+    </button>
+  </>
+) : (
+  <>
+    {medium === "offline" && lumaurl ? (
+      <>
+        <button 
+          onClick={() => window.location.href = lumaurl} 
+          className="bg-gradient-to-r shadow-xl from-primary to-primary/90 p-5 text-white text-center hover:shadow-md"
+          style={{ 
+            width: "100%", 
+            textAlign: "center", 
+            fontWeight: "bold", 
+            fontSize: "20px",
+            borderRadius: "10px", 
+            transition: "background 1s, background-position 0.5s"
+          }}
+        >
+          REGISTER FOR THIS EVENT
+        </button>
+      </>
+    ) : (
+      <button 
+        className="bg-gradient-to-r shadow-xl from-red-500 to-black p-5 text-white text-center hover:shadow-md"
+        style={{ 
+          width: "100%", 
+          textAlign: "center", 
+          fontWeight: "bold", 
+          fontSize: "20px",
+          borderRadius: "10px", 
+          transition: "background 1s, background-position 0.5s"
+        }}
+      >
+        REGISTRATIONS ARE CLOSED
+      </button>
+    )}
+  </>
+)}
 
+
+{lumaurl && (
+  <div style={{ position: "relative", paddingBottom: "100%", height: window.innerWidth <= 768 ? "100%" : "50%", overflow: "hidden", maxWidth: "100%" }}>
+    <iframe
+      src={lumaurl}
+      width="100%"
+      height="100%"
+      frameborder="0"
+      aria-hidden="false"
+      tabindex="0"
+      style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", borderRadius: "20px" }}
+    ></iframe>
+  </div>
+)}
+{insta && window.innerWidth <= 768 && (
+  <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <InstagramEmbed url={insta} width={550}/>
+  </div>
+)}
 
           <h2 className="font-semibold py-2 border-b border-neutral-300 text-lg">
             About
@@ -290,17 +323,6 @@ REGISTRATIONS ARE CLOSED
           <div className="display-linebreak text-neutral-800 text-sm font-grostek">
             {description}
           </div>
-          {insta && (
-  <div style={{ display: 'flex', justifyContent: 'center' }}>
-    <InstagramEmbed url={insta} width={550}/>
-  </div>
-)}
-
-{facebooker && (
-  <div style={{ display: 'flex', justifyContent: 'center' }}>
-    <FacebookEmbed url={facebooker} width={550} />
-  </div>
-)}
           {tnc && (
   <>
     <h2 className="font-semibold py-2 border-b border-neutral-300 text-lg">

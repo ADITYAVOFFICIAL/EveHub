@@ -11,7 +11,9 @@ function ExploreEventCard({
     $id,
     medium,
     startDate,
-    endDate
+    endDate,
+    webyurl,
+    lumaurl
 }) {
     const start = new Date(startDate?.split('+')[0])
     startDate = start.getDate()
@@ -36,6 +38,27 @@ function ExploreEventCard({
         <div className="py-2">
     <h1 className="font-bold" style={{ fontSize: "20px", whiteSpace: 'normal' }}>{title}</h1>
     <h1 className="font-bold" style={{ fontSize: "14px", whiteSpace: 'normal' }}>{usernamee}</h1>
+    <button className="primary-btn" style={{
+  border: "1px solid",
+  borderRadius: "20px",
+  height: "20px",
+  width: "60%",
+  color: "black",
+  borderColor: "white",
+  backgroundColor: "white",
+  fontWeight: "bold",
+  marginTop: "0px"
+}}>
+  {lumaurl || webyurl ? (
+    <span style={{ fontWeight: "bolder", color: "green", fontSize: "12px" }}>
+      Registrations Open
+    </span>
+  ) : (
+    <span style={{ fontWeight: "bolder", color: "red", fontSize: "12px" }}>
+      Registrations Closed
+    </span>
+  )}
+</button>
     {/* <p className="text-sm text-gray-500 line-clamp-3">{description}</p> */}
 </div>
   </Link>;
