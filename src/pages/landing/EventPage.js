@@ -241,17 +241,6 @@ function convertTo12HourFormat(hours, minutes) {
               ))}
               
          </div>
-         {insta && (
-  <div style={{ display: 'flex', justifyContent: 'center' }}>
-    <InstagramEmbed url={insta} width={550}/>
-  </div>
-)}
-
-{facebooker && (
-  <div style={{ display: 'flex', justifyContent: 'center' }}>
-    <FacebookEmbed url={facebooker} width={550} />
-  </div>
-)}
 
           </div>
           {medium === "offline" && webyurl ? (
@@ -301,6 +290,17 @@ REGISTRATIONS ARE CLOSED
           <div className="display-linebreak text-neutral-800 text-sm font-grostek">
             {description}
           </div>
+          {insta && (
+  <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <InstagramEmbed url={insta} width={550}/>
+  </div>
+)}
+
+{facebooker && (
+  <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <FacebookEmbed url={facebooker} width={550} />
+  </div>
+)}
           {tnc && (
   <>
     <h2 className="font-semibold py-2 border-b border-neutral-300 text-lg">
