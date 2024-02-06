@@ -271,7 +271,7 @@ style={{
 >
 REGISTRATIONS ARE CLOSED
 </button>}
-<div style={{ position: "relative", paddingBottom: "56.25%", height: "0", overflow: "hidden", maxWidth: "100%" }}>
+<div style={{ position: "relative", paddingBottom: "100%", height: "0", overflow: "hidden", maxWidth: "100%" }}>
   <iframe
     src={lumaurl}
     width="100%"
