@@ -2,22 +2,49 @@ import Border from "../assets/images/eventCard.png";
 import { IoLocation } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { MdComputer } from "react-icons/md";
+import imageCompression from 'image-compressor';
+import { useState, useEffect } from "react";
+
+const compressImage = async (file) => {
+  try {
+    const compressedFile = await imageCompression(file, {
+      maxSizeMB: 1, // Adjust the maximum size as needed
+      maxWidthOrHeight: 1920, // Adjust the maximum width or height as needed
+    });
+    return compressedFile;
+  } catch (error) {
+    console.error('Image compression error:', error);
+    return file; // Return the original file if compression fails
+  }
+};
 
 const EventCard = ({
-  event: { title, description, category, image, location, $id, medium, startDate, endDate,usernamee, maxParticipants},
+  event: { title, description, category, image, location, $id, medium, startDate, endDate, usernamee, maxParticipants },
 }) => {
+  const [compressedImage, setCompressedImage] = useState(null);
 
-  
+  useEffect(() => {
+    const fetchImage = async () => {
+      try {
+        const compressedFile = await compressImage(image);
+        setCompressedImage(compressedFile);
+      } catch (error) {
+        console.error('Error compressing image:', error);
+      }
+    };
+    fetchImage();
+  }, [image]);
 
   return (
     <Link to={`/dashboard/event/${$id}`} className="bg-white overflow-hidden text-black p-2 rounded-[18px] mr-2 outline outline-1 outline-neutral-100 shadow-sm hover:shadow-lg transition-all">
       <div className="relative">
-        <img
-          alt="event"
-          className="w-full rounded-[18px] h-48 object-cover"
-          src={image}
-        />
-
+        {compressedImage && (
+          <img
+            alt="event"
+            className="w-full rounded-[18px] h-48 object-cover"
+            src={compressedImage}
+          />
+        )}
         <div className=" w-max absolute  left-0 top-0 flex flex-row justify-between">
           <div>
             <p className="bg-white p-2 px-4 rounded-tl-[8px] rounded-br-[18px]">
