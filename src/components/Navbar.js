@@ -60,8 +60,8 @@ function Navbar() {
                     to="/dashboard"
                   >
                     <>
-                      <IoPersonOutline className="text-lg" />
-                      <span className="text-lg">Welcome {userInfo.name}</span>
+                      <IoPersonOutline className="text-lg" style={{fontWeight:"600"}}/>
+                      <span className="text-lg" style={{fontWeight:"600"}}>Welcome {userInfo.name}</span>
                     </>
                   </NavLink>
                 )}
@@ -135,7 +135,7 @@ function Navbar() {
     }}>
       <>
         <IoPersonOutline className="text-lg" />
-        <span className="text-lg" style={{width:"280px"}}>Welcome {userInfo.name}</span>
+        <span className="text-lg" style={{width:"280px",fontWeight:"600"}}>Welcome {userInfo.name}</span>
       </>
     </button>
   </NavLink>

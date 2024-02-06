@@ -28,6 +28,10 @@ function CreateEventLogic() {
   const fileRef = useRef(null);
 
   const [title, setTitle] = useState("");
+  const [name1, setName1] = useState("");
+  const [name2, setName2] = useState("");
+  const [ph1, setPh1] = useState("");
+  const [ph2, setPh2] = useState("");
   const [usernamee, setName] = useState(userName);
   const [webyurl, setWebyurl] = useState("");
   const [insta, setInsta] = useState("");
@@ -78,6 +82,10 @@ function CreateEventLogic() {
       
       const {
         title,
+        ph1,
+        ph2,
+        name1,
+        name2,
         usernamee,
         price,
         webyurl,
@@ -102,6 +110,10 @@ function CreateEventLogic() {
       } = response;
       setFetchedDoc((prev) => response);
       setTitle((prev) => title);
+      setName1((prev) => name1);
+setName2((prev) => name2);
+setPh1((prev) => ph1);
+setPh2((prev) => ph2);
       setName((prev) => userName);
       setPrice((prev) => price);
       setDescription((prev) => description);
@@ -143,6 +155,18 @@ function CreateEventLogic() {
     const updatedObj = {};
     if (value.title !== fetchedDoc?.title) {
       updatedObj.title = title;
+    }
+    if (value.name1 !== fetchedDoc?.name1) {
+      updatedObj.name1 = name1;
+    }
+    if (value.name2 !== fetchedDoc?.name2) {
+      updatedObj.name2 = name2;
+    }
+    if (value.ph1 !== fetchedDoc?.ph1) {
+      updatedObj.ph1 = ph1;
+    }
+    if (value.ph2 !== fetchedDoc?.ph2) {
+      updatedObj.ph2 = ph2;
     }
     if (value.webyurl !== fetchedDoc?.webyurl) {
       updatedObj.webyurl = value.webyurl;
@@ -306,6 +330,10 @@ function CreateEventLogic() {
         }
         const value = {
           title,
+          name1,
+          name2,
+          ph1,
+          ph2,
           usernamee,
           price,
           description,
@@ -422,6 +450,34 @@ function CreateEventLogic() {
       show: true,
       required: true,
       type: "textarea",
+    },
+    {
+      label: "Contact Name 1",
+      placeholder: "Please provide a contact person name for your event.",
+      value: name1,
+      cb: setName1,
+      show: true,
+    },
+    {
+      label: "Contact Name 1 Phone Number",
+      placeholder: "Please provide a contact person's phone number for your event.",
+      value: ph1,
+      cb: setPh1,
+      show: true,
+    },
+    {
+      label: "Contact Name 2",
+      placeholder: "Please provide a contact person name for your event.",
+      value: name2,
+      cb: setName2,
+      show: true,
+    },
+    {
+      label: "Contact Name 2 Phone Number",
+      placeholder: "Please provide a contact person's phone number for your event.",
+      value: ph2,
+      cb: setPh2,
+      show: true,
     },
     {
       label: "Privacy",
