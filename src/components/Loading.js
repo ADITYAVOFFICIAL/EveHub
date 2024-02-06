@@ -1,10 +1,10 @@
 import React from 'react'
-import { AiOutlineLoading } from 'react-icons/ai'
+import { FiLoader} from 'react-icons/fi'
 
 function Loading({text}) {
   return (
     <div className="w-full h-full flex flex-col items-center justify-center min-h-[80vh]">
-      <AiOutlineLoading className="text-4xl animate-spin text-primary"/>
+      <FiLoader className="text-4xl animate-spin text-primary"/>
       <p className="text-xl">{text}</p>
     </div>
   )

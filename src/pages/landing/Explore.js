@@ -95,11 +95,18 @@ function Explore() {
       <hr className="w-full  border border-black opacity-80 mb-5"></hr>
       <div style={{
   padding: "20px",
-  borderRadius: "20px",
-  backgroundImage: "url(https://images.squarespace-cdn.com/content/v1/5d017747ed82db0001af480d/1631683467096-JA2BYYOL9AAQHROBD1UJ/horizon.gif)",
+  borderRadius: "12px",
+  backgroundImage: "url(https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXo1d2YxaWswdWV3OXNoZW83ajFsbmZmN3k4em91amFtZ2NlcjJ6ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MRtqvTqgmmzdYeQIJF/giphy.gif)",
   backgroundSize: "cover",
-  backgroundRepeat: "no-repeat"
-}}>
+  backgroundRepeat: "no-repeat",
+  // Media query for mobile devices
+  "@media (max-width: 550px)": {
+    padding: "40px 40px 360px",
+    borderRadius: "18px",
+    width:"100%", // Increase border radius
+  }
+}}
+>
   <h1 className="pb-6 text-2xl md:text-4xl font-bold text-center md:text-center text-black">
     EVENT CALENDAR : SRMIST KTR
   </h1>

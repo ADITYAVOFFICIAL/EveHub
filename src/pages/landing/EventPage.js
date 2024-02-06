@@ -60,7 +60,7 @@ function EventPage() {
 const endDay = end ? formatDate(end) : null;
 
 function formatDate(date) {
-  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const monthsOfYear = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   
   const dayOfWeek = daysOfWeek[date.getDay()];
@@ -172,7 +172,7 @@ function convertTo12HourFormat(hours, minutes) {
 
               <h2 className="inline-flex items-center gap-2 text-sm">
                 <IoCalendarClearOutline /> {startDay}, {startTime}
-                {startDay === endDay && ` | ${endTime}`}
+                {startDay === endDay && ` to ${endTime}`}
               </h2>
               {startDay !== endDay && endDate && endDay && (
                 <h2 className="inline-flex items-center gap-2 text-sm">
@@ -379,7 +379,7 @@ function convertTo12HourFormat(hours, minutes) {
 
             <h2 className="inline-flex items-center gap-2 text-sm">
               <IoCalendarClearOutline /> {startDay}, {startTime}
-              {startDay === endDay && ` | ${endTime}`}
+              {startDay === endDay && ` to ${endTime}`}
             </h2>
             {startDay !== endDay && endDate && endDay && (
               <h2 className="inline-flex items-center gap-2 text-sm">

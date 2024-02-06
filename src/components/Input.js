@@ -37,18 +37,19 @@ function Input({
         <div className={`p-2 px-1 ${leftIcon && 'pl-2'} ${rightIcon && 'pr-2'} border border-neutral-300 focus-within:border-neutral-400 bg-transparent w-full inline-flex rounded-[18px] font-poppins`}>
           {leftIcon}
           {type === "textarea" ? (
-            <textarea
-              onChange={(e) => {
-                e?.preventDefault();
-                if(cb) {
-                  cb((prev) => e.target.value);
-                }
-              }}
-              value={value}
-              placeholder={placeholder}
-              className="p-2 w-full bg-transparent focus-within:outline-none focus-within:border-none"
-            />
-          ) : 
+  <textarea
+    onChange={(e) => {
+      e?.preventDefault();
+      if (cb) {
+        cb((prev) => e.target.value);
+      }
+    }}
+    value={value}
+    placeholder={placeholder}
+    className="p-2 w-full bg-transparent focus-within:outline-none focus-within:border-none"
+    style={{ width: "100%", height: "500px", resize: "vertical" }} // Enclose style in curly braces
+  />
+) :
           (<input
             disabled={disabled}
             min={0}

@@ -40,7 +40,7 @@ function ExploreEventCard({
     <h1 className="font-bold" style={{ fontSize: "14px", whiteSpace: 'normal' }}>{usernamee}</h1>
     <button className="primary-btn" style={{
   border: "1px solid",
-  borderRadius: "20px",
+  borderRadius: "6px",
   height: "20px",
   color: "black",
   borderColor: "black",
@@ -49,11 +49,11 @@ function ExploreEventCard({
   marginTop: "0px"
 }}>
   {lumaurl || webyurl ? (
-    <span style={{ fontWeight: "bolder", color: "limegreen", fontSize: "12px" }}>
+    <span style={{ fontWeight: "bolder", color: "limegreen", fontSize: "13px" }}>
       Registrations Open
     </span>
   ) : (
-    <span style={{ fontWeight: "bolder", color: "red", fontSize: "12px" }}>
+    <span style={{ fontWeight: "bolder", color: "red", fontSize: "13px" }}>
       Registrations Closed
     </span>
   )}
