@@ -48,7 +48,7 @@ function Cal() {
   // Function to customize event content
   const renderEventContent = (eventInfo) => {
     return (
-      <div className="event-content" style={{ whiteSpace: "wrap" }}>
+      <div className="event-content" style={{ whiteSpace: "normal", overflowWrap: "break-word" }}>
   <p className="event-title">{eventInfo.event.title}</p>
   <p className="event-details">{eventInfo.event.extendedProps.description}</p>
   <p className="event-category">{eventInfo.event.extendedProps.category}</p>
