@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import GetExporeLogic from "../../Logic/Explore/getEvents";
 import EventCarousel from "../../components/EventCarousel";
 import Loading from "../../components/Loading";
@@ -17,14 +17,17 @@ function Explore() {
   } = GetExporeLogic();
 
   const [searchInput, setSearchInput] = useState("");
+
   const handleChange = (e) => {
-    e.preventDefault();
     setSearchInput(e.target.value);
   };
 
-  const filteredEvents = searchInput.length > 0
-    ? events.filter(event => event.title.toLowerCase().includes(searchInput.toLowerCase()))
-    : events;
+  const filteredEvents = useMemo(() => {
+    if (searchInput.trim() === "") return events;
+    return events.filter(event =>
+      event.title.toLowerCase().includes(searchInput.toLowerCase())
+    );
+  }, [events, searchInput]);
 
   if (loading) return <Loading />;
 
