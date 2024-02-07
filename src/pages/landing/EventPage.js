@@ -224,7 +224,7 @@ function convertTo12HourFormat(hours, minutes) {
     )}
     { ph1 && (
       <p style={{ fontSize: "14px", marginBottom: "12px", padding: "0", lineHeight: "0.1" }}>
-        <span style={{ fontWeight: "600" }}>Phone Number</span> : <span style={{ fontSize: "10px" }}>{ph1}</span>
+        <span style={{ fontWeight: "600" }}>Phone Number</span> : <span style={{ fontSize: "12px" }}>{ph1}</span>
       </p>
     )}
     { name2 && (
@@ -234,7 +234,7 @@ function convertTo12HourFormat(hours, minutes) {
     )}
     { ph2 && (
       <p style={{ fontSize: "14px", margin: "0", padding: "0", lineHeight: "1" }}>
-      <span style={{ fontWeight: "600" }}>Phone Number</span> : <span style={{ fontSize: "10px" }}>{ph2}</span>
+      <span style={{ fontWeight: "600" }}>Phone Number</span> : <span style={{ fontSize: "12px" }}>{ph2}</span>
     </p>    
     )}
   </div>
