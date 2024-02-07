@@ -214,7 +214,31 @@ function convertTo12HourFormat(hours, minutes) {
                 <RSVPBtn />
                 
               </div>
-              
+              { (name1 || ph1 || name2 || ph2) && (
+  <div className="rounded-lg flex flex-col gap-4 outline w-full outline-1 outline-neutral-300 p-6">
+    <h2 className="font-bold text-md">Contact Details</h2>
+    { name1 && (
+      <p style={{ fontSize: "14px", margin: "0", padding: "0", lineHeight: "1" }}>
+        <span style={{ fontWeight: "600" }}>Name</span> : {name1}
+      </p>
+    )}
+    { ph1 && (
+      <p style={{ fontSize: "14px", marginBottom: "12px", padding: "0", lineHeight: "0.1" }}>
+        <span style={{ fontWeight: "600" }}>Phone Number</span> : {ph1}
+      </p>
+    )}
+    { name2 && (
+      <p style={{ fontSize: "14px", margin: "0", padding: "0", lineHeight: "1" }}>
+        <span style={{ fontWeight: "600" }}>Name</span> : {name2}
+      </p>
+    )}
+    { ph2 && (
+      <p style={{ fontSize: "14px", margin: "0", padding: "0", lineHeight: "0.1" }}>
+        <span style={{ fontWeight: "600" }}>Phone Number</span> : {ph2}
+      </p>
+    )}
+  </div>
+)}
             </div>
             
             <div className="inline-flex w-full items-center gap-2">

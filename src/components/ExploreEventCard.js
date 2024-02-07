@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {MdVerified } from "react-icons/md";
 
 function ExploreEventCard({
     title,
@@ -37,11 +38,14 @@ function ExploreEventCard({
         </div>
         <div className="py-2">
     <h1 className="font-bold" style={{ fontSize: "20px", whiteSpace: 'normal' }}>{title}</h1>
-    <h1 className="font-bold" style={{ fontSize: "14px", whiteSpace: 'normal' }}>{usernamee}</h1>
+    <div className="font-bold" style={{ display: 'flex', alignItems: 'center', fontSize: '14px', whiteSpace: 'normal' }}>
+  {usernamee}
+  <MdVerified style={{ color: "#17c3ff", marginLeft: "3px" }} />
+</div>
     <button className="primary-btn" style={{
   border: "1px solid",
   borderRadius: "6px",
-  height: "20px",
+  height: "17px",
   color: "black",
   borderColor: "black",
   backgroundColor: "black",
