@@ -146,7 +146,7 @@ function Landing() {
   className="bg-white shadow-xl from-primary to-primary/90 p-4 text-black text-center sm:text-xs md:text-base lg:text-lg lg:my-4"
   style={{ borderRadius: "12px", fontWeight: "bold", maxWidth: "90%", width: "100%", lineHeight: "1", padding: "8px 16px" }}
 >
-  ⚠️ Please refrain from sharing the website link as it has not yet been launched ⚠️
+  ✅ 💬 Please share the link to EveHub to help promote the website once it's launched 💬 ✅
 </Link>
 
 <Link
@@ -154,7 +154,7 @@ function Landing() {
   className="bg-white shadow-xl from-primary to-primary/90 p-4 text-black text-center sm:text-xs md:text-base lg:text-lg"
   style={{ borderRadius: "12px", fontWeight: "bold", maxWidth: "90%", width: "100%", lineHeight: "1", padding: "8px 16px" }}
 >
-  🔔 Website will launch on 8 Feb 11:00AM IST🔔
+  🔔 Website will launch on 8 Feb 11:00AM IST 🔔
 </Link>
 
           <div
