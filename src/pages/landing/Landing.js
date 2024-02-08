@@ -307,10 +307,10 @@ function Landing() {
             </SwiperSlide>
           ))}
         </Swiper>
-        <h1 className="text-3xl md:text-5xl text-white font-semibold md:leading-normal md:text-center" style={{marginTop:"50px"}}>Website Performance</h1>
+        {/* <h1 className="text-3xl md:text-5xl text-white font-semibold md:leading-normal md:text-center" style={{marginTop:"50px"}}>Website Performance</h1>
         <div style={{ flexBasis: "55%", display: "flex", justifyContent: "center"}}>
   <img alt="GTmetrix Performance" className="w-full" src={GTmet} style={{ borderRadius: "12px", maxHeight: "300px", maxWidth: "850px"}}/>
-</div>
+</div> */}
       </div>
       <div className="flex-1 bg-secondary font-poppins select-none">    
         <section className="container py-8">
