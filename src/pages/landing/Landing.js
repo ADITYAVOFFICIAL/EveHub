@@ -141,7 +141,7 @@ function Landing() {
             borderRadius:"25px 25px 20px 20px ",
           }}
         >
-          <Link
+          {/* <Link
   to={""}
   className="bg-white shadow-xl from-primary to-primary/90 p-4 text-black text-center sm:text-xs md:text-base lg:text-lg lg:my-4"
   style={{ borderRadius: "12px", fontWeight: "bold", maxWidth: "90%", width: "100%", lineHeight: "1", padding: "8px 16px" }}
@@ -155,7 +155,7 @@ function Landing() {
   style={{ borderRadius: "12px", fontWeight: "bold", maxWidth: "90%", width: "100%", lineHeight: "1", padding: "8px 16px" }}
 >
   🔔 Website will launch on 8 Feb 11:00AM IST 🔔
-</Link>
+</Link> */}
 
           <div
             className="flex flex-col gap-4 items-center justify-center z-10"

@@ -4,6 +4,7 @@ import EventCarousel from "../../components/EventCarousel";
 import Loading from "../../components/Loading";
 import { categories } from "../../Logic/EventsLogic/categories";
 import Cal from "../../pages/dashboard/Cal";
+import Calimage from "../../assets/images/cal.jpg"
 
 function Explore() {
   const {
@@ -96,17 +97,16 @@ function Explore() {
       <div style={{
   padding: "20px",
   borderRadius: "12px",
-  backgroundImage: "url(https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXo1d2YxaWswdWV3OXNoZW83ajFsbmZmN3k4em91amFtZ2NlcjJ6ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MRtqvTqgmmzdYeQIJF/giphy.gif)",
+  backgroundImage: `url(${Calimage})`, // Wrap Calimage in url()
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
   // Media query for mobile devices
   "@media (max-width: 550px)": {
     padding: "40px 40px 360px",
     borderRadius: "18px",
-    width:"100%", // Increase border radius
+    width: "100%", // Increase border radius
   }
-}}
->
+}}>
   <h1 className="pb-6 text-2xl md:text-4xl font-bold text-center md:text-center text-black">
     EVENT CALENDAR : SRMIST KTR
   </h1>
