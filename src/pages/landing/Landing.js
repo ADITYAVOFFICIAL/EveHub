@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import FutureUpdatesBackground from "../../assets/images/cardy.gif";
 import OneBackground from "../../assets/images/b1.gif";
 import TwoBackground from "../../assets/images/b2.gif";
-import GTmet from "../../assets/images/gtmetric.png";
 import Card from "../../components/Card";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
