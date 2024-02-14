@@ -30,7 +30,7 @@ function Footer() {
         
     </ul>
     <div>
-        <p className='text-neutral-300 text-xs md:text-sm text-center'>&copy; EveHub {new Date().getFullYear()} | All rights reserved | <Link className='hover:text-accent hover:underline' target='_blank' to='https://github.com/ADITYAVOFFICIAL'>ADITYA VERMA</Link> | <Link className='hover:text-accent hover:underline' to='/dashboard'>For Organisers</Link></p>
+        <p className='text-neutral-300 text-xs md:text-sm text-center'>&copy; EveHub {new Date().getFullYear()} | All rights reserved | <Link className='hover:text-accent hover:underline' target='_blank' to='https://adityaver.netlify.app/'>ADITYA VERMA</Link> | <Link className='hover:text-accent hover:underline' to='/dashboard'>For Organisers</Link></p>
     </div>
     </div>
   )
