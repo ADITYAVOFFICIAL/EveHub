@@ -24,10 +24,7 @@ export const categories = [
         label: 'Games',
     },
     {
-        label: 'Sports',
-    },
-    {
-        label: 'Law',
+        label: 'Faculty',
     },
     {
         label: 'Medical',                
