@@ -79,7 +79,7 @@ function Explore() {
             <EventCarousel events={filteredEvents} title={"All"} />
           ) : (
             <div className="text-white" style={{ fontSize: "40px", fontWeight: "bold", textAlign: "center" , marginBottom:"15px"}}>
-              <span className="bg-black px-4 py-2 flex flex-col items-center justify-center" style={{ borderRadius: "25px" }}>
+              <span className="bg-black px-4 py-2 flex flex-col items-center justify-center" style={{ borderRadius: "16px" }}>
                 <span>⚠️ NO EVENTS FOUND</span>
                 <span className="mt-1 text-base">Wait for Organisers to Post</span>
               </span>
