@@ -6,14 +6,13 @@ import client from "../../appwrite.config";
 import { Account as Ac, Databases, Query } from "appwrite";
 import { toast } from "react-hot-toast";
 import { useUser } from "../../context/userContext";
+import batGif from "../../assets/images/bat.gif"; // Import the bat.gif file
 
 function Account() {
   const [loading, setLoading] = useState(false);
   const [updateFields, setUpdateFields] = useState(false);
 
   const { userInfo, setUserInfo } = useUser();
-
-  // const user = JSON.parse(localStorage.getItem("evehub-user"));
 
   const {
     name: userName,
@@ -31,7 +30,7 @@ function Account() {
     e.preventDefault();
 
     try {
-      setLoading((prev) => true);
+      setLoading(true);
       const account = new Ac(client);
       const res = await account.createVerification(
         `${process.env.REACT_APP_WEBSITE_URL}/verify-email`
@@ -40,9 +39,9 @@ function Account() {
       toast.success("Verification email sent");
     } catch (err) {
       console.error(err);
-      toast.error(err.messsage);
+      toast.error(err.message);
     } finally {
-      setLoading((prev) => false);
+      setLoading(false);
     }
   };
 
@@ -79,16 +78,16 @@ function Account() {
   const revalidateFields = () => {
     const user = JSON.parse(localStorage.getItem("evehub-user"));
     const { name: userName, email: userEmail, phone: userPhone } = user;
-    setName((prev) => userName);
-    setEmail((prev) => userEmail);
-    setPhone((prev) => userPhone);
-    setUserInfo((prev) => user);
+    setName(userName);
+    setEmail(userEmail);
+    setPhone(userPhone);
+    setUserInfo(user);
   };
 
   const handleUpdateFields = async (e) => {
     e.preventDefault();
     try {
-      setLoading((prev) => true);
+      setLoading(true);
       const account = new Ac(client);
 
       if (name !== userName) {
@@ -118,21 +117,21 @@ function Account() {
     } catch (err) {
       toast.error(err.message);
     } finally {
-      setLoading((prev) => false);
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     if (!updateFields) {
-      setName((prev) => userName);
-      setEmail((prev) => userEmail);
-      setPhone((prev) => userPhone);
+      setName(userName);
+      setEmail(userEmail);
+      setPhone(userPhone);
     }
   }, [updateFields]);
 
   return (
-    <div className="flex flex-col items-center justify-center h-full w-full gap-4 ">
-      <h1 className="page-title" style={{fontSize:"50px",marginBottom:"20px"}}>PERSONAL ACCOUNT PAGE</h1>
+    <div className="relative flex flex-col items-center justify-center h-full w-full gap-4">
+      <h1 className="page-title" style={{ fontSize: "50px", paddingBottom: "10px" }}>YOUR PROFILE PAGE</h1>
       <Avatar size={"text-3xl"} name={userName} />
       <h1 className="page-title">Hello, {userName} 👋🏼</h1>
       <form
@@ -162,7 +161,8 @@ function Account() {
           />
         )} */}
       </form>
-      <p style={{fontWeight:"bold"}}>To change your password send mail to av4923@srmist.edu.in</p>
+      <p style={{ fontWeight: "bold" }}>To change your password send mail to av4923@srmist.edu.in</p>
+      <img src={batGif} alt="Bat" className="absolute bottom-0 left-0 w-30 h-auto animate-bat" />
     </div>
   );
 }

@@ -245,7 +245,7 @@ function Landing() {
           <div className="flex flex-row gap-16">
             <div className="flex-[80%] space-y-4">
               <p className="text-accent tracking-[1px] font-semibold  items-center gap-2 flex">
-                <div className="w-20 h-1 bg-accent"></div> Secure
+                <div className="w-20 h-1 bg-accent"></div> About
               </p>
               <h1 className="text-3xl md:text-5xl text-white font-semibold md:leading-normal">
                 Seamless Event Planning and Organization

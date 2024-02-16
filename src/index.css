@@ -216,3 +216,16 @@ button {
 #ticket {
   @apply bg-white rounded-[18px] shadow-md p-1;
 }
+/* Add this CSS code to your stylesheet */
+@keyframes moveBat {
+  0% {
+    left: -100px; /* Start position */
+  }
+  100% {
+    left: calc(100vw + 100px); /* End position */
+  }
+}
+
+.animate-bat {
+  animation: moveBat 8s linear infinite; /* Adjust duration and timing function as needed */
+}
