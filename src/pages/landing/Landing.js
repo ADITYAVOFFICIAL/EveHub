@@ -201,11 +201,11 @@ function Landing() {
           className="flex flex-col gap-4 items-start justify-evenly text-left py-8 lg:pr-16"
           style={{ flexBasis: "50%" }}
         >
-          <p className="text-accent tracking-[2px] font-semibold text-xl items-center gap-2 flex">
+          <p className="text-accent tracking-[1px] font-bold items-center gap-2 flex">
             <hr className="w-20 h-1 bg-accent"></hr> Onboarded Members
           </p>
           <hr className="w-full border border-neutral-200"></hr>
-          <ol className="text-md leading-[1.4rem] md:max-w-[90%] py-4 text-neutral-700 text-justify" style={{ fontWeight: "bold" }}>
+          <ol className="text-sm leading-[1.4rem] md:max-w-[90%] py-4 text-neutral-700 text-justify" style={{ fontWeight: "bold" }}>
   <li className="mb-2">1. Data Science Community SRM</li>
   <li className="mb-2">2. The Product House x SRMIST</li>
   <li className="mb-2">3. Aerospace Systems Research Laboratory </li>
