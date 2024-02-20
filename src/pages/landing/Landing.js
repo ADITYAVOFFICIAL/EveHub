@@ -18,7 +18,7 @@ import {
 } from "react-icons/io5";
 import { MdOutlinePrivacyTip} from "react-icons/md";
 import WelcomeBackground from "../../assets/images/welbag.gif";
-import WelcomeBackgroundMobile from "../../assets/images/welbagmob.gif";
+import WelcomeBackgroundMobile from "../../assets/images/cardy.gif";
 import Security from "../../assets/images/hero.png";
 const data = [
   {
