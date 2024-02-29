@@ -210,6 +210,7 @@ function Landing() {
   <li className="mb-2">2. The Product House x SRMIST</li>
   <li className="mb-2">3. Aerospace Systems Research Laboratory </li>
   <li className="mb-2">4. Newton School Coding Club SRM </li>
+  <li className="mb-2">5. Liftoff </li>
   </ol>
         </div>
       </section>
