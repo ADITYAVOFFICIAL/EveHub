@@ -25,15 +25,13 @@ function Cal() {
 
         console.log("Fetched events:", response.documents);
 
-        const transformedEvents = response.documents
-          .filter(event => event.privacy === 'public') // Filter events by privacy
-          .map(event => ({
-            title: event.title,
-            start: event.startDate.substring(0, 10),
-            description: event.usernamee,
-            category:event.category, // Extract the date part (YYYY-MM-DD)
-            // Add more fields as needed
-          }));
+        const transformedEvents = response.documents.map(event => ({
+          title: event.title,
+          start: event.startDate.substring(0, 10),
+          description: event.usernamee,
+          category: event.category,
+          // Add more fields as needed
+        }));
 
         console.log('Transformed events:', transformedEvents);
         setEvents(transformedEvents);
@@ -49,11 +47,10 @@ function Cal() {
   const renderEventContent = (eventInfo) => {
     return (
       <div className="event-content" style={{ whiteSpace: "normal", overflowWrap: "break-word"}}>
-  <p className="event-title">{eventInfo.event.title}</p>
-  <p className="event-details">{eventInfo.event.extendedProps.description}</p>
-  <p className="event-category">{eventInfo.event.extendedProps.category}</p>
-</div>
-
+        <p className="event-title">{eventInfo.event.title}</p>
+        <p className="event-details">{eventInfo.event.extendedProps.description}</p>
+        <p className="event-category">{eventInfo.event.extendedProps.category}</p>
+      </div>
     );
   };
 
