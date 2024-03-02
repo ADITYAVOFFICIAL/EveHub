@@ -7,6 +7,7 @@ import TwoBackground from "../../assets/images/b2.gif";
 import Card from "../../components/Card";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import apk from "../../assets/evehub.apk"
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -67,7 +68,7 @@ function Landing() {
   const handleDropdown1Change = (e) => {
     setDropdown1Value(e.target.value);
   };
-  const APKUrl = "https://github.com/ADITYAVOFFICIAL/EveHub/raw/main/src/assets/evehub.apk";
+  const APKUrl = apk;
   
   // Handle change in dropdown 2
   const handleDropdown2Change = (e) => {
