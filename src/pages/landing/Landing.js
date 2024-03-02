@@ -67,7 +67,7 @@ function Landing() {
   const handleDropdown1Change = (e) => {
     setDropdown1Value(e.target.value);
   };
-  const APKUrl = "../../assets/evehub.apk";
+  const APKUrl = "https://github.com/ADITYAVOFFICIAL/EveHub/raw/main/src/assets/evehub.apk";
   
   // Handle change in dropdown 2
   const handleDropdown2Change = (e) => {
