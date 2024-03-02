@@ -5,10 +5,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import ExploreEventCard from "./ExploreEventCard";
 
 function EventCarousel({ events, title }) {
-  const swiperRef = useRef(null);
-  
-  
-  
+  const firstSwiperRef = useRef(null);
+  const secondSwiperRef = useRef(null);
+
+  // Calculate the number of remaining events
+  const remainingEvents = events && events.length > 4 ? events.slice(4) : [];
 
   return (
     <div>
@@ -17,14 +18,16 @@ function EventCarousel({ events, title }) {
         <div className="inline-flex text-primary gap-4 justify-end items-center">
           <button
             onClick={() => {
-              swiperRef.current.swiper.slidePrev();
+              firstSwiperRef.current.swiper.slidePrev();
+              secondSwiperRef.current.swiper.slidePrev();
             }}
           >
             <IoArrowBack />
           </button>
           <button
             onClick={() => {
-              swiperRef.current.swiper.slideNext();
+              firstSwiperRef.current.swiper.slideNext();
+              secondSwiperRef.current.swiper.slideNext();
             }}
           >
             <IoArrowForward />
@@ -34,16 +37,16 @@ function EventCarousel({ events, title }) {
       <div>
         <Swiper
           className="event-swiper"
-          ref={swiperRef}
+          ref={firstSwiperRef}
           modules={[Navigation]}
           slidesPerView={4}
           spaceBetween={20}
           breakpoints={{
             360: {
-                slidesPerView: 1,
+              slidesPerView: 1,
             },
             560: {
-                slidesPerView: 2,
+              slidesPerView: 2,
             },
             640: {
               slidesPerView: 3,
@@ -53,13 +56,44 @@ function EventCarousel({ events, title }) {
             }
           }}
         >
-          {events?.map((item) => (
+          {events?.slice(0, 4).map((item) => (
             <SwiperSlide>
               <ExploreEventCard {...item} />
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
+      {remainingEvents.length > 0 && (
+        <div>
+          <Swiper
+            className="event-swiper"
+            ref={secondSwiperRef}
+            modules={[Navigation]}
+            slidesPerView={4}
+            spaceBetween={20}
+            breakpoints={{
+              360: {
+                slidesPerView: 1,
+              },
+              560: {
+                slidesPerView: 2,
+              },
+              640: {
+                slidesPerView: 3,
+              },
+              820: {
+                slidesPerView: 4,
+              }
+            }}
+          >
+            {remainingEvents.map((item) => (
+              <SwiperSlide>
+                <ExploreEventCard {...item} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      )}
     </div>
   );
 }
