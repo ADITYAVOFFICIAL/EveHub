@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { GooglePlayButton } from "react-mobile-app-button";
 import FutureUpdatesBackground from "../../assets/images/cardy.gif";
 import OneBackground from "../../assets/images/b1.gif";
 import TwoBackground from "../../assets/images/b2.gif";
@@ -67,7 +67,8 @@ function Landing() {
   const handleDropdown1Change = (e) => {
     setDropdown1Value(e.target.value);
   };
-
+  const APKUrl = "../../assets/evehub.apk";
+  
   // Handle change in dropdown 2
   const handleDropdown2Change = (e) => {
     setDropdown2Value(e.target.value);
@@ -182,6 +183,12 @@ function Landing() {
             <span class="relative" style={{fontWeight:"bold"}}>Explore EveHub</span>
           </a>
         </div>
+        <div>
+      <GooglePlayButton
+        url={APKUrl}
+        theme={"dark"}
+      />
+    </div>
         <Link
   to={""}
   className="bg-black shadow-xl from-primary to-primary/90 p-4 text-white text-center sm:text-xs md:text-base lg:text-lg"
