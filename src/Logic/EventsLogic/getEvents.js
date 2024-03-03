@@ -11,6 +11,7 @@ function GetEventLogic() {
     const {pathname} = useLocation();
     const filter = searchParams.get("filter");
     const [events, setEvents] = useState(null)
+    const [usernamee, setUsername] = useState(null)
     const [eventCount, setEventCount] = useState(null)
     const [privateEvent, setPrivateEvent] = useState(null)
     const [publicEvent, setPublicEvent] = useState(null)
@@ -71,7 +72,7 @@ function GetEventLogic() {
                 id
             );
             
-            if(!pathname.includes('dashboard') && response.privacy === 'private') throw new Error('This event is private')
+            if(!pathname.includes('dashboard') && response.privacy === 'public') throw new Error('This event is private')
             setEvents(prev => response);
         }
         catch(err) {
