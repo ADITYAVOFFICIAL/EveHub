@@ -72,7 +72,7 @@ function GetEventLogic() {
                 id
             );
             
-            if(!pathname.includes('dashboard') && response.privacy === 'private') throw new Error('This event is private')
+            if(!pathname.includes('dashboard') && response.privacy === 'public' && response.privacy === 'private') throw new Error('This event is private')
             setEvents(prev => response);
         }
         catch(err) {
