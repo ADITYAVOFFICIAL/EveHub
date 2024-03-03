@@ -220,6 +220,7 @@ function Landing() {
   <li className="mb-2">4. Newton School Coding Club SRM </li>
   <li className="mb-2">5. Liftoff </li>
   <li className="mb-2">6. Hybrutos Racing </li>
+  <li className="mb-2">7. ACM SIGKDD Student Chapter </li>
   </ol>
         </div>
       </section>
