@@ -194,7 +194,7 @@ function convertTo12HourFormat(hours, minutes) {
                 ) : (
                   <>
                     <MdComputer />
-                    <span className="overflow-hidden whitespace-nowrap">{meet[0] || "Online"}</span>
+                    {meet[0] || "Online"}
                   </>
                 )}
               </h2>
@@ -267,7 +267,7 @@ function convertTo12HourFormat(hours, minutes) {
          </div>
 
           </div>
-          {medium === "offline"||"online" && webyurl ? (
+          {medium === "offline" && webyurl ? (
   <>
     <button 
       onClick={() => window.location.href = webyurl} 
@@ -424,7 +424,7 @@ function convertTo12HourFormat(hours, minutes) {
               ) : (
                 <>
                   <MdComputer />
-                  <span className="overflow-hidden whitespace-nowrap">{meet[0] || "Online"}</span>
+                  {meet[0] || "Online"}
                 </>
               )}
             </h2>
