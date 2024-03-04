@@ -194,7 +194,7 @@ function convertTo12HourFormat(hours, minutes) {
                 ) : (
                   <>
                     <MdComputer />
-                    {meet[0] || "Online"}
+                    <span className="overflow-hidden whitespace-nowrap">{meet[0] || "Online"}</span>
                   </>
                 )}
               </h2>
@@ -268,58 +268,66 @@ function convertTo12HourFormat(hours, minutes) {
 
           </div>
           {medium === "offline" && webyurl ? (
-  <>
-    <button 
-      onClick={() => window.location.href = webyurl} 
-      className="bg-gradient-to-r shadow-xl from-primary to-primary/90 p-5 text-white text-center hover:shadow-md"
-      style={{ 
-        width: "100%", 
-        textAlign: "center", 
-        fontWeight: "bold", 
-        fontSize: "20px",
-        borderRadius: "10px", 
-        transition: "background 1s, background-position 0.5s"
-      }}
-    >
-      REGISTER FOR THIS EVENT
-    </button>
-  </>
+  <button 
+    onClick={() => window.location.href = webyurl} 
+    className="bg-gradient-to-r shadow-xl from-primary to-primary/90 p-5 text-white text-center hover:shadow-md"
+    style={{ 
+      width: "100%", 
+      textAlign: "center", 
+      fontWeight: "bold", 
+      fontSize: "20px",
+      borderRadius: "10px", 
+      transition: "background 1s, background-position 0.5s"
+    }}
+  >
+    REGISTER FOR THIS EVENT
+  </button>
+) : medium === "offline" && lumaurl ? (
+  <button 
+    onClick={() => window.location.href = lumaurl} 
+    className="bg-gradient-to-r shadow-xl from-primary to-primary/90 p-5 text-white text-center hover:shadow-md"
+    style={{ 
+      width: "100%", 
+      textAlign: "center", 
+      fontWeight: "bold", 
+      fontSize: "20px",
+      borderRadius: "10px", 
+      transition: "background 1s, background-position 0.5s"
+    }}
+  >
+    REGISTER FOR THIS EVENT
+  </button>
+) : medium === "online" && meet[0] ? (
+  <button 
+    onClick={() => window.location.href = meet[0]} 
+    className="bg-gradient-to-r shadow-xl from-primary to-primary/90 p-5 text-white text-center hover:shadow-md"
+    style={{ 
+      width: "100%", 
+      textAlign: "center", 
+      fontWeight: "bold", 
+      fontSize: "20px",
+      borderRadius: "10px", 
+      transition: "background 1s, background-position 0.5s"
+    }}
+  >
+    REGISTER FOR THIS EVENT
+  </button>
 ) : (
-  <>
-    {medium === "offline" && lumaurl ? (
-      <>
-        <button 
-          onClick={() => window.location.href = lumaurl} 
-          className="bg-gradient-to-r shadow-xl from-primary to-primary/90 p-5 text-white text-center hover:shadow-md"
-          style={{ 
-            width: "100%", 
-            textAlign: "center", 
-            fontWeight: "bold", 
-            fontSize: "20px",
-            borderRadius: "10px", 
-            transition: "background 1s, background-position 0.5s"
-          }}
-        >
-          REGISTER FOR THIS EVENT
-        </button>
-      </>
-    ) : (
-      <button 
-        className="bg-gradient-to-r shadow-xl from-red-500 to-black p-5 text-white text-center hover:shadow-md"
-        style={{ 
-          width: "100%", 
-          textAlign: "center", 
-          fontWeight: "bold", 
-          fontSize: "20px",
-          borderRadius: "10px", 
-          transition: "background 1s, background-position 0.5s"
-        }}
-      >
-        REGISTRATIONS ARE CLOSED
-      </button>
-    )}
-  </>
+  <button 
+    className="bg-gradient-to-r shadow-xl from-red-500 to-black p-5 text-white text-center hover:shadow-md"
+    style={{ 
+      width: "100%", 
+      textAlign: "center", 
+      fontWeight: "bold", 
+      fontSize: "20px",
+      borderRadius: "10px", 
+      transition: "background 1s, background-position 0.5s"
+    }}
+  >
+    REGISTRATIONS ARE CLOSED
+  </button>
 )}
+
 
 {insta && window.innerWidth <= 768 && (
   <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -424,7 +432,7 @@ function convertTo12HourFormat(hours, minutes) {
               ) : (
                 <>
                   <MdComputer />
-                  {meet[0] || "Online"}
+                  <span className="overflow-hidden whitespace-nowrap">{meet[0] || "Online"}</span>
                 </>
               )}
             </h2>
