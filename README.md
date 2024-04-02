@@ -9,7 +9,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/ADITYAVOFFICIAL/EveHub)
 
 <p align="center">
-  <a href="srmsigkdd.vercel.app">
+  <a href="evehubsrm.vercel.app">
     <img alt = "Logo" height="150" width="150" src = "https://raw.githubusercontent.com/ADITYAVOFFICIAL/EveHub/main/public/logo512.png">
   </a>
 
