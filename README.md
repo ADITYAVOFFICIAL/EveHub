@@ -25,7 +25,7 @@ This repository serves as a centralized platform to explore and manage events ha
 <br>
 
 ## Demo Screenshot of Home Page
-<img align="center" alt="Home Page"  src="https://raw.githubusercontent.com/ACM-SIGKDD-SRM-KTR-STUDENT-CHAPTER/Official_Website/main/public/ss.png">
+<img align="center" alt="Home Page"  src="https://raw.githubusercontent.com/ADITYAVOFFICIAL/EveHub/main/public/ss.png">
 
 ## Setting Up EveHub
 
