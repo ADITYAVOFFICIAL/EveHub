@@ -88,5 +88,3 @@ B[Open Folder] --> C[npm install --legacy-peer-deps] -->D[npm start]
 </a>
 </div>
 
-#
-<p align="center">Made with ❤️ <b>TEAM ACM SIGKDD SRM KTR </b></p>
