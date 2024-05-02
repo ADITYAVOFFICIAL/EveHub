@@ -224,7 +224,7 @@ function Landing() {
   </ol>
         </div>
       </section>
-      {/* <section className="flex flex-col-reverse  lg:flex-row w-full py-8 md:py-16 justify-between gap-8 md:gap-0 container">
+       {/* <section className="flex flex-col-reverse  lg:flex-row w-full py-8 md:py-16 justify-between gap-8 md:gap-0 container">
         <div className="md:pt-16 " style={{ flexBasis: "50%" }}>
           <img className="w-full" src={Hero2} />
         </div>
@@ -250,9 +250,9 @@ function Landing() {
                 {token ? "[ PAID FEATURE ]" : "[ PAID FEATURE ]"}
               </Link>
         </div>
-      </section> */}
+      </section>  */}
       <div className="bg-gradient-to-b from-secondary from-100% to-50% to-white pb-10" style={{ borderRadius: "25px 25px 0 0" }}>
-        <section className="flex flex-col lg:flex-row w-full items-center py-8 lg:pt-16 lg:pb-0 justify-between gap-4 md:gap-0 container">
+        {/* <section className="flex flex-col lg:flex-row w-full items-center py-8 lg:pt-16 lg:pb-0 justify-between gap-4 md:gap-0 container">
           <div className="flex flex-row gap-16">
             <div className="flex-[80%] space-y-4">
               <p className="text-accent tracking-[1px] font-semibold  items-center gap-2 flex">
@@ -266,8 +266,8 @@ function Landing() {
           <p className="flex-[80%] w-full text-sm leading-[1.4rem] md:max-w-[90%] py-4 text-slate-400 text-justify">
           Bid farewell to the hassles of event planning. Our intuitive interface streamlines the process, freeing you to concentrate on your creative pursuits. Seamlessly create and oversee events—from scheduling dates and venues to crafting event details and ticketing choices. Simplify your planning journey and transform your vision into reality.
           </p>
-        </section>
-        <div className="flex flex-row gap-4 items-center justify-between container">
+        </section> */}
+        {/* <div className="flex flex-row gap-4 items-center justify-between container">
           <hr className="w-full  border border-neutral-200 opacity-30"></hr>
           <div className="inline-flex flex-[50%] gap-4 justify-end items-center">
             <button
@@ -287,8 +287,8 @@ function Landing() {
               <IoArrowForward />
             </button>
           </div>
-        </div>
-        <Swiper
+        </div> */}
+        {/* <Swiper
           ref={swiperRef}
           modules={[Navigation]}
           spaceBetween={50}
@@ -316,15 +316,10 @@ function Landing() {
               <Card {...item} />
             </SwiperSlide>
           ))}
-        </Swiper>
-        {/* <h1 className="text-3xl md:text-5xl text-white font-semibold md:leading-normal md:text-center" style={{marginTop:"50px"}}>Website Performance</h1>
-        <div style={{ flexBasis: "55%", display: "flex", justifyContent: "center"}}>
-  <img alt="GTmetrix Performance" className="w-full" src={GTmet} style={{ borderRadius: "12px", maxHeight: "300px", maxWidth: "850px"}}/>
-</div> */}
+        </Swiper> */}
       </div>
       <div className="flex-1 bg-secondary font-poppins select-none">    
         <section className="container py-8">
-          <hr className="border border-grey my-4 mx-1" />
           <h2 className="text-3xl font-semibold mb-4" style={{ color: "white" }}>Contact Us</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <input type="hidden" name="Website Origin" value="EveHub" />
